@@ -1,33 +1,32 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: GitHub Actions Build and Deploy
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches:
+      - master
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.deploy }}
+          BRANCH: gh-pages
+          FOLDER: build
+          BUILD_SCRIPT: npm install --registry=https://registry.npm.taobao.org && npm run build
+      - name: sync to gitee
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:luge-ai/luge-ai.git'
+          destination-repo: 'git@gitee.com:luge-ai/luge-ai.git'
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@master
+        with:
+          branch: gh-pages
+          gitee-username: lugeAi
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: luge-ai/luge-ai
