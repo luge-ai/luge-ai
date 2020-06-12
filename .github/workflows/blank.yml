@@ -12,7 +12,7 @@ jobs:
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
-          ACCESS_TOKEN: ${{ secrets.deploy }}
+          SSH: ${{ secrets.SSH_PRIVATE_KEY }}
           BRANCH: gh-pages
           FOLDER: build
           BUILD_SCRIPT: npm install --registry=https://registry.npm.taobao.org && npm run build
