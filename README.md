@@ -1,4 +1,4 @@
-# 这里可以是slogan （非必填）update test11
+# 这里可以是slogan （非必填）
 
 # 中文NLP开源数据集
 
