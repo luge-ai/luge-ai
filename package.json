@@ -1,0 +1,17 @@
+{
+  "name": "nlp-progress",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "license": "UNLICENSED",
+  "homepage": "https://luge-ai.github.io/luge-ai",
+  "dependencies": {
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "vuepress": "^1.3.0"
+  }
+}

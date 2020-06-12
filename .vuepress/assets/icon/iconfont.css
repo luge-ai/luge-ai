@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1582770917385'); /* IE9 */
+  src: url('iconfont.eot?t=1582770917385#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO8AAsAAAAAB7AAAANwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDGIJ2ATYCJAMMCwgABCAFhG0HNxu9BsiuMG7hiRZUFtJFV2ysw/3dFQKch0XwNfa67+5CAIolj8cCu7JrxyeyREZFtey+0e141tX537UsBeIUUQKiWvqZneGXTQFQAQkDPLI9EAaI1D1/qoPnliTD8QBn10izA59PmZh8jXKDC7Ym/gEn2xZeeOXNhw24IKLAcOVbpQ+52v9cTm+UBTb2tyyXsbbubUe9AOOAAt2D1tZACyQgbxi78iLWE6g3LIPdbnVjJ3JVGN0CcZ/njMg1ZVFq8kOtUF0ytoiXqNr0KD3CC//78c9S1JJUZUbfvZtVFlT6M+8vdzg+G1wXIR3PBTaJjEVIIa6Xei5yCCOLHNQrGsf69GpFSGP57x5fouqqV/rHS0Q1I7cRzEJ1OimpzSf4hRhSkTtXo+AEwEdA7twii94+3VU7762+OSkxdmdOVgPVZ9Ovn3TEE8UXq62dW9PHayHGw7XXx4XA93LG0kycfvuxV7+Ozvfnwl277ldvei7mwCwOGie0PXNYh1zX+eDtws61PHOe29fq3r71/jqPz6FXx5F/HqVObyff/4Xrz9DvTgepsVEi1/pxtIw+6K5vjwYHj250/YCU9AeeJLe6vh8p9z0VaUSRofK400+P3r0D6CFFL0c4P3jvODoq39NpxeFghT3duOVbXZWUluhNm9qYQ3UPmli3/3bJae2Ww2Zd+O5qn0tNgsOOa23mN++ZIwyMDpOZM/athks3h+dPuV7Hjxv2nvKuFQu2Py3vRzEMEM6eK7nMj02UH/6z3ziX/4+VT+F/VxbwQ+U3lLXzIbV35A3+kLRlVVH1sLbIElui+7Ldu3UloIhr/ZdCaPelv66rdS6hVlcMSY0hyGpNooW8CFUarEC1WhtQb0HN5AYdKAdR6jBvAUBodQlJswpkrR6jhfwZqnT7B9VaI0O98xEwZ4PpuONeQcHIwIJNI5g3qwqx7Mw9yG8HbkAy0qTcZ3UDtfF+nGuRjdeAAnSMAbZBLo8xgglVZVwNNgNJUrFGVQHMLMvKmJaf7V12pSyzKiN3OyhgxAALzGQExjNTKYhbn3HPfb4d4AyQGNEaQkWwG6Bs+OaxXFlyWqA1GqUV4Vr2sRnEycMwBEZQKhlWDVoBiUSFaeWtBMCMyWLtEdLkyzZrkbaarPl18vNtgHrGkjlS5CjKfV4RnTmeWQdMCAE=') format('woff2'),
+  url('iconfont.woff?t=1582770917385') format('woff'),
+  url('iconfont.ttf?t=1582770917385') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1582770917385#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-link:before {
+  content: "\e632";
+}
+
+.icon-github:before {
+  content: "\e72a";
+}
+
