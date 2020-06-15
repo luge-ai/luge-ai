@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    base: '/',
+    base: './',
     dest: 'build',
     themeConfig: {
         navbar: false,
