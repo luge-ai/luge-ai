@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-    // base: '/static/dataset/',
     base: '/',
     dest: 'build',
     themeConfig: {
