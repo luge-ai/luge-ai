@@ -6,7 +6,7 @@
 
 module.exports = {
     // base: '/static/dataset/',
-    base: '/luge-ai/',
+    base: '/',
     dest: 'build',
     themeConfig: {
         navbar: false,
