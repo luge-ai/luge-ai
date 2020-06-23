@@ -31,8 +31,8 @@ export default {
     methods: {
         computeHeight() {
             const footerDom = this.$refs.footerRef;
-            const {height, 'padding-top': paddingTop, 'padding-bottom': paddingBottom} = window.getComputedStyle(footerDom);
-            document.getElementById('global-layout').style['padding-bottom'] = parseInt(height, 10) + parseInt(paddingTop, 10) + parseInt(paddingBottom, 10) + 'px';
+            const {height} = window.getComputedStyle(footerDom);
+            document.getElementById('global-layout').style['padding-bottom'] = height;
         }
     },
     mounted() {
