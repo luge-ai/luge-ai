@@ -196,6 +196,7 @@ table
         white-space nowrap
         box-sizing border-box
         max-width 100%
+        color #fff
         &::before
             position absolute
             counter-increment section 1
