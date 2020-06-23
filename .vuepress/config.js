@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+    title: '千言',
     base: '/',
     dest: 'build',
     themeConfig: {
