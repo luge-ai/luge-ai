@@ -150,6 +150,28 @@ export default {
 table
     display table
     table-layout fixed
+    border-radius 10px
+    border-collapse separate
+    td
+        border-right 1px solid #E6ECF0
+        border-bottom 1px solid #E6ECF0
+        &:first-of-type
+            border-left 1px solid #E6ECF0
+    tr:first-of-type td
+        border-top 1px solid #E6ECF0
+    tr:first-of-type
+        td:first-of-type
+            border-top-left-radius 10px
+        td:last-of-type
+            border-top-right-radius 10px
+    tr:last-of-type
+        td:first-of-type
+            border-bottom-left-radius 10px
+        td:last-of-type
+            border-bottom-right-radius 10px
+    *
+        background #F9FAFB!important
+        border: none;
     div
         display flex
         span:first-of-type
