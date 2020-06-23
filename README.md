@@ -1,9 +1,10 @@
-# 这里可以是slogan （非必填）
-
+---
+title: 千言
+---
 # 中文NLP开源数据集
 
 ## 词法分析
-- [分词](lexical-analysis/word-segment.md) 
+- [分词](lexical-analysis/word-segment.md)
 - [词性标注](lexical-analysis/part-of-speech-tagging.md)
 - [命名实体](lexical-analysis/name-entity-recognition.md)
 
