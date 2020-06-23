@@ -43,7 +43,7 @@ export default {
     },
     data() {
         return {
-            tabValue: 1,
+            tabValue: 2,
             tabsFix: false,
             tabs: [
                 {path: '/list/list.html', label: '榜单', value: 1},
@@ -106,6 +106,11 @@ export default {
 #global-layout
     min-height 100%
     // padding-bottom 需要动态计算footer
+
+header + footer,
+.tabs + footer
+    margin-bottom 400px
+    z-index -1
 
 .bk-dark
     background #0a1d3a
