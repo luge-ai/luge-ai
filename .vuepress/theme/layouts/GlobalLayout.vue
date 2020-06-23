@@ -7,36 +7,47 @@
             </video>
             <div>
                 <div class="header-content">
-                    <h1>NLP-PROGRESS</h1>
-                    <h2>Repository to trasck the progress in Natural Language Processing (NLP), including the datasets and the current state-of-the-art for the most common NLP tasks.</h2>
-                    <a class="btn" href="#">
-                        <i class="iconfont icon-github"></i>
-                        View on GitHub
-                    </a>
+                    <h1>千言</h1>
+                    <p>LUGE ( Language Understanding and Generation Evaluation benchmarks )</p>
+                    <p>全面的面向自然语言理解和生成任务的中文开源数据集合，旨在为研究人员带来一站式的数据集浏览、整理、下载和评测的科研体验，共同推动中文信息处理技术的进步。</p>
+                    <div>
+                        <a class="btn" href="https://github.com/luge-ai/luge-ai" target="_blank">
+                            <i class="iconfont icon-github"></i>
+                            View on GitHub
+                        </a>
+                        <a class="btn" href="https://gitee.com/luge-ai/luge-ai" target="_blank">
+                            <i class="iconfont icon-gitee"></i>
+                            View on Gitee
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
         <div class="tabs" :class="tabsFix ? 'tabs-fix' : ''" v-if="tabValue">
             <span v-for="(item, index) in tabs" :key="index" :class="item.value === tabValue ? 'tabs-active' : ''" @click="onClickTab(item.path)">{{item.label}}</span>
         </div>
-        <component :is="layout"></component>
-        <footer class="bk-dark">
-            <div class="footer-content">
-                <p>Published with GitHub Pages</p>
-            </div>
-        </footer>
+        <list-component v-if="tabValue === 1"></list-component>
+        <component :is="layout" v-else></component>
+
+        <footer-component></footer-component>
     </div>
 </template>
 
 <script>
+import listComponent from './../../components/list';
+import footerComponent from './../../components/footer';
 export default {
+    components: {
+        listComponent,
+        footerComponent
+    },
     data() {
         return {
             tabValue: 1,
             tabsFix: false,
             tabs: [
-                {path: '/', label: '数据集', value: 1},
-                {path: '/list/list.html', label: '榜单', value: 2}
+                {path: '/list/list.html', label: '榜单', value: 1},
+                {path: '/', label: '数据集', value: 2}
             ]
         };
     },
@@ -93,14 +104,8 @@ export default {
 <style lang='stylus' scoped>
 @import url("./../../assets/icon/iconfont.css");
 #global-layout
-    padding-bottom 80px
     min-height 100%
-    footer
-        position absolute
-        left 0
-        width 100%
-        bottom 0
-        z-index 2
+    // padding-bottom 需要动态计算footer
 
 .bk-dark
     background #0a1d3a
@@ -124,16 +129,25 @@ header
     .header-content
         z-index 1
         width 800px
-    h1
-        line-height 64px
-        font-size 48px
-        margin-bottom 6px
-    h2
+        text-align center
         font-size 14px
-        line-height 26px
-        margin auto
-        margin-bottom 20px
-        width 600px
+        h1
+            line-height 66px
+            font-size 48px
+        p
+            width 600px
+            line-height 26px
+            margin auto
+            &:nth-of-type(1)
+                font-weight 300
+                margin-bottom 10px
+        div
+            text-align center
+            margin-top 20px
+            a:nth-of-type(1)
+                margin-right 50px
+
+
     video
         width 100%
         height 100%
@@ -143,21 +157,7 @@ header
         transform translate3d(-50%, -50%, 0)
         width 1440px
         height 288px
-footer
-    .footer-content
-        overflow hidden
-        max-width  800px
-        margin auto
-        padding 29px 20px;
-        display flex
-        justify-content space-between
-        a:hover
-            text-decoration underline
-        p
-            margin 0
-            line-height 22px
-            &:first-of-type
-                margin-right 20px
+
 .btn
     height 40px
     border 1px solid #fff
@@ -166,7 +166,6 @@ footer
     padding 0 20px
     display inline-block
     border-radius 20px
-    // transition all .3s ease-in
     font-weight 400
     &:hover
         background #fff
@@ -203,20 +202,24 @@ footer
 
 
 @media (max-width: 719px)
-    footer .footer-content p
-        font-size 12px
     header
         .header-content
             width 100%
             box-sizing border-box
             padding 0 1.5rem
             font-size 12px
-        h1
-            font-size 18px
-            line-height 28px
-        h2
-            font-size 12px
-            width 100%
+            h1
+                font-size 18px
+                line-height 28px
+            p
+                width 100%
+                margin-bottom 0!important
+            div
+                margin-left -2rem
+                margin-right -2rem
+            a:first-of-type
+                margin-right 10px!important
+
         .btn
             font-size 12px
             height 28px
