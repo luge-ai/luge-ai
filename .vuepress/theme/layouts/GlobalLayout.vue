@@ -10,14 +10,14 @@
                     <h1>千言</h1>
                     <p>LUGE ( Language Understanding and Generation Evaluation benchmarks )</p>
                     <p>全面的面向自然语言理解和生成任务的中文开源数据集合，旨在为研究人员带来一站式的数据集浏览、整理、下载和评测的科研体验，共同推动中文信息处理技术的进步。</p>
-                    <div>
+                    <div style="display: flex; justify-content: center;">
                         <a class="btn" href="https://github.com/luge-ai/luge-ai" target="_blank">
                             <i class="iconfont icon-github"></i>
-                            View on GitHub
+                            <span>View on GitHub</span>
                         </a>
                         <a class="btn" href="https://gitee.com/luge-ai/luge-ai" target="_blank">
                             <i class="iconfont icon-gitee"></i>
-                            View on Gitee
+                            <span>View on Gitee</span>
                         </a>
                     </div>
                 </div>
@@ -172,6 +172,12 @@ header
     border-radius 20px
     font-weight 400
     width 170px
+    display flex
+    align-items center
+    justify-content center
+    i
+        margin-right 5px
+        font-size 20px
     &:hover
         background #fff
         color #071B34
@@ -229,6 +235,6 @@ header
             font-size 12px
             height 28px
             line-height 26px
-            width 130px
+            width 140px
 
 </style>

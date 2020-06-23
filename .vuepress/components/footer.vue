@@ -87,6 +87,8 @@ footer
             margin-bottom 0
 .footer-bottom
     display flex
+    span
+        color rgba(255, 255, 255, .5)
     span:first-of-type
         white-space nowrap
         margin-right 10px
