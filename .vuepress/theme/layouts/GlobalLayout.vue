@@ -168,10 +168,10 @@ header
     border 1px solid #fff
     color #fff
     line-height 38px
-    padding 0 20px
     display inline-block
     border-radius 20px
     font-weight 400
+    width 170px
     &:hover
         background #fff
         color #071B34
@@ -229,6 +229,6 @@ header
             font-size 12px
             height 28px
             line-height 26px
-            padding 0 10px
+            width 130px
 
 </style>
