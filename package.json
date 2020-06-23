@@ -1,11 +1,11 @@
 {
-  "name": "nlp-progress",
+  "name": "luge-ai",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev",
-    "build": "vuepress build"
+    "build": "sh build.sh"
   },
   "license": "UNLICENSED",
   "homepage": "https://luge-ai.github.io/luge-ai",
