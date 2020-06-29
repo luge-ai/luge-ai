@@ -72,7 +72,7 @@ export default {
                 },
                 {
                     title: '文本相似度',
-                    desc: 'i.	我们从多领域数据和模型鲁棒性的角度，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文） 三个数据集。',
+                    desc: '我们从多领域数据和模型鲁棒性的角度，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文） 三个数据集。',
                     img: require('../assets/text-match.png'),
                     link: 'http://www.baidu.com'
                 },
