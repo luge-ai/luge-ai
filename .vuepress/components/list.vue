@@ -1,9 +1,12 @@
 <template>
     <div class="list-page">
         <section class="list-center">
-            <h2>评测榜单</h2>
-            <p>开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一的测评方式，期望从多个任务、多个领域的角度对模型选练效果进行综合评价。该开源数据集旨在为研究人员和开发者提供学术和技术交流平台，进一步提升情感分析和研究水平，推动自然语言和人工智能领域技术的应用和发展。</p>
-            <p>为了给大家提供***，我们从数据集中选取了***个topic，并进行了***的评测，最终选评出***榜单，供大家参考。</p>
+            <h2>简介</h2>
+            <p>数据集是推动自然语言处理技术进步的基石，但是目前整个社区缺乏对数据集的支撑性工作，使得我们面临很多困难：</p>
+            <p>（a）科研工作者在使用数据时，需要查找、下载和处理数据集，存在大量重复和繁琐的工作；</p>
+            <p>（b）数据集作者缺少来自使用者的反馈，数据集影响力不足；</p>
+            <p>（c）针对某个任务的单一数据集评测往往不够充分。</p>
+            <p>因此我们发起了千言数据集开源项目，目的是为科研人员带来一站式的数据集浏览、整理、下载和评测的科研体验，并且能够更好的连接数据集的作者和使用者。千言项目针对不同的自然语言处理问题，对多个数据集进行统一的整理并提供统一的测评方式，期望从多任务、多领域的角度对模型效果进行综合评价。目前，千言项目已经针对7个任务，收集和整理了来自10所高校和企业的20个开源数据集。未来，希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。</p>
             <div class="list-box">
                 <a class="list-box-item" v-for="(item, index) in boxData" :href="item.link" target="_blank">
                     <div>
@@ -33,8 +36,8 @@
         <section class="join-section">
             <section class="list-center">
                 <h2>加入我们</h2>
-                <p>该榜单由***按照***规则进行了整理，欢迎您的加入，共同维护中文NLP技术的发展</p>
-                <h3>榜单评测规则：</h3>
+                <p>我们希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。未来3年，我们希望面向20个任务，收集100个中文自然语言处理数据集。</p>
+                <h3>希望您能够与我们联系：</h3>
                 <div class="rule">
                     <span class="rule-item" v-for="(item, index) in ruleData">{{item}}</span>
                 </div>
@@ -49,56 +52,57 @@ export default {
             boxData: [
                 {
                     title: '情感分析',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    desc: '针对句子级情感分类、评价对象级情感分类、观点抽取三个子任务，我们收集和整理了ChnSentiCorp、NLPCC14-SC、SemEval16-ABSA、COTE四个数据集。',
                     img: require('../assets/sentiment-analysis.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '阅读理解',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    desc: '针对抽取式阅读理解和观点式阅读理解两个子任务，我们收集和整理了DuReaderrobust、DuReaderyesno两个数据集。',
                     img: require('../assets/mrc.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
-                    title: '对话',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    title: '开放域对话',
+                    desc: '针对网络日常对话，情感对话，知识对话，有目标的开放域对话等任务，我们收集和整理了来自工业界和学术界共七个对话数据集。',
                     img: require('../assets/conversation.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
-                    title: '短文本匹配',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    title: '文本相似度',
+                    desc: 'i.	我们从多领域数据和模型鲁棒性的角度，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文） 三个数据集。',
                     img: require('../assets/text-match.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '语义解析',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    desc: '针对数据库的不同形式和SQL查询语句的复杂度，我们收集和整理了Spider、Text-to-SQL、DuSQL三个数据集。',
                     img: require('../assets/semantic-parsing.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
-                    title: '翻译同传',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    title: '同声传译',
+                    desc: '机器同传结合了机器翻译、语音识别和语音合成等技术，我们整理了BSTC数据集，包含针对中英、英西两个方向共4项任务。',
                     img: require('../assets/translate.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '信息抽取',
-                    desc: '开源数据集网站收集了一系列开放的中文情感分析数据集，并对数据集进行了统一的整理以及提供了统一。',
+                    desc: '针对关系抽取和事件抽取两个子任务，我们收集和整理了DuIE、DuEE两个数据集。',
                     img: require('../assets/information-extraction.png'),
                     link: 'http://www.baidu.com'
                 }
             ],
             tableData: [
-                [{name: '张三dasd', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}],
-                [{name: '张三', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}],
-                [{name: '张三', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}, {name: '张三', unit: 'dasdasd'}]
+                [{name: '张三', unit: '百度'}, {name: '黄民烈', unit: '清华大学'}, {name: '赵妍妍', unit: '哈尔滨工业大学'}],
+                [{name: '陈清才', unit: '哈尔滨工业大学（深圳）'}, {name: '谭松波', unit: '中科院计算所'}, {name: '柳厅文', unit: '中科院信工所'}],
+                [{name: '李寿山', unit: '苏州大学'}, {name: '张岳', unit: '西湖大学'}, {name: '张三', unit: '微软'}]
+                [{unit: '微软'}, {unit: '华为'}, {unit: '腾讯'}, {unit: '追一科技'}]
             ],
             ruleData: [
-                '规则文案规则文案规则文案规则16字',
-                '规则文案规则文案规则文案规则文案',
-                '规则文案规则文案规则文案规则文案'
+                '将您的数据集加入已有任务',
+                '增加新的任务并加入您的数据集',
+                '欢迎您提出更多的宝贵意见'
             ]
         };
     }
