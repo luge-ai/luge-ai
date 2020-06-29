@@ -8,7 +8,7 @@
             <div>
                 <div class="header-content">
                     <h1>千言</h1>
-                    <p>LUGE ( Language Understanding and Generation Evaluation benchmarks )</p>
+                    <p>LUGE ( Language Understanding and Generation Evaluation Benchmarks )</p>
                     <p>全面的面向自然语言理解和生成任务的中文开源数据集合，旨在为研究人员带来一站式的数据集浏览、整理、下载和评测的科研体验，共同推动中文信息处理技术的进步。</p>
                     <div style="display: flex; justify-content: center;">
                         <a class="btn" href="https://github.com/luge-ai/luge-ai" target="_blank">
@@ -46,8 +46,8 @@ export default {
             tabValue: 2,
             tabsFix: false,
             tabs: [
-                {path: '/list/list.html', label: '榜单', value: 1},
-                {path: '/', label: '数据集', value: 2}
+                {path: '/list/list.html', label: '千言数据集', value: 1},
+                {path: '/', label: '其它开源数据集索引', value: 2}
             ]
         };
     },
