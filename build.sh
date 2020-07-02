@@ -6,6 +6,6 @@ fi
 
 cp README.md dataset.md
 
-# vuepress build
-# cd build
-# echo 'luge.ai' > CNAME
+vuepress build
+cd build
+echo 'luge.ai' > CNAME
