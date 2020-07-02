@@ -43,7 +43,7 @@ export default {
     },
     data() {
         return {
-            tabValue: 2,
+            tabValue: 1,
             tabsFix: false,
             tabs: [
                 {path: '/', label: '千言数据集', value: 1},
