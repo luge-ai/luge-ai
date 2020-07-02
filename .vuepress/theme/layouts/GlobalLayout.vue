@@ -46,8 +46,8 @@ export default {
             tabValue: 2,
             tabsFix: false,
             tabs: [
-                {path: '/list/list.html', label: '千言数据集', value: 1},
-                {path: '/', label: '其它开源数据集索引', value: 2}
+                {path: '/', label: '千言数据集', value: 1},
+                {path: '/dataset.html', label: '其它开源数据集索引', value: 2}
             ]
         };
     },
