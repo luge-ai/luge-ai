@@ -16,7 +16,6 @@
             </div>
         </section>
         <section class="list-center">
-            <h2>榜单由以下作者共同整理</h2>
             <h3>数据集作者（以下作者按照拼音排序）</h3>
             <table width="100%">
                 <tr v-for="(row, rowIndex) in tableData">
