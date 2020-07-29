@@ -91,9 +91,9 @@ export default {
             ],
             tableData: [
                 [{name: '陈清财等', unit: '哈尔滨工业大学(深圳)'}, {name: '黄民烈等', unit: '清华大学'}, {name: '刘云峰等', unit: '追一科技'}],
-                [{name: '陈清才', unit: '哈尔滨工业大学（深圳）'}, {name: '谭松波', unit: '中科院计算所'}, {name: '柳厅文', unit: '中科院信工所'}],
-                [{name: '李寿山', unit: '苏州大学'}, {name: '张岳', unit: '西湖大学'}, {name: '张三', unit: '微软'}],
-                [{name: '张三', unit: '华为'}, {name: '张三', unit: '腾讯'}, {name: '王五', unit: '追一科技'}]
+                [{name: '李寿山等', unit: '苏州大学'}, {name: '柳厅文等', unit: '中科院信工所'}, {name: '史树明等', unit: '腾讯'}],
+                [{name: '尚利锋等', unit: '华为'}, {name: '谭松波等', unit: '中科院计算所'}, {name: '吴华等', unit: '百度'}],
+                [{name: '周明等', unit: '微软'}, {name: '赵妍妍等', unit: '哈尔滨工业大学'}, {name: '张岳等', unit: '西湖大学'}]
             ],
             ruleData: [
                 '将您的数据集加入已有任务',
