@@ -76,8 +76,8 @@ export default {
                     link: 'http://www.baidu.com'
                 },
                 {
-                    title: '同声传译',
-                    desc: '同声传译结合了机器翻译、语音识别和语音合成等多种技术，整理了BSTC数据集，包含针对中英、英西两个方向共四项任务。',
+                    title: '机器同传',
+                    desc: '机器同传结合了机器翻译、语音识别和语音合成等多种技术，整理了BSTC数据集，包含针对中英、英西两个方向共四项任务。',
                     img: require('../assets/translate.png'),
                     link: 'http://www.baidu.com'
                 },
