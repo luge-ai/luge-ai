@@ -60,3 +60,7 @@
     | 名称      | 规模 | 创建日期 | 单位 | 论文 | 下载 | 评测 |
     | --------- | ---- | ---- | ---- | ---- | ---- | ---- |
     | CLUENER2020 | 训练集10748个句子，验证集1343个句子 | 2020年 | CLUEbenchmark  | [链接](https://arxiv.org/abs/2001.04351)  | [链接](https://www.cluebenchmarks.com/introduce.html)    |      [链接](https://github.com/CLUEbenchmark/CLUENER2020)|
+    
+    
+    
+[回到首页](/README.md)    
