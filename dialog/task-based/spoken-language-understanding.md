@@ -35,3 +35,6 @@ NLPCC2018 Shared Task 4的数据集，数据来源于真实商用车载语音任
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
     | NLPCC2018 Shared Task 4 | 5800对话 <br> 2.6万问题 | 2018年 | zhao et al. | 腾讯 | [链接](http://tcci.ccf.org.cn/conference/2018/papers/EV33.pdf) | [训练开发集](http://tcci.ccf.org.cn/conference/2018/dldoc/trainingdata04.zip) <br> [测试集](http://tcci.ccf.org.cn/conference/2018/dldoc/tasktestdata04.zip) | [NLPCC 2018 Spoken Language Understanding in Task-oriented Dialog Systems](http://tcci.ccf.org.cn/conference/2018/taskdata.php) |
 
+
+
+[回到首页](/README.md)

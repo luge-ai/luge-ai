@@ -21,3 +21,7 @@
 - **基于该数据集发表的相关论文：**
     - Chen, Xinchi, Xipeng Qiu, and Xuanjing Huang. "A feature-enriched neural model for joint Chinese word segmentation and part-of-speech tagging." arXiv preprint arXiv:1611.05384 (2016).
     - Diao, Shizhe, et al. "ZEN: Pre-training Chinese Text Encoder Enhanced by N-gram Representations." arXiv preprint arXiv:1911.00720 (2019).
+    
+    
+    
+    [回到首页](/README.md)

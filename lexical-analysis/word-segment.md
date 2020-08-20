@@ -68,3 +68,7 @@
     - Ma J ,  Ganchev K ,  Weiss D . State-of-the-art Chinese Word Segmentation with Bi-LSTMs[J].  2018.
     - Huang W ,  Cheng X ,  Chen K , et al. Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning[J].  2019.
     - Diao, Shizhe, et al. "ZEN: Pre-training Chinese Text Encoder Enhanced by N-gram Representations." arXiv preprint arXiv:1911.00720 (2019).
+    
+    
+    
+[回到首页](/README.md)
