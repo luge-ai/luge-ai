@@ -5,17 +5,16 @@
             <div class="footer-top">
                 <div>
                     <div class="title">关于我们</div>
-                    <span>“千言”是百度联合中国计算机学会自然语言处理专委会、中国中文信息学会评测工作委员会，以及来自国内多家高校和企业的数据资源研发者共同发起的中文开源数据集及评测项目。</span>
+                    <span>“千言”是百度联合中国计算机学会自然语言处理专委会、中国中文信息学会评测工作委员会共同发起的，由来自国内多家高校和企业的数据资源研发者共同建设的中文开源数据集及评测项目。</span>
                 </div>
-                <div>
+                <!-- <div>
                     <div class="title">指导委员会</div>
                     <span><a href="http://www.baidu.com" target="_blank">中国计算机学会</a></span>
                     <span><a href="http://www.baidu.com" target="_blank">中国中文信息学会</a></span>
-                </div>
+                </div>  -->
                 <div>
                     <div class="title">联系我们</div>
-                    <span>占位占位</span>
-                    <span>占位占位占位</span>
+                    <span>luge_ai@126.com</span>
                 </div>
             </div>
             <div class="footer-bottom">

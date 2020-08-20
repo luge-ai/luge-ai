@@ -2,7 +2,7 @@
     <div class="list-page">
         <section class="list-center">
             <h2>简介</h2>
-            <p>数据集是推动自然语言处理技术进步的基石，但是目前整个社区缺少针对开源数据集的支撑性工作。我们发起了千言数据集开源项目，目的是为科研人员带来一站式的数据集浏览、整理、下载和评测的科研体验，并且能够更好的连接数据集的作者和使用者。千言项目针对不同的自然语言处理问题，对多个数据集进行统一的整理并提供统一的测评方式，期望从多任务、多领域的角度对模型效果进行综合评价。目前，千言项目已经针对7个任务，收集和整理了来自10所高校和企业的20个开源数据集。未来，希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。</p>
+            <p>数据集是推动自然语言处理技术进步的基石。目前的许多技术研发仅关注模型在单一数据集上的效果，然而自然语言处理技术在大规模产业化的应用中，面临着多领域、多场景等诸多挑战。因此，我们亟需更加全面的数据集合以应对这些挑战。千言项目针对每个自然语言处理问题，均收集和整理多个开源数据集，进行统一的处理并提供统一的测评方式。千言项目期望从准确性、泛化性和鲁棒性等多角度对模型效果进行综合评价。目前，千言项目已经针对7个任务，汇集了来自11所高校和企业的22个开源数据集。未来，希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。</p>
             <div class="list-box">
                 <a class="list-box-item" v-for="(item, index) in boxData" :href="item.link" target="_blank">
                     <div>
@@ -16,7 +16,6 @@
             </div>
         </section>
         <section class="list-center">
-            <h2>榜单由以下作者共同整理</h2>
             <h3>数据集作者（以下作者按照拼音排序）</h3>
             <table width="100%">
                 <tr v-for="(row, rowIndex) in tableData">
@@ -48,52 +47,52 @@ export default {
             boxData: [
                 {
                     title: '情感分析',
-                    desc: '针对句子级情感分类、评价对象级情感分类、观点抽取三个子任务，我们收集和整理了ChnSentiCorp、NLPCC14-SC、SemEval16-ABSA、COTE四个数据集。',
+                    desc: '针对句子级情感分类、评价对象级情感分类和观点抽取三个子任务，收集和整理了ChnSentiCorp、NLPCC14-SC、SemEval16-ABSA、COTE四个数据集。',
                     img: require('../assets/sentiment-analysis.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '阅读理解',
-                    desc: '针对抽取式阅读理解和观点式阅读理解两个子任务，我们收集和整理了DuReaderrobust、DuReaderyesno两个数据集。',
+                    desc: '针对抽取式阅读理解和观点式阅读理解两个子任务，收集和整理了DuReader_robust、DuReader_yesno两个数据集。',
                     img: require('../assets/mrc.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '开放域对话',
-                    desc: '针对网络日常对话，情感对话，知识对话，有目标的开放域对话等任务，我们收集和整理了来自工业界和学术界共七个对话数据集。',
+                    desc: '针对多种场景的对话任务：包括网络日常对话，情感对话，知识对话和有目标的开放域对话等任务，收集和整理了来自工业界和学术界的七个对话数据集。',
                     img: require('../assets/conversation.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '文本相似度',
-                    desc: '我们从多领域数据和模型鲁棒性的角度，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文） 三个数据集。',
+                    desc: '针对多个领域数据和模型鲁棒性的问题，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文）三个数据集。',
                     img: require('../assets/text-match.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '语义解析',
-                    desc: '针对数据库的不同形式和SQL查询语句的复杂度，我们收集和整理了Spider、Text-to-SQL、DuSQL三个数据集。',
+                    desc: '针对不同的数据库形式和SQL查询语句的复杂度，收集和整理了Spider、Text-to-SQL和DuSQL三个数据集。',
                     img: require('../assets/semantic-parsing.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
-                    title: '同声传译',
-                    desc: '机器同传结合了机器翻译、语音识别和语音合成等技术，我们整理了BSTC数据集，包含针对中英、英西两个方向共4项任务。',
+                    title: '机器同传',
+                    desc: '机器同传结合了机器翻译、语音识别和语音合成等多种技术，整理了BSTC数据集，包含针对中英、英西两个方向共四项任务。',
                     img: require('../assets/translate.png'),
                     link: 'http://www.baidu.com'
                 },
                 {
                     title: '信息抽取',
-                    desc: '针对关系抽取和事件抽取两个子任务，我们收集和整理了DuIE、DuEE两个数据集。',
+                    desc: '针对关系抽取和事件抽取两个子任务，收集和整理了DuIE和DuEE两个数据集。',
                     img: require('../assets/information-extraction.png'),
                     link: 'http://www.baidu.com'
                 }
             ],
             tableData: [
-                [{name: '张三', unit: '百度'}, {name: '黄民烈', unit: '清华大学'}, {name: '赵妍妍', unit: '哈尔滨工业大学'}],
-                [{name: '陈清才', unit: '哈尔滨工业大学（深圳）'}, {name: '谭松波', unit: '中科院计算所'}, {name: '柳厅文', unit: '中科院信工所'}],
-                [{name: '李寿山', unit: '苏州大学'}, {name: '张岳', unit: '西湖大学'}, {name: '张三', unit: '微软'}],
-                [{name: '张三', unit: '华为'}, {name: '张三', unit: '腾讯'}, {unit: '追一科技'}]
+                [{name: '陈清财等', unit: '（哈尔滨工业大学(深圳)）'}, {name: '黄民烈等', unit: '（清华大学）'}, {name: '刘云峰等', unit: '（追一科技）'}],
+                [{name: '柳厅文等', unit: '（中科院信工所）'}, {name: '史树明等', unit: '（腾讯）'}, {name: '尚利锋等', unit: '（华为）'}],
+                [{name: '谭松波等', unit: '（联想）'}, {name: '吴华等', unit: '（百度）'}, {name: '周明等', unit: '（微软）'}],
+                [{name: '赵妍妍等', unit: '（哈尔滨工业大学）'}, {name: '张岳等', unit: '（西湖大学）'}, {name: '', unit: ''}]
             ],
             ruleData: [
                 '将您的数据集加入已有任务',
@@ -151,24 +150,20 @@ table
     display table
     table-layout fixed
     border-radius 10px
+    border 1px solid #E6ECF0
     border-collapse separate
     td
-        border-right 1px solid #E6ECF0
         border-bottom 1px solid #E6ECF0
-        &:first-of-type
-            border-left 1px solid #E6ECF0
-    tr:first-of-type td
-        border-top 1px solid #E6ECF0
+        border-right 1px solid #E6ECF0
+        &:last-of-type
+            border-right none
+    tr:last-of-type td 
+        border-bottom none
     tr:first-of-type
         td:first-of-type
             border-top-left-radius 10px
         td:last-of-type
-            border-top-right-radius 10px
-    tr:last-of-type
-        td:first-of-type
-            border-bottom-left-radius 10px
-        td:last-of-type
-            border-bottom-right-radius 10px
+            border-top-right-radius 10px    
     *
         background #F9FAFB!important
         border: none;
