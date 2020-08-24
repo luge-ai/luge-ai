@@ -49,43 +49,43 @@ export default {
                     title: '情感分析',
                     desc: '针对句子级情感分类、评价对象级情感分类和观点抽取三个子任务，收集和整理了ChnSentiCorp、NLPCC14-SC、SemEval16-ABSA、COTE四个数据集。',
                     img: require('../assets/sentiment-analysis.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/50/?isFromLuge=1'
                 },
                 {
                     title: '阅读理解',
                     desc: '针对抽取式阅读理解和观点式阅读理解两个子任务，收集和整理了DuReader_robust、DuReader_yesno两个数据集。',
                     img: require('../assets/mrc.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/49/?isFromLuge=1'
                 },
                 {
                     title: '开放域对话',
                     desc: '针对多种场景的对话任务：包括网络日常对话，情感对话，知识对话和有目标的开放域对话等任务，收集和整理了来自工业界和学术界的七个对话数据集。',
                     img: require('../assets/conversation.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/48/?isFromLuge=1'
                 },
                 {
                     title: '文本相似度',
                     desc: '针对多个领域数据和模型鲁棒性的问题，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文）三个数据集。',
                     img: require('../assets/text-match.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/45/?isFromLuge=1'
                 },
                 {
                     title: '语义解析',
                     desc: '针对不同的数据库形式和SQL查询语句的复杂度，收集和整理了Spider、Text-to-SQL和DuSQL三个数据集。',
                     img: require('../assets/semantic-parsing.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1'
                 },
                 {
                     title: '机器同传',
                     desc: '机器同传结合了机器翻译、语音识别和语音合成等多种技术，整理了BSTC数据集，包含针对中英、英西两个方向共四项任务。',
                     img: require('../assets/translate.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/44/?isFromLuge=1'
                 },
                 {
                     title: '信息抽取',
                     desc: '针对关系抽取和事件抽取两个子任务，收集和整理了DuIE和DuEE两个数据集。',
                     img: require('../assets/information-extraction.png'),
-                    link: 'http://www.baidu.com'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/46/?isFromLuge=1'
                 }
             ],
             tableData: [
