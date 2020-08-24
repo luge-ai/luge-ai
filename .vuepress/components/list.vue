@@ -65,7 +65,7 @@ export default {
                 },
                 {
                     title: '文本相似度',
-                    desc: '针对多个领域数据和模型鲁棒性的问题，收集和整理了LCQMC, BQ Coupus 和PAWS-X（中文）三个数据集。',
+                    desc: '针对多个领域数据和模型鲁棒性的问题，收集和整理了LCQMC, BQ Corpus 和PAWS-X（中文）三个数据集。',
                     img: require('../assets/text-match.png'),
                     link: 'https://aistudio.baidu.com/aistudio/competition/detail/45/?isFromLuge=1'
                 },
