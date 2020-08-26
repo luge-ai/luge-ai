@@ -2,9 +2,9 @@
 <template>
     <div id="global-layout">
         <header class="bk-dark">
-            <video autoplay loop muted>
+            <!-- <video autoplay loop muted>
                 <source src="./../../assets/bk.mp4" type="video/mp4"></source>
-            </video>
+            </video> -->
             <div>
                 <div class="header-content">
                     <h1>千言</h1>
