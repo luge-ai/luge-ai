@@ -236,5 +236,10 @@ header
             height 28px
             line-height 26px
             width 140px
+    .tabs
+        display flex
+        justify-content space-around
+        span 
+            margin-right 0
 
 </style>
