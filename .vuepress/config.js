@@ -5,9 +5,10 @@
  */
 
 module.exports = {
-    title: '千言',
+    title: 'LUGE',
     base: '/',
     dest: 'build',
+    host: '0.0.0.0',
     themeConfig: {
         navbar: false,
         smoothScroll: true,

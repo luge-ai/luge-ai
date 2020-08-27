@@ -17,7 +17,7 @@
         </section>
         <section class="list-center">
             <h3>数据集作者（以下作者按照拼音排序）</h3>
-            <table width="100%">
+            <table width="100%" class="list-table">
                 <tr v-for="(row, rowIndex) in tableData">
                     <td v-for="(column, columnIndex) in row" width="33.33333%">
                         <div>
@@ -27,6 +27,12 @@
                     </td>
                 </tr>
             </table>
+            <ul class="list-display">
+                <li v-for="(val, valIndex) in list">
+                    <span>{{val.name}}</span>
+                    <span>{{val.unit}}</span>
+                </li>
+            </ul>
         </section>
         <section class="join-section">
             <section class="list-center">
@@ -93,6 +99,12 @@ export default {
                 [{name: '柳厅文等', unit: '（中科院信工所）'}, {name: '史树明等', unit: '（腾讯）'}, {name: '尚利锋等', unit: '（华为）'}],
                 [{name: '谭松波等', unit: '（联想）'}, {name: '吴华等', unit: '（百度）'}, {name: '周明等', unit: '（微软）'}],
                 [{name: '赵妍妍等', unit: '（哈尔滨工业大学）'}, {name: '张岳等', unit: '（西湖大学）'}, {name: '', unit: ''}]
+            ],
+            list: [
+                {name: '陈清财等', unit: '(哈尔滨工业大学(深圳))'}, {name: '黄民烈等', unit: '(清华大学)'}, {name: '刘云峰等', unit: '(追一科技)'},
+                {name: '柳厅文等', unit: '(中科院信工所)'}, {name: '史树明等', unit: '(腾讯)'}, {name: '尚利锋等', unit: '(华为)'},
+                {name: '谭松波等', unit: '(联想)'}, {name: '吴华等', unit: '(百度)'}, {name: '周明等', unit: '(微软)'},
+                {name: '赵妍妍等', unit: '(哈尔滨工业大学)'}, {name: '张岳等', unit: '(西湖大学)'}
             ],
             ruleData: [
                 '将您的数据集加入已有任务',
@@ -173,6 +185,8 @@ table
             min-width 70px
             margin-right 10px
             font-weight 500
+.list-display
+    display none
 .rule
     counter-reset section
     &-item
@@ -244,10 +258,36 @@ h3
     .list-page
         padding-left 32px
         padding-right 32px
+    .list-box 
+        margin-bottom 20px
     .list-box-item
         width 100%
     table
-        display block
+        display none
         table-layout auto
-
+    .list-display
+        display block
+        padding 0
+        margin 0 0 40px 0
+        border 1px solid #d5d5d5
+        border-radius 10px
+        li
+            display flex
+            list-style none
+            margin 0
+            padding-left 15px
+            height 39px
+            line-height 39px
+            border-bottom 1px solid #E6ECF0;
+            &:last-of-type
+                border-bottom none
+            span:first-of-type
+                width 80px
+                font-size 16px
+                font-weight bolder
+                margin-right 20px
+                display  inline-block
+            span:last-of-type
+                font-size 14px
+                color #333
 </style>
