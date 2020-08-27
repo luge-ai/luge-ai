@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    title: 'LUGE',
+    title: '千言',
     base: '/',
     dest: 'build',
     host: '0.0.0.0',
