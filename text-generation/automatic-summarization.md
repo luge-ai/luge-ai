@@ -30,4 +30,4 @@
 - <strong>基于该数据集发表的相关论文：</strong>
     - Zheng, Hao, and Mirella Lapata. "Sentence Centrality Revisited for Unsupervised Summarization." In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pp. 6236-6247. 2019.
 
-[回到首页](/README.md)
+[回到首页](/dataset.html)

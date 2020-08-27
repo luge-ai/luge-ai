@@ -113,7 +113,10 @@ header + footer,
     z-index -1
 
 .bk-dark
-    background #0a1d3a
+    background-color  #0a1d3a
+    background-image url(./../../assets/bg1.png)
+    background-position center
+    background-size cover
     color #fff
 h1, h2
     background transparent
@@ -213,6 +216,11 @@ header
 
 
 @media (max-width: 719px)
+    .bk-dark
+        background-color  #0a1d3a
+        background-image url(./../../assets/bg2.png)
+        background-position center
+        background-size cover
     header
         .header-content
             width 100%
@@ -220,8 +228,8 @@ header
             padding 0 1.5rem
             font-size 12px
             h1
-                font-size 18px
-                line-height 28px
+                font-size 30px
+                line-height 48px
             p
                 width 100%
                 margin-bottom 0!important
@@ -236,5 +244,10 @@ header
             height 28px
             line-height 26px
             width 140px
+    .tabs
+        display flex
+        justify-content space-around
+        span 
+            margin-right 0
 
 </style>
