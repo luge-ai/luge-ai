@@ -70,6 +70,7 @@ export default {
         });
     },
     mounted() {
+        document.title = '千言 | LUGE';
         window.addEventListener('scroll', () => {
             const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
             if (top > 288) {
