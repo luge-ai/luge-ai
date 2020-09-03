@@ -9,6 +9,17 @@ module.exports = {
     base: '/',
     dest: 'build',
     host: '0.0.0.0',
+    head: [
+        ['script', {}, `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?9c32cb64f61e52065c210729d6cbe6e0";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })(); 
+        `]
+    ],
     themeConfig: {
         navbar: false,
         smoothScroll: true,
