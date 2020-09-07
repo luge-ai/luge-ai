@@ -1,3 +1,4 @@
+&nbsp;
 ## 词性标注
 
 ### 1. Chinese Treebank X.0 (CTBX)
