@@ -1,3 +1,4 @@
+&nbsp;
 ## 开放的中文知识图谱
 ### 1. CN-Probase
 - <strong> 图谱简介： </strong>
