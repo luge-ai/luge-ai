@@ -44,4 +44,4 @@
 - <strong>基于该数据集发表的相关论文：</strong> 
     - Yinfei Yang, Yuan Zhang, Chris Tar and Jason Baldridge, 2019, Aug. PAWS-X: A Cross-lingual Adversarial Dataset for Paraphrase Identification. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing.
 
-[回到首页](/dataset.html)
+[回到首页](/)

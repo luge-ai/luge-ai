@@ -23,6 +23,11 @@
                 </div>
             </div>
         </header>
+        <ul v-if="!tabValue"  class="mes-tab">
+            <li><a href="/dataset.html">其他开源数据集索引</a></li>
+            <li><img src="../../assets/arrow.png"></li>
+            <li>{{mes}}</li>
+        </ul>
         <div class="tabs" :class="tabsFix ? 'tabs-fix' : ''" v-if="tabValue">
             <span v-for="(item, index) in tabs" :key="index" :class="item.value === tabValue ? 'tabs-active' : ''" @click="onClickTab(item.path)">{{item.label}}</span>
         </div>
@@ -48,13 +53,16 @@ export default {
             tabs: [
                 {path: '/', label: '千言数据集', value: 1},
                 {path: '/dataset.html', label: '其它开源数据集索引', value: 2}
-            ]
+            ],
+            mes: ''
         };
     },
     computed: {
         layout() {
             if (this.$page.path) {
                 const layout = this.$page.frontmatter.layout;
+                console.log(this.$page.headers[0].title, this.$page.path, this.$vuepress);
+                this.mes = this.$page.headers[0].title;
                 if (layout && (this.$vuepress.getLayoutAsyncComponent(layout)
                     || this.$vuepress.getVueComponent(layout))) {
                     return layout;
@@ -122,7 +130,7 @@ h1, h2
     background transparent
     border none
     padding 0!important
-    margin 0
+    margin 0 !improtant
 header
     text-align center
     height 288px
@@ -142,6 +150,7 @@ header
         h1
             line-height 66px
             font-size 48px
+            margin 0 !important
         p
             width 600px
             line-height 26px
@@ -213,8 +222,30 @@ header
         &.tabs-active
             color #0173EB
             border-color #0173EB
-
-
+.mes-tab 
+    display flex
+    max-width 800px
+    margin 0 auto
+    padding-top 30px
+    padding-left 0
+    li 
+        margin 0
+        padding 0
+        list-style none
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:first-of-type
+            margin-right 10px
+            a
+                color #666
+                &:hover
+                    color #0173eb
+        &:last-of-type
+            margin-left 10px
+            color #333
+        img
+            width 8px
 @media (max-width: 719px)
     .bk-dark
         background-color  #0a1d3a
@@ -230,6 +261,7 @@ header
             h1
                 font-size 30px
                 line-height 48px
+                margin 0 !important
             p
                 width 100%
                 margin-bottom 0!important
