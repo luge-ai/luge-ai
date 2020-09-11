@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    title: '千言-LUGE',
+    title: '千言（LUGE）| 全面的中文开源数据集合',
     base: '/',
     dest: 'build',
     host: '0.0.0.0',
