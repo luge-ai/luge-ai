@@ -16,4 +16,4 @@
 - <strong>基于该数据集发表的相关论文：</strong>
     - Wallaart O., Frasincar F. 2019. A Hybrid Approach for Aspect-Based Sentiment Analysis Using a Lexicalized Domain Ontology and Attentional Neural Models. In: Hitzler P. et al. (eds) The Semantic Web. ESWC 2019. Lecture Notes in Computer Science, vol 11503. Springer, Cham
 
-[回到首页](/dataset.html)
+[回到首页](/dataset.md)
