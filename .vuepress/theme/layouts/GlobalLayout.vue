@@ -61,7 +61,6 @@ export default {
         layout() {
             if (this.$page.path) {
                 const layout = this.$page.frontmatter.layout;
-                console.log(this.$page.headers[0].title, this.$page.path, this.$vuepress);
                 this.mes = this.$page.headers[0].title;
                 if (layout && (this.$vuepress.getLayoutAsyncComponent(layout)
                     || this.$vuepress.getVueComponent(layout))) {
