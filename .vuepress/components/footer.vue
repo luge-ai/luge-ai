@@ -16,6 +16,10 @@
                     <div class="title">联系我们</div>
                     <span>luge_ai@126.com</span>
                 </div>
+                <div class="code">
+                    <img src="../assets/code.png"></img>
+                    <div class="title">扫码加入“千言”交流群</div>
+                </div>
             </div>
             <div class="footer-bottom">
                 <span>免责声明：</span>
@@ -80,6 +84,16 @@ footer
         font-weight 500px
         font-size 20px
         line-height 27px
+    .code
+        display flex
+        flex-direction column
+        align-items center
+        img 
+            width 150px
+        .title
+            font-size 14px
+            margin-top 10px
+            font-weight 300
     span
         margin-bottom 10px
         &:last-of-type
@@ -95,11 +109,15 @@ footer
 @media (max-width: 900px)
     .footer-top,
     .footer-bottom
-        flex-direction column
+        flex-wrap wrap
         > div:first-of-type span
             width 100%
         > div:not(:first-of-type) .title
             margin-top 30px
+        .code
+            margin-top 30px
+            .title
+                margin-top 10px !important
 @media (max-width: 719px)
     footer
         padding-left 32px
