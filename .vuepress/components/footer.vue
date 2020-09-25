@@ -17,8 +17,8 @@
                     <span>luge_ai@126.com</span>
                 </div>
                 <div class="code">
-                    <img src="../assets/code.png"></img>
                     <div class="title">扫码加入“千言”交流群</div>
+                    <img src="../assets/code.png"></img>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -89,11 +89,8 @@ footer
         flex-direction column
         align-items center
         img 
-            width 150px
-        .title
-            font-size 14px
-            margin-top 10px
-            font-weight 300
+            width 198px
+            margin-top 5px
     span
         margin-bottom 10px
         &:last-of-type
@@ -109,13 +106,14 @@ footer
 @media (max-width: 900px)
     .footer-top,
     .footer-bottom
-        flex-wrap wrap
+        flex-direction column
         > div:first-of-type span
             width 100%
         > div:not(:first-of-type) .title
             margin-top 30px
         .code
             margin-top 30px
+            align-items flex-start
             .title
                 margin-top 10px !important
 @media (max-width: 719px)
