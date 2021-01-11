@@ -9,7 +9,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | DuSQL | 200个数据库，近2.4万问题 | 2020年 | -- | 百度 | 暂无 | [链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1) |[2020 Language and Intelligence Challenge on Semantic Parsing](https://aistudio.baidu.com/aistudio/competition/detail/30)|
+    | DuSQL | 200个数据库，近2.4万问题 | 2020年 | Lijie Wang, et al. | 百度 | [链接](https://www.aclweb.org/anthology/2020.emnlp-main.562.pdf) | [链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1) |[2020 Language and Intelligence Challenge on Semantic Parsing](https://aistudio.baidu.com/aistudio/competition/detail/30)|
 
 - <strong>基于该数据集发表的相关论文：</strong>
     -  无
