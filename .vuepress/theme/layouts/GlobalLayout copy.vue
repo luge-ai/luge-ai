@@ -10,31 +10,20 @@
                 <div class="header-menu-left">
                     <img src="../../assets/leftlogo.png" />
                 </div>
-                <div class="header-menu-right big-screen">
+                <div class="header-menu-right">
                     <img src="../../assets/github.png" @click="goTo('https://github.com/luge-ai/luge-ai')" />
                     <img src="../../assets/gitee.png" @click="goTo('https://gitee.com/luge-ai/luge-ai')"/>
-                    <div @click="changeLanguage('zh-CN')" :class="language === 'zh-CN' ? 'change-language current-language' : 'change-language'">中文</div>
+                    <div @click="changeLanguage('zh-CN')" class="change-language">中文</div>
                     <div>|</div>
-                    <div @click="changeLanguage('en-US')" :class="language === 'en-US' ? 'change-language current-language' : 'change-language'">EN</div>
-                </div>
-                <div class="header-menu-right small-screen dropdown">
-                    <div class="dropbtn">{{language === 'zh-CN' ? '中文' : 'En'}}&nbsp;<img src="../../assets/arrow-down.png" style="width: 16px; height: 16px" /></div>
-                    <div class="dropdown-content">
-                        <a href="javascript:void(0);" @click="changeLanguage('zh-CN')">中文</a>
-                        <a href="javascript:void(0);" @click="changeLanguage('en-US')">En</a>
-                    </div>
+                    <div @click="changeLanguage('en-US')" class="change-language">EN</div>
                 </div>
             </div>
             <div class="header-container">
                 <div class="header-content">
-                    <picture>
-                        <source media="(max-width: 719px)" srcset="../../assets/headerlogo-2x.png">
-                        <img src="../../assets/headerlogo.png" />
-                    </picture>
+                    <img src="../../assets/headerlogo.png">
                     <p>LUGE ( Language Understanding and Generation Evaluation Benchmarks )</p>
-                    <p v-if="language === 'zh-CN'">全面的面向自然语言理解和生成任务的中文开源数据集合，旨在为研究人员带来一站式的数据集浏览、整理、下载和评测的科研体验，共同推动中文信息处理技术的进步。</p>
-                    <p v-else>LUGE, an open-source collection of Chinese NLP benchmark datasets, is designed to provide NLP researchers with a one-stop experience to access and acquire quality datasets for model training and testing, together with whom we work towards furthering the progress of Chinese NLP.</p>
-                    <div class="git-link">
+                    <p>全面的面向自然语言理解和生成任务的中文开源数据集合，旨在为研究人员带来一站式的数据集浏览、整理、下载和评测的科研体验，共同推动中文信息处理技术的进步。</p>
+                    <!-- <div style="display: flex; justify-content: center;">
                         <a class="btn" href="https://github.com/luge-ai/luge-ai" target="_blank">
                             <i class="iconfont icon-github"></i>
                             <span>View on GitHub</span>
@@ -43,7 +32,7 @@
                             <i class="iconfont icon-gitee"></i>
                             <span>View on Gitee</span>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="header-operating">
@@ -54,13 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="show-more">
-                <div @click="showMoreInfo" v-if="language === 'zh-CN'">{{ isShowAll ? '收起' : '查看更多' }}</div>
-                <div @click="showMoreInfo" v-else>{{ isShowAll ? 'Pack Up' : 'View More' }}</div>
-                <div class="arrow-down">
-                    <img src="../../assets/arrow-down.png" />
-                </div>
-            </div>
+            <!-- <div>查看更多</div> -->
         </header>
         <ul v-if="!tabValue"  class="mes-tab">
             <li><a href="/dataset.html">其他开源数据集索引</a></li>
@@ -70,10 +53,10 @@
         <div class="tabs" :class="tabsFix ? 'tabs-fix' : ''" v-if="tabValue">
             <span v-for="(item, index) in tabs" :key="index" :class="item.value === tabValue ? 'tabs-active' : ''" @click="onClickTab(item.path)">{{item.label}}</span>
         </div>
-        <list-component v-if="tabValue === 1" :language="language"></list-component>
+        <list-component v-if="tabValue === 1"></list-component>
         <component :is="layout" v-else></component>
 
-        <footer-component :language="language"></footer-component>
+        <footer-component></footer-component>
     </div>
 </template>
 
@@ -87,14 +70,11 @@ export default {
     },
     data() {
         return {
-            language: 'zh-CN',
             tabValue: 1,
             tabsFix: false,
-            totalTabs: [
-                {path: '/', label: '千言数据集', value: 1, language: 'zh-CN'},
-                {path: '/dataset.html', label: '其它开源数据集索引', value: 2, language: 'zh-CN'},
-                {path: '/en/', label: 'LUGE Datasets', value: 1, language: 'en-US'},
-                {path: '/en/dataset.html', label: 'Other Datasets', value: 2, language: 'en-US'}
+            tabs: [
+                {path: '/', label: '千言数据集', value: 1},
+                {path: '/dataset.html', label: '其它开源数据集索引', value: 2}
             ],
             mes: '',
             operatingInfo: [
@@ -102,8 +82,7 @@ export default {
                 {id: 2, title: '这里是运营文章2', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'},
                 {id: 3, title: '这里是运营文章3', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'},
                 {id: 4, title: '这里是运营文章4', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'}
-            ],
-            isShowAll: false
+            ]
         };
     },
     computed: {
@@ -117,25 +96,15 @@ export default {
                 }
                 return 'Layout';
             }
-            return 'Layout';
-        },
-        tabs() {
-            return this.totalTabs.filter(item => item.language === this.language);
+            return 'NotFound';
         }
     },
     beforeRouteEnter(to, from, next) {
-        console.log('path: ', to.path)
         next(vm => {
             vm.handleChangeTab(to.path);
         });
     },
     mounted() {
-        const path = this.$page.path;
-        if (path === '/') {
-            this.language = 'zh-CN';
-        } else {
-            this.language = 'en-US';
-        }
         let height = window.innerHeight;
         window.addEventListener('scroll', () => {
             const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
@@ -152,11 +121,9 @@ export default {
             switch (type) {
                 case 'en-US':
                     path = '/en/';
-                    this.language = 'en-US';
                     break;
                 case 'zh-CN':
                     path = '/';
-                    this.language = 'zh-CN';
                     break;
             }
             if (this.$router.currentRoute.path !== path) {
@@ -165,7 +132,7 @@ export default {
         },
         handleChangeTab(path) {
             let hasTab = false;
-            this.totalTabs.forEach(item => {
+            this.tabs.forEach(item => {
                 if (item.path === path) {
                     this.tabValue = item.value;
                     hasTab = true;
@@ -183,20 +150,6 @@ export default {
             if (this.$router.currentRoute.path !== path) {
                 this.$router.push(path);
             }
-        },
-        showMoreInfo() {
-            this.isShowAll = !this.isShowAll
-            let header = document.getElementsByClassName('header-container')[0]
-            let operatingBox = document.getElementsByClassName('header-operating')[0]
-            const {height} = window.getComputedStyle(header)
-            console.log(height)
-            if (this.isShowAll) {
-                header.style.height = parseInt(height, 10) - 162 + 'px';
-                operatingBox.style.height = '300px'
-            } else {
-                header.style.height = parseInt(height, 10) + 162 + 'px';
-                operatingBox.style.height = '138px'
-            }
         }
     }
 };
@@ -212,29 +165,36 @@ header + footer,
     z-index -1
 
 .bk-dark
-    background-color #000
+    background-color  #000
     background-image url(./../../assets/headerbg1.png)
     background-position center
     background-size cover
     color #fff
-
+h1, h2
+    background transparent
+    border none
+    padding 0!important
+    margin 0 !improtant
 header
+    // text-align center
     height 100vh
     position relative
     overflow hidden
     .header-container
-        height calc(100% - 218px)
+        width 100%
+        height 100%
         display flex
         justify-content center
         align-items center
         .header-content
-            margin 0 107px
+            z-index 1
+            width 800px
             text-align center
             font-size 14px
-            max-width 855px
             img
                 margin-bottom 20px
             p
+                width 780px
                 line-height 26px
                 margin auto
                 &:nth-of-type(1)
@@ -244,21 +204,22 @@ header
                     font-size 20px
                     line-height 2
             div
-                // text-align center
+                text-align center
                 margin-top 20px
                 a:nth-of-type(1)
                     margin-right 50px
-            .git-link
-                display none
 
 
     .header-menu
-        height 42px
-        margin 20px 107px 0 107px
+        width 80%
+        position absolute
+        left 50%
+        top 20px
+        transform translate3d(-50%, 0, 0)
+        height 40px
         display flex
         justify-content space-between
         align-items center
-
         &-right
             display flex 
             align-items center
@@ -267,16 +228,16 @@ header
                 &:hover
                     cursor pointer
             .change-language
-                color rgba(255, 255, 255, .5)
                 &:hover
                     cursor pointer
-            .current-language
-                color #fff
-        .small-screen
-            display none
 
     .header-operating
-        margin 0 85px 85px
+        width 90%
+        position absolute
+        left 50%
+        bottom 10%
+        transform translate3d(-50%, 0, 0)
+        height 10%
         display grid
         grid-template-columns repeat(4, 1fr)
         .operating-container
@@ -286,13 +247,6 @@ header
                 color #fff
                 opacity 0.5
                 margin-bottom 5px
-                text-overflow -o-ellipsis-lastline
-                overflow hidden
-                text-overflow ellipsis
-                display -webkit-box
-                -webkit-line-clamp 1
-                line-clamp 1
-                -webkit-box-orient vertical
             .description
                 text-overflow -o-ellipsis-lastline
                 overflow hidden
@@ -316,14 +270,14 @@ header
             height 100%
             background #fff
             transform scaleX(0.5)
-    .show-more
-        display none
+
 
 .btn
     height 40px
     border 1px solid #fff
     color #fff
     line-height 38px
+    display inline-block
     border-radius 20px
     font-weight 400
     width 170px
@@ -392,86 +346,39 @@ header
 @media (max-width: 719px)
     .bk-dark
         background-color  #000
-        background-image url(./../../assets/headerbg2.png)
+        background-image url(./../../assets/headerbg1.png)
         background-position center
         background-size cover
     header
-        .header-container
-            transition all .5s ease-in-out
-            .header-content
-                margin 0 1.5rem
-                p
-                    margin-bottom 0!important
-                    &:nth-of-type(2)
-                        font-size 16px
-                div
-                    margin-left -2rem
-                    margin-right -2rem
-                a:first-of-type
-                    margin-right 10px!important
-                .git-link
-                    display flex
-                    justify-content center
-        .header-menu
-            margin 12px 16px 0 16px
-            .small-screen
-                display block
-            .dropbtn
-                height 38px
-                width 100px
-                color white
-                font-size 16px
-                padding 4px
-                border none
-                cursor pointer
-                background-color transparent
-                box-sizing border-box
-                text-align center
-                display flex 
-                justify-content center
-                align-items center
-                img
-                    margin-right 0
-            .dropdown
-                position relative
-                display inline-block
-                
-            .dropdown-content
-                display none
-                position absolute
-                width 100px
-                box-shadow 0px 8px 16px 0px rgba(0,0,0,0.2)
-                background-color #111
-                color #fff
-                text-align center
-            .dropdown-content a
-                color #fff
-                background-color #111
-                padding 12px 16px
-                text-decoration none
-                display block
-                border-top 1px solid rgba(255, 255, 255, .2)
-            .dropdown-content
-                a:hover
-                    color #1590FF
+        .header-content
+            width 100%
+            box-sizing border-box
+            padding 0 1.5rem
+            font-size 12px
+            h1
+                font-size 30px
+                line-height 48px
+                margin 0 !important
+            p
+                width 100%
+                margin-bottom 0!important
+            div
+                margin-left -2rem
+                margin-right -2rem
+            a:first-of-type
+                margin-right 10px!important
 
-            .dropdown:hover .dropdown-content
-                display: block;
-            .dropdown:hover .dropbtn {
-                background-color: #111;
-            }
         .btn
             font-size 12px
             height 28px
             line-height 26px
             width 140px
         .header-operating
-            width calc(100% - 46px)
-            height 138px
-            margin 0 23px
+            width 60%
+            height 18%
+            margin 0 auto
             display block
             overflow scroll
-            // transition all .5s ease-in-out
             .operating-container
                 padding 10px 0
                 .description
@@ -485,27 +392,11 @@ header
             
             .operating-container:not(:last-child)::after
                 content ""
-                left 0
-                top 70px
-                width 100%
-                height 1px
-                background #fff
-                transform scaleY(0.5)
-        .show-more
-            display flex
-            justify-content center 
-            align-items center
-            // text-align center
-            .arrow-down, .arrow-up
-                img
-                    width 16px
-            &:hover
-                cursor pointer
+                width 0
+                height 0
     .tabs
         display flex
         justify-content space-around
         span 
             margin-right 0
-    .big-screen
-        display none !important
 </style>

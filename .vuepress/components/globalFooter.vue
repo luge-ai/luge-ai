@@ -3,22 +3,34 @@
     <footer ref="footerRef">
         <section>
             <div class="footer-top">
-                <div>
+                <div v-if="language === 'zh-CN'">
                     <div class="title">关于我们</div>
                     <span>“千言”是百度联合中国计算机学会自然语言处理专委会、中国中文信息学会评测工作委员会共同发起的，由来自国内多家高校和企业的数据资源研发者共同建设的中文开源数据集及评测项目。</span>
+                </div>
+                <div v-else>
+                    <div class="title">About LUGE</div>
+                    <span>LUGE is a project jointly lunched by Baidu, CCF (China Computer Federation) and CIPSC (Chinese Information Processing Society of China). It is a comprehensive open-source project of Chinese NLP benchmarks contributed by authors from both academia and industry.</span>
                 </div>
                 <!-- <div>
                     <div class="title">指导委员会</div>
                     <span><a href="http://www.baidu.com" target="_blank">中国计算机学会</a></span>
                     <span><a href="http://www.baidu.com" target="_blank">中国中文信息学会</a></span>
                 </div>  -->
-                <div>
+                <div v-if="language === 'zh-CN'">
                     <div class="title">联系我们</div>
                     <span>luge_ai@126.com</span>
                 </div>
-                <div class="code">
+                <div v-else>
+                    <div class="title">Contact</div>
+                    <span>luge_ai@126.com</span>
+                </div>
+                <div class="code" v-if="language === 'zh-CN'">
                     <div class="title">扫码加入“千言”交流群</div>
-                    <img src="../assets/code.png"></img>
+                    <img src="../assets/qrcode.png" />
+                </div>
+                <div class="code" v-else>
+                    <div class="title">Join our community</div>
+                    <img src="../assets/qrcode.png" />
                 </div>
             </div>
             <div class="footer-bottom">
@@ -31,11 +43,19 @@
 
 <script>
 export default {
+    props: {
+        language: {
+            type: String,
+            default: 'zh-CN'
+        },
+    },
     methods: {
         computeHeight() {
             const footerDom = this.$refs.footerRef;
-            const {height} = window.getComputedStyle(footerDom);
-            document.getElementById('global-layout').style['padding-bottom'] = height;
+            if (footerDom) {
+                const {height} = window.getComputedStyle(footerDom);
+                document.getElementById('global-layout').style['padding-bottom'] = height;
+            }
         }
     },
     mounted() {
@@ -52,6 +72,9 @@ footer
     bottom 0
     z-index 2
     background #071B34;
+    background-image url(../assets/footbackground.png)
+    background-position center
+    background-size cover
     color #fff;
     padding: 30px 40px 20px 40px;
     box-sizing border-box;
@@ -90,6 +113,7 @@ footer
         align-items center
         img 
             width 198px
+            height 198px
             margin-top 5px
     span
         margin-bottom 10px
@@ -112,10 +136,7 @@ footer
         > div:not(:first-of-type) .title
             margin-top 30px
         .code
-            margin-top 30px
-            align-items flex-start
-            .title
-                margin-top 10px !important
+            display none
 @media (max-width: 719px)
     footer
         padding-left 32px
