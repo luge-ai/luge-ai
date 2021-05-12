@@ -146,7 +146,7 @@ export default {
                 },
                 {
                     zhTitle: '实体链指',
-                    enTitle: '实体链指英文',
+                    enTitle: 'Entity Linking',
                     zhDesc: '文本中的mention链接到KG里的entity的任务。',
                     enDesc: '英文版描述',
                     img: require('../assets/entity.png'),
