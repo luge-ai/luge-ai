@@ -63,7 +63,10 @@
             </div>
         </header>
         <ul v-if="!tabValue"  class="mes-tab">
-            <li><a href="/dataset.html">其他开源数据集索引</a></li>
+            <li>
+                <a href="/dataset.html" v-if="language === 'zh-CN'">其他开源数据集索引</a>
+                <a href="/en/dataset.html" v-else>Other Datasets</a>
+            </li>
             <li><img src="../../assets/arrow.png"></li>
             <li>{{mes}}</li>
         </ul>
@@ -98,10 +101,29 @@ export default {
             ],
             mes: '',
             operatingInfo: [
-                {id: 1, title: '这里是运营文章1', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'},
-                {id: 2, title: '这里是运营文章2', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'},
-                {id: 3, title: '这里是运营文章3', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'},
-                {id: 4, title: '这里是运营文章4', description: '目前的许多技术研发仅关注模型在单一数据集上的效果', url: 'https://www.baidu.com/'}
+                {
+                    id: 1,
+                    title: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
+                    description: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
+                    url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
+                },
+                {
+                    id: 2,
+                    title: '小布助手在百度飞桨实体链指比赛中的实践应用',
+                    description: '小布助手在百度飞桨实体链指比赛中的实践应用',
+                    url: 'https://mp.weixin.qq.com/s/-kp7ekMBWDEQJ-kf0ER76g'},
+                {
+                    id: 3,
+                    title: 'ACL 2019论文分享: 让机器有自主意识的和人类对话',
+                    description: 'ACL 2019论文分享: 让机器有自主意识的和人类对话',
+                    url: 'https://mp.weixin.qq.com/s/uyNlO97QQ4nQpFjYNOVceg'
+                },
+                {
+                    id: 4,
+                    title: 'NLP青年学者深度对话：探寻NLP未来之路',
+                    description: 'NLP青年学者深度对话：探寻NLP未来之路',
+                    url: 'https://mp.weixin.qq.com/s/sKHT5j4ekCsRQR4m9AByxQ'
+                }
             ],
             isShowAll: false
         };
