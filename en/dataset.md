@@ -21,24 +21,24 @@ This page provides information and links to a range of open-sourced NLP datasets
 ## Text Similarity
 - [Text Similarity](text-similarity/text-similarity.md)
 
-## Sentiment analysis
+## Sentiment Analysis
 - [Sentence-level Sentiment Classification](sentiment-analysis/sentiment-classification.md)
 - [Aspect-level Sentiment Classification](sentiment-analysis/aspect-level-sentiment-classification.md)
 - [Opinion Extraction](sentiment-analysis/opinion-role-labeling.md)
 
-## Information extraction
+## Information Extraction
 - [Entity Linking](information-extraction/entity_linking.md)
 - [Relation Extraction](information-extraction/relation-extraction.md)
 - [Event Extraction](information-extraction/event-extraction.md)
 
-## Text generation
+## Text Generation
 - [Text Summarization](text-generation/automatic-summarization.md)
 - [Chinese Poem Generation](text-generation/chinese-poetry.md)
 
 ## Question Answering System
 - [Machine Reading Comprehension](question-answering/mrc.md)
 
-## Dialogue system
+## Dialogue System
 - [Chatbot](dialog/open-domain-dialog.md)
 - [Spoken Language Understanding](dialog/task-based/spoken-language-understanding.md)
 
