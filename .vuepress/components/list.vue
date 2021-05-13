@@ -94,7 +94,7 @@ export default {
                     zhDesc: '针对句子级情感分类、评价对象级情感分类和观点抽取三个子任务，收集和整理了ChnSentiCorp、NLPCC14-SC、SemEval16-ABSA、COTE四个数据集。',
                     enDesc: 'Three subtasks: sentence-level sentiment classification, object-level sentiment classification, and opinion extraction. Four datasets: ChnSentiCorp, NLPCC14-SC, SemEval16-ABSA, and COTE.',
                     img: require('../assets/sentiment-analysis.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/50/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/50/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '阅读理解',
@@ -102,7 +102,7 @@ export default {
                     zhDesc: '针对抽取式阅读理解和观点式阅读理解两个子任务，收集和整理了DuReader_robust、DuReader_yesno两个数据集。',
                     enDesc: 'Two subtasks: extractive reading comprehension and opinion reading comprehension. Two datasets: DuReader_robust and DuReader_yesno.',
                     img: require('../assets/mrc.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/49/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/49/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '开放域对话',
@@ -110,7 +110,7 @@ export default {
                     zhDesc: '针对多种场景的对话任务：包括网络日常对话，情感对话，知识对话和有目标的开放域对话等任务，收集和整理了来自工业界和学术界的七个对话数据集。',
                     enDesc: 'The subtasks for multiple scenarios: including daily conversation, emotional dialogues, knowledge-driven dialogues, and conversational recommendation. Seven dialogue data sets from industry and academia have been collected.',
                     img: require('../assets/conversation.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/48/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/48/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '文本相似度',
@@ -118,23 +118,23 @@ export default {
                     zhDesc: '针对多个领域数据和模型鲁棒性的问题，收集和整理了LCQMC, BQ Corpus 和PAWS-X（中文）三个数据集。',
                     enDesc: 'Three datasets targeting multiple domains and robustness: LCQMC, BQ Corpus and PAWS-X (Chinese) were collected.',
                     img: require('../assets/text-match.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/45/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/45/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '语义解析',
                     enTitle: 'Semantic Parser',
-                    zhDesc: '针对不同的数据库形式和SQL查询语句的复杂度，收集和整理了Spider、Text-to-SQL和DuSQL三个数据集。',
-                    enDesc: 'Three datasets: Spider (Translated), Text-to-SQL and DuSQL, that contains different database forms and the complexity of SQL query statements.',
+                    zhDesc: '针对不同的数据库形式和SQL查询语句的复杂度，收集和整理了CSpider、NL2SQL和DuSQL三个数据集。',
+                    enDesc: 'Three datasets: CSpider、NL2SQL and DuSQL, that contains different database forms and the complexity of SQL query statements.',
                     img: require('../assets/semantic-parsing.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '机器同传',
-                    enTitle: 'Simultaneous translation',
+                    enTitle: 'Simultaneous Translation',
                     zhDesc: '机器同传结合了机器翻译、语音识别和语音合成等多种技术，整理了BSTC数据集，包含针对中英、英西两个方向共四项任务。',
                     enDesc: 'This technology combines multiple technologies such as machine translation, speech recognition, and speech synthesis. BSTC dataset provides translation tasks between Chinese and English, and English and Spanish.',
                     img: require('../assets/translate.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/44/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/44/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '信息抽取',
@@ -142,15 +142,15 @@ export default {
                     zhDesc: '针对关系抽取和事件抽取两个子任务，收集和整理了DuIE和DuEE两个数据集。',
                     enDesc: 'Two subtasks: relation extraction and event extraction. Two data sets: DuIE and DuEE.',
                     img: require('../assets/information-extraction.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/46/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/46/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '实体链指',
                     enTitle: 'Entity Linking',
-                    zhDesc: '文本中的mention链接到KG里的entity的任务。',
-                    enDesc: '英文版描述',
+                    zhDesc: '针对实体链指任务，收集和整理了DuEL数据集。',
+                    enDesc: 'For the task of entity linking, the DuEL data set was collected and organized.',
                     img: require('../assets/entity.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/83/?isFromLuge=1'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/83/?isFromLUGE=TRUE'
                 }
             ],
             tableData: [

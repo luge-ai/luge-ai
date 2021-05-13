@@ -103,26 +103,27 @@ export default {
             operatingInfo: [
                 {
                     id: 1,
-                    title: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
+                    title: '千言发布',
                     description: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
                     url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
                 },
                 {
                     id: 2,
-                    title: '小布助手在百度飞桨实体链指比赛中的实践应用',
-                    description: '小布助手在百度飞桨实体链指比赛中的实践应用',
-                    url: 'https://mp.weixin.qq.com/s/-kp7ekMBWDEQJ-kf0ER76g'},
+                    title: '论文解读',
+                    description: '语义解析 (Text-to-SQL) 技术研究及应用 下篇',
+                    url: 'https://mp.weixin.qq.com/s/5lTLW5OOuRMo2zjbzMxr_Q'
+                },
                 {
                     id: 3,
-                    title: 'ACL 2019论文分享: 让机器有自主意识的和人类对话',
-                    description: 'ACL 2019论文分享: 让机器有自主意识的和人类对话',
-                    url: 'https://mp.weixin.qq.com/s/uyNlO97QQ4nQpFjYNOVceg'
+                    title: '用户方案',
+                    description: '小布助手在百度飞桨实体链指比赛中的实践应用',
+                    url: 'https://mp.weixin.qq.com/s/-kp7ekMBWDEQJ-kf0ER76g'
                 },
                 {
                     id: 4,
-                    title: 'NLP青年学者深度对话：探寻NLP未来之路',
-                    description: 'NLP青年学者深度对话：探寻NLP未来之路',
-                    url: 'https://mp.weixin.qq.com/s/sKHT5j4ekCsRQR4m9AByxQ'
+                    title: '论文解读',
+                    description: '语义解析 (Text-to-SQL) 技术研究及应用 上篇',
+                    url: 'https://mp.weixin.qq.com/s/FtsA4O_VTUqhhYS3Gq3G8Q'
                 }
             ],
             isShowAll: false
