@@ -8,7 +8,7 @@
             </video> -->
             <div class="header-menu">
                 <div class="header-menu-left">
-                    <img src="../../assets/leftlogo.png" />
+                    <img src="../../assets/leftlogo.png" @click="goHome"/>
                 </div>
                 <div class="header-menu-right big-screen">
                     <img src="../../assets/github.png" @click="goTo('https://github.com/luge-ai/luge-ai')" />
@@ -169,20 +169,33 @@ export default {
     },
     methods: {
         changeLanguage(type) {
+            let currentPage = this.getPath();
             let path = '';
             switch (type) {
                 case 'en-US':
-                    path = '/en/';
+                    path = '/en/' + currentPage;
                     this.language = 'en-US';
                     break;
                 case 'zh-CN':
-                    path = '/';
+                    path = '/' + currentPage;
                     this.language = 'zh-CN';
                     break;
             }
             if (this.$router.currentRoute.path !== path) {
                 this.$router.push(path)
             }
+        },
+        // 获取当前有效地址
+        getPath() {
+            const currentPath = this.$page.path;
+            let tempList = currentPath.split('/');
+            let currentPage = '';
+            if (tempList[1] === 'en') {
+                currentPage = currentPath.slice(4);
+            } else {
+                currentPage = currentPath.slice(1);
+            }
+            return currentPage;
         },
         handleChangeTab(path) {
             let hasTab = false;
@@ -199,6 +212,12 @@ export default {
         },
         goTo(path) {
             window.open(path);
+        },
+        goHome() {
+            const path = this.language === 'zh-CN' ? '/' : '/en/';
+            if (this.$router.currentRoute.path !== path) {
+                this.$router.push(path)
+            }
         },
         onClickTab(path) {
             if (this.$router.currentRoute.path !== path) {
@@ -279,6 +298,10 @@ header
         display flex
         justify-content space-between
         align-items center
+
+        &-left
+            &:hover
+                cursor pointer
 
         &-right
             display flex 

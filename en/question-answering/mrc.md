@@ -65,4 +65,4 @@
     | CJRC | 5万问题 | 2019年 | Duan et al. | 哈工大讯飞联合实验室 | [链接](https://arxiv.org/pdf/1912.09156.pdf) | [链接](https://github.com/china-ai-law-challenge/CAIL2019/tree/master/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3)| [“中国法研杯”中文法律阅读理解比赛](http://cail.cipsc.org.cn) |
 
 
-[回到首页](/dataset.md)
+[回到首页](/en/dataset.md)
