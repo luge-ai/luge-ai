@@ -49,9 +49,7 @@
             <div class="header-operating">
                 <div class="operating-container" v-for="item in operatingInfo" :key="item.id">
                     <div class="title">{{item.title}}</div>
-                    <div class="description">
-                        <a :href="item.url" target="_blank">{{item.description}}</a>
-                    </div>
+                    <a :href="item.url" target="_blank"><div class="description">{{item.description}}</div></a>
                 </div>
             </div>
             <div class="show-more">
@@ -154,10 +152,10 @@ export default {
     },
     mounted() {
         const path = this.$page.path;
-        if (path === '/') {
-            this.language = 'zh-CN';
-        } else {
+        if (path.startsWith('/en/')) {
             this.language = 'en-US';
+        } else {
+            this.language = 'zh-CN';
         }
         let height = window.innerHeight;
         window.addEventListener('scroll', () => {
@@ -324,10 +322,13 @@ header
                 -webkit-line-clamp 2
                 line-clamp 2
                 -webkit-box-orient vertical
-                a
-                    color #FFF
-                a:hover
-                    color #1590FF
+                color #FFF
+                // a
+                //     color #FFF
+                // a:hover
+                //     color #1590FF
+            .description:hover
+                color #1590FF
 
         .operating-container:not(:last-child)::after
             content " "

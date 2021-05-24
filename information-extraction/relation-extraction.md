@@ -8,7 +8,7 @@
 
     | 名称       | 规模  |  文本来源  | 评测  |下载  |论文  |
     | :-----:  | :-----:  | :----:  |:----:  |:----:  |:----:  |
-    | DuIE   | 48种关系类型、21万句子，40wSPO实例 |   百度百科+百度贴吧+通用网页   |[LIC2020](https://aistudio.baidu.com/aistudio/competition/detail/31)  |[链接](https://aistudio.baidu.com/aistudio/competition/detail/31) |[链接](http://tcci.ccf.org.cn/conference/2019/papers/EV10.pdf)
+    | DuIE   | 48种关系类型、21万句子，40wSPO实例 |   百度百科+百度贴吧+通用网页   |[LIC2020](https://aistudio.baidu.com/aistudio/competition/detail/31/?isFromLUGE=TRUE)  |[链接](https://aistudio.baidu.com/aistudio/competition/detail/31/?isFromLUGE=TRUE) |[链接](http://tcci.ccf.org.cn/conference/2019/papers/EV10.pdf)
 
 
  - <strong>基于该数据集发表的相关论文：</strong>

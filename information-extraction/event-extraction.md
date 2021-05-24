@@ -8,7 +8,7 @@
 
     | 名称       | 规模  |  文本来源  | 评测  |下载  |论文  |
     | :-----:  | :-----:  | :----:  |:----:  |:----:  |:----:  |
-    | DuEE   | 65种事件类型、1.7万句子，2万事件 |   新闻   |[LIC2020](https://aistudio.baidu.com/aistudio/competition/detail/32)  |[链接](https://aistudio.baidu.com/aistudio/competition/detail/32) | - |
+    | DuEE   | 65种事件类型、1.7万句子，2万事件 |   新闻   |[LIC2020](https://aistudio.baidu.com/aistudio/competition/detail/32/?isFromLUGE=TRUE)  |[链接](https://aistudio.baidu.com/aistudio/competition/detail/32/?isFromLUGE=TRUE) | - |
 
 
 ### 2. ACE 2005 Multilingual Training Corpus

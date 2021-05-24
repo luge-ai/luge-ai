@@ -32,7 +32,7 @@ module.exports = {
     },
     themeConfig: {
         navbar: false,
-        // smoothScroll: true,
+        smoothScroll: true,
         displayAllHeaders: true,
         sidebar: 'auto'
     },
