@@ -30,4 +30,4 @@
 - <strong>基于该数据集发表的相关论文：</strong>
     - GUAN Pengfei, LI Bao‘an, LV Xueqiang, ZHOU Jianshe. Attention Enhanced Bi-directional LSTM for Sentiment Analysis. , 2019, 33(2): 105-111.
 
-[回到首页](/dataset.md)
+[回到首页](/en/dataset.md)
