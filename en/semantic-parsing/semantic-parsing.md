@@ -10,7 +10,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | DuSQL | 200个数据库，近2.4万问题 | 2020年 | Lijie Wang, et al. | 百度 | [链接](https://www.aclweb.org/anthology/2020.emnlp-main.562/) | [链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1) |[2020 Language and Intelligence Challenge on Semantic Parsing](https://aistudio.baidu.com/aistudio/competition/detail/30)|
+    | DuSQL | 200个数据库，近2.4万问题 | 2020年 | Lijie Wang, et al. | 百度 | [链接](https://www.aclweb.org/anthology/2020.emnlp-main.562/) | [链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLUGE=TRUE) |[2020 Language and Intelligence Challenge on Semantic Parsing](https://aistudio.baidu.com/aistudio/competition/detail/30/?isFromLUGE=TRUE)|
 
 - <strong>基于该数据集发表的相关论文：</strong>
     -  无
@@ -40,7 +40,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | NL2SQL | 26521个数据库，8万+问题 | 2019年 | Ningyuan Sun, et al. | 追一科技 | [链接](https://arxiv.org/abs/2006.06434) |[链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLuge=1)| [基于阿里天池的比赛](https://tianchi.aliyun.com/competition/entrance/231716/rankingList) |
+    | NL2SQL | 26521个数据库，8万+问题 | 2019年 | Ningyuan Sun, et al. | 追一科技 | [链接](https://arxiv.org/abs/2006.06434) |[链接](https://aistudio.baidu.com/aistudio/competition/detail/47/?isFromLUGE=TRUE)| [基于阿里天池的比赛](https://tianchi.aliyun.com/competition/entrance/231716/rankingList) |
 
 - <strong>基于该数据集发表的相关论文：</strong>
     - 无
