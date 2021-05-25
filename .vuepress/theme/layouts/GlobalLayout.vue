@@ -1,6 +1,6 @@
 <!-- themePath/layouts/GlobalLayout.vue -->
 <template>
-    <div id="global-layout">
+    <div id="global-layout" ontouchstart="">
         <!-- <div class="header-menu">哈哈哈哈</div> -->
         <header class="bk-dark">
             <!-- <video autoplay loop muted>
@@ -77,7 +77,6 @@
         <footer-component :language="language"></footer-component>
     </div>
 </template>
-
 <script>
 import listComponent from './../../components/list';
 import footerComponent from './../../components/globalFooter';
@@ -157,8 +156,10 @@ export default {
         } else {
             this.language = 'zh-CN';
         }
-        let height = window.innerHeight;
         window.addEventListener('scroll', () => {
+            let header = document.getElementsByClassName('bk-dark')[0];
+            let height = window.getComputedStyle(header).height;
+            height = height.substr(0, height.length - 2);
             const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
             if (top >= height) {
                 this.tabsFix = true;
@@ -166,6 +167,7 @@ export default {
                 this.tabsFix = false;
             }
         });
+        document.body.addEventListener("touchstart", function() {});
     },
     methods: {
         changeLanguage(type) {
@@ -226,16 +228,16 @@ export default {
         },
         showMoreInfo() {
             this.isShowAll = !this.isShowAll
-            let header = document.getElementsByClassName('header-container')[0]
+            let header = document.getElementsByClassName('bk-dark')[0]
             let operatingBox = document.getElementsByClassName('header-operating')[0]
             const {height} = window.getComputedStyle(header)
             console.log(height)
             if (this.isShowAll) {
-                header.style.height = parseInt(height, 10) - 162 + 'px';
-                operatingBox.style.height = '300px'
-            } else {
                 header.style.height = parseInt(height, 10) + 162 + 'px';
-                operatingBox.style.height = '138px'
+                operatingBox.classList.add('full-operating');
+            } else {
+                header.style.height = '100vh';
+                operatingBox.classList.remove('full-operating');
             }
         }
     }
@@ -243,6 +245,10 @@ export default {
 </script>
 <style lang='stylus' scoped>
 @import url("./../../assets/icon/iconfont.css");
+html, body
+    height 100%
+    overflow auto
+    margin 0
 #global-layout
     min-height 100%
     // padding-bottom 需要动态计算footer
@@ -258,12 +264,17 @@ header + footer,
     background-size cover
     color #fff
 
+.full-operating
+    height 300px !important
 header
     height 100vh
     position relative
     overflow hidden
+    display flex
+    flex-direction column
     .header-container
-        height calc(100% - 218px)
+        // height calc(100% - 218px)
+        flex 1
         display flex
         justify-content center
         align-items center
@@ -442,6 +453,7 @@ header
         background-image url(./../../assets/headerbg2.png)
         background-position center
         background-size cover
+        transition all .5s ease-in-out
     header
         .header-container
             transition all .5s ease-in-out
@@ -517,8 +529,8 @@ header
             height 138px
             margin 0 23px
             display block
-            overflow scroll
-            // transition all .5s ease-in-out
+            overflow hidden
+            transition all .5s ease-in-out
             .operating-container
                 padding 10px 0
                 .description
@@ -539,6 +551,8 @@ header
                 background #fff
                 transform scaleY(0.5)
         .show-more
+            height 22px
+            margin-bottom 20px
             display flex
             justify-content center 
             align-items center
