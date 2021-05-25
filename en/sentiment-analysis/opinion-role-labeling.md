@@ -18,4 +18,5 @@
     - Li, Yanzeng and Liu, Tingwen and Li, Diying and Li, Quangang and Shi, Jinqiao and Wang, Yanqiu. 2018. Character-based BiLSTM-CRF Incorporating POS and Dictionaries for Chinese Opinion Target Extraction. Asian Conference on Machine Learning (Vol. 95, pp. 518-533).
  
 
+
 [回到首页](/en/dataset.md)

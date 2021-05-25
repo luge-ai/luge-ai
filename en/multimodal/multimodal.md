@@ -18,8 +18,6 @@
     - 第一名：https://chuangke.aliyun.com/info/detail/673631?scm=20140722.184.2.173
     - baseline：https://github.com/MTCloudVision/MTSVRC
 
-[回到首页](/en/dataset.md)
-
 ### 视频内容识别
 
 #### 1. VideoNet 2019
@@ -36,9 +34,6 @@
 - <strong>基于该数据集发表的相关方案：</strong>
     - baseline：https://github.com/xxbbml/VideoNet_Baseline
     - 第一名：http://www.ia.cas.cn/xwzx/kydt/201909/t20190905_5377262.html
-
-[回到首页](/en/dataset.md)
-
 
 ### 视频人物识别
 
@@ -59,9 +54,6 @@
     - Jianrong C., Li Yang., et al. 2019. A Novel Deep Multi-Modal Feature Fusion Method for Celebrity Video Identification. MM '19: Proceedings of the 27th ACM International Conference on Multimedia. https://dl.acm.org/doi/abs/10.1145/3343031.3356067
     - Xi Fang., Ying Zou., 2019. Make the Best of Face Clues in iQIYI Celebrity VideoIdentification Challenge 2019. MM '19: Proceedings of the 27th ACM International Conference on Multimedia. https://dl.acm.org/doi/abs/10.1145/3343031.3356056
 
-[回到首页](/en/dataset.md)
-
-
 ### 视频增强和超分
 
 #### 1. Youku-VESR Dataset
@@ -77,10 +69,6 @@
 
 - <strong>基于该数据集发表的相关方案&论文：</strong>
     - Jiale Chen., Xu Tan., et al. 2020. VESR-Net: The Winning Solution to Youku Video Enhancement and Super-Resolution Challenge. 
-
-[回到首页](/en/dataset.md)
-
-
 
 ### 多模内容生成
 #### 1. Flickr8K-CN、Flickr30K-CN、COCO-CN
@@ -129,6 +117,7 @@
  
 - <strong>基于该数据集发表的相关论文：</strong>
     - Wang, X., Wu, J., Chen, J., Li, L., Wang, Y. F., & Wang, W. Y. (2019). VATEX: A large-scale, high-quality multilingual dataset for video-and-language research. In Proceedings of the IEEE International Conference on Computer Vision (pp. 4581-4591).
+
 
 
 [回到首页](/en/dataset.md)
