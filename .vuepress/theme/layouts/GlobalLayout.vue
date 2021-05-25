@@ -267,6 +267,7 @@ header + footer,
 .full-operating
     height 300px !important
 header
+    min-height 700px
     height 100vh
     position relative
     overflow hidden
