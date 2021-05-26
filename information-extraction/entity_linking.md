@@ -28,8 +28,8 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: | 
-    | KBP 2017 EDL | 500标注篇章，9w未标注篇章 | 2017年 | N/A | 美国国家标准与技术研究院 | [链接](http://nlp.cs.rpi.edu/paper/kbp2017.pdf) | [链接](http://nlp.cs.rpi.edu/kbp/2017/)| [KBP2017 Entity Discovery and Linking](http://nlp.cs.rpi.edu/kbp/2017/)
-    | KBP 2019 EDL | 500标注篇章，30w未标注篇章 | 2019年 | N/A | 美国国家标准与技术研究院 | [链接](http://nlp.cs.rpi.edu/kbp/2019/EDL2019TaskSpec_V6.0.pdf) | [链接](http://nlp.cs.rpi.edu/kbp/2019/)| [KBP2019 Entity Discovery and Linking](http://nlp.cs.rpi.edu/kbp/2019/)
+    | KBP 2017 EDL | 500标注篇章，9w未标注篇章 | 2017年 | N/A | 美国国家标准与技术研究院 | [链接](http://nlp.cs.rpi.edu/paper/kbp2017.pdf) | [链接](https://tac.nist.gov/2017/KBP/index.html)| [KBP2017 Entity Discovery and Linking](https://tac.nist.gov/2017/KBP/index.html)
+    | KBP 2019 EDL | 500标注篇章，30w未标注篇章 | 2019年 | N/A | 美国国家标准与技术研究院 | [链接](http://nlp.cs.rpi.edu/kbp/2019/EDL2019TaskSpec_V6.0.pdf) | [链接](https://tac.nist.gov/2019/index.html)| [KBP2019 Entity Discovery and Linking](https://tac.nist.gov/2019/index.html)
 
 - <strong>基于该数据集发表的相关论文：</strong>
     - Rijhwani S, Xie J, Neubig G, et al. Zero-shot neural transfer for cross-lingual entity linking[C]//Proceedings of the AAAI Conference on Artificial Intelligence. 2019, 33: 6924-6931.
