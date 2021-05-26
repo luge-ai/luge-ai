@@ -12,7 +12,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | MTSVRC数据集 | 10万视频数据 | 2018年 | N/A | 美图 | N/A | [链接](https://github.com/MTCloudVision/MTSVRC)| [美图短视频实时分类挑战赛](https://challenge.ai.meitu.com/mtsvrc2018/introduction.html) |
+    | MTSVRC数据集 | 10万视频数据 | 2018年 | N/A | 美图 | N/A | [链接](https://github.com/MTCloudVision/MTSVRC)| [美图短视频实时分类挑战赛](https://github.com/MTCloudVision/MTSVRC) <备注：竞赛原官方[下载链接](https://challenge.ai.meitu.com/mtsvrc2018/introduction.html)已失效> |
 
 - <strong>基于该数据集发表的相关方案：</strong>
     - 第一名：https://chuangke.aliyun.com/info/detail/673631?scm=20140722.184.2.173
@@ -31,7 +31,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | VideoNet | 近9万视频 | 2019年 | N/A | 极链科技&复旦大学 | N/A | [链接](http://challenge.ai.videojj.com/#/lookback2019summer/ds)| [视频内容识别挑战赛](http://challenge.ai.videojj.com/#/lookback2019summer/intro) |
+    | VideoNet | 近9万视频 | 2019年 | N/A | 极链科技&复旦大学 | N/A | [链接](http://challenge.ai.videojj.com/#/lookback2019summer/ds)| [视频内容识别挑战赛](http://videojj.com/blog/5d5223971b015b2600c6138a) <备注：竞赛原官方[下载链接](http://challenge.ai.videojj.com/#/lookback2019summer/intro)已失效> |
 
 - <strong>基于该数据集发表的相关方案：</strong>
     - baseline：https://github.com/xxbbml/VideoNet_Baseline
@@ -125,7 +125,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | VaTEX | 41k/412k(videos/captions) | 2019年 | Xin Wang | University of California, Santa Barbara | [链接](https://arxiv.org/abs/1904.03493) | [链接](https://vatex.org/main/index.html)| - |
+    | VaTEX | 41k/412k(videos/captions) | 2019年 | Xin Wang | University of California, Santa Barbara | [链接](https://arxiv.org/abs/1904.03493) | [链接](https://arxiv.org/abs/1904.03493) <备注：竞赛原官方[下载链接](https://vatex.org/main/index.html)已失效>| - |
  
 - <strong>基于该数据集发表的相关论文：</strong>
     - Wang, X., Wu, J., Chen, J., Li, L., Wang, Y. F., & Wang, W. Y. (2019). VATEX: A large-scale, high-quality multilingual dataset for video-and-language research. In Proceedings of the IEEE International Conference on Computer Vision (pp. 4581-4591).
