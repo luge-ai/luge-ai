@@ -29,7 +29,7 @@
                     <img src="../assets/qrcode.png" />
                 </div>
                 <div class="code" v-else>
-                    <div class="title">Join our community</div>
+                    <div class="title">Join Our Community</div>
                     <img src="../assets/qrcode.png" />
                 </div>
             </div>
