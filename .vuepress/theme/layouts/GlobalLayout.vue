@@ -106,21 +106,21 @@ export default {
                 },
                 {
                     id: 2,
-                    title: '论文解读',
-                    description: 'ACL 2019论文分享: 让机器有自主意识的和人类对话',
-                    url: 'https://mp.weixin.qq.com/s/uyNlO97QQ4nQpFjYNOVceg'
+                    title: '赛事联动',
+                    description: '2021语言与智能技术竞赛正式启动 三大任务诚邀各界共迎技术挑战',
+                    url: 'https://mp.weixin.qq.com/s/E4arjfYOr62P_7qQU_zCWQ'
                 },
                 {
                     id: 3,
-                    title: '趋势探索',
-                    description: 'NLP青年学者深度对话：探寻NLP未来之路',
-                    url: 'https://mp.weixin.qq.com/s/sKHT5j4ekCsRQR4m9AByxQ'
+                    title: '直播回顾',
+                    description: '直播回顾 | 解读机器同传，不容错过的NAACL评测大赛',
+                    url: 'https://mp.weixin.qq.com/s/1KBPEtnPoeNzoWO-606Y8g'
                 },
                 {
                     id: 4,
-                    title: '用户方案',
-                    description: '小布助手在百度飞桨实体链指比赛中的实践应用',
-                    url: 'https://mp.weixin.qq.com/s/-kp7ekMBWDEQJ-kf0ER76g'
+                    title: '活动发布',
+                    description: '2020 CCF大数据与计算智能大赛－千言多技能对话任务启动',
+                    url: 'https://mp.weixin.qq.com/s/C7OeFZFpFMORBmtR97emXg '
                 }
             ],
             isShowAll: false
@@ -319,6 +319,8 @@ header
             display flex 
             align-items center
             img
+                width 31px
+                height 31px
                 margin-right 16px
                 &:hover
                     cursor pointer
