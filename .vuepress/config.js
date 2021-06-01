@@ -20,9 +20,19 @@ module.exports = {
         })(); 
         `]
     ],
+    locales: {
+        '/': {
+            lang: 'zh-CN',
+            title: '千言（LUGE）| 全面的中文开源数据集合'
+        },
+        '/en/': {
+            lang: 'en-US',
+            title: 'LUGE | English Version'
+        }
+    },
     themeConfig: {
         navbar: false,
-        smoothScroll: true,
+        smoothScroll: false,
         displayAllHeaders: true,
         sidebar: 'auto'
     },
