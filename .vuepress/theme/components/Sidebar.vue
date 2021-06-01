@@ -26,8 +26,9 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', () => {
+            let height = window.innerHeight;
             let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
-            if (top > (this.$page.hasTab ? 288 : 424)) {
+            if (top >= (this.$page.hasTab ? height : height + 136)) {
                 this.sideAbs = false;
             } else {
                 this.sideAbs = true;
