@@ -43,7 +43,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | IWSLT | 22万中英双语句对 | 2015 | - | 布鲁诺·凯斯勒基金会FBK && TED | [链接](http://www.mt-archive.info/EAMT-2012-Cettolo.pdf) | [链接](https://wit3.fbk.eu/mt.php?release=2015-01)| [链接](http://workshop2015.iwslt.org/) |
+    | IWSLT | 22万中英双语句对 | 2015 | - | 布鲁诺·凯斯勒基金会FBK && TED | [链接](https://www.aclweb.org/anthology/2012.eamt-1.60.pdf) | [链接](https://wit3.fbk.eu/2015-01)| [链接](http://workshop2015.iwslt.org/) |
 
 - <strong>基于该数据集发表的相关论文：</strong> 
    - K. Cho, B. van Merrienboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using rnn encoder–decoder for statistical machine translation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1724–1734, Doha, Qatar, October 2014. Association for Computational Linguistics.
