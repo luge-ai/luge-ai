@@ -31,7 +31,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | VideoNet | 近9万视频 | 2019年 | N/A | 极链科技&复旦大学 | N/A | [链接](http://challenge.ai.videojj.com/#/lookback2019summer/ds)| [视频内容识别挑战赛](http://videojj.com/blog/5d5223971b015b2600c6138a) <备注：竞赛原官方[下载链接](http://challenge.ai.videojj.com/#/lookback2019summer/intro)已失效> |
+    | VideoNet | 近9万视频 | 2019年 | N/A | 极链科技&复旦大学 | N/A | 竞赛官方[下载链接](http://challenge.ai.videojj.com/#/lookback2019summer/ds)已失效，请联系竞赛组织者| [视频内容识别挑战赛](http://videojj.com/blog/5d5223971b015b2600c6138a) <备注：竞赛官方[下载链接](http://challenge.ai.videojj.com/#/lookback2019summer/intro)已失效> |
 
 - <strong>基于该数据集发表的相关方案：</strong>
     - baseline：https://github.com/xxbbml/VideoNet_Baseline
@@ -109,7 +109,7 @@
 
     |  名称 | 规模 | 创建日期 | 作者 | 单位 | 论文 | 下载 | 评测 |
     | :---: | :---:| :---: | :---: | :---: | :---: | :---: | :---: |
-    | AIC-ICC | 240k/1.2M(images/captions) | 2017年 | - | - | [链接](https://arxiv.org/abs/1711.06475) | [链接]()| - |
+    | AIC-ICC | 240k/1.2M(images/captions) | 2017年 | - | - | [链接](https://arxiv.org/abs/1711.06475) | - | - |
  
 - <strong>基于该数据集发表的相关论文：</strong>
     - Xirong Li, Chaoxi Xu, Xiaoxu Wang, Weiyu Lan, Zhengxiong Jia, Gang Yang, Jieping Xu, COCO-CN for Cross-Lingual Image Tagging, Captioning and Retrieval, IEEE Transactions on Multimedia, Volume 21, Number 9, pages 2347-2360, 2019
