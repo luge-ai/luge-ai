@@ -107,8 +107,8 @@ export default {
                 {
                     id: 2,
                     title: '赛事联动',
-                    description: '2021语言与智能技术竞赛正式启动 三大任务诚邀各界共迎技术挑战',
-                    url: 'https://mp.weixin.qq.com/s/E4arjfYOr62P_7qQU_zCWQ'
+                    description: '[评测通知] 2021语言与智能技术竞赛开启报名',
+                    url: 'https://mp.weixin.qq.com/s/4Gmvohuzwayhfa-MH1pH0g'
                 },
                 {
                     id: 3,
@@ -119,8 +119,8 @@ export default {
                 {
                     id: 4,
                     title: '活动发布',
-                    description: '2020 CCF大数据与计算智能大赛－千言多技能对话任务启动',
-                    url: 'https://mp.weixin.qq.com/s/C7OeFZFpFMORBmtR97emXg '
+                    description: '聚数据人才，助产业腾飞——2020 CCF大数据与计算智能大赛正式起航',
+                    url: 'https://mp.weixin.qq.com/s/r9Y9uq3qgn6Jsz-lLrMiEQ'
                 }
             ],
             isShowAll: false
