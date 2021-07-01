@@ -4,15 +4,30 @@
             <h2 v-if="language === 'zh-CN'">简介</h2>
             <h2 v-else>Introduction</h2>
             <p :class="isShowAll ? '' : 'introduction'" v-if="language === 'zh-CN'">
-                数据集是推动自然语言处理技术进步的基石。目前的许多技术研发仅关注模型在单一数据集上的效果，然而自然语言处理技术在大规模产业化的应用中，面临着多领域、多场景等诸多挑战。因此，我们亟需更加全面的数据集合以应对这些挑战。千言项目针对每个自然语言处理问题，均收集和整理多个开源数据集，进行统一的处理并提供统一的测评方式。千言项目期望从准确性、泛化性和鲁棒性等多角度对模型效果进行综合评价。目前，千言项目已经针对8个任务，汇集了来自11所高校和企业的23个开源数据集。未来，希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。
+                数据集是推动自然语言处理技术进步的基石。目前的许多技术研发仅关注模型在单一数据集上的效果，然而自然语言处理技术在大规模产业化的应用中，面临着多领域、多场景等诸多挑战。因此，我们亟需更加全面的数据集合以应对这些挑战。千言项目针对每个自然语言处理问题，均收集和整理多个开源数据集，进行统一的处理并提供统一的测评方式。千言项目期望从准确性、泛化性和鲁棒性等多角度对模型效果进行综合评价。目前，千言项目已经针对8个任务，汇集了来自11所高校和企业的28个开源数据集。未来，希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，建设世界范围的中文信息处理影响力。
             </p>
             <p :class="isShowAll ? '' : 'introduction'" v-else>
-                Datasets are the cornerstone of NLP advances. Most current research focuses on models’ performance on a single general-purpose dataset, while large-scale industrial application of NLP brings domain- and scenario-specific challenges. A more comprehensive collection of data resources is urgently needed. Hence we have LUGE, which collects a wide range of open-source datasets for different NLP tasks. For each task we convert relevant datasets to unified format and provide unified metrics. LUGE aims at comprehensive evaluation that measures models’ accuracy, generalization and robustness. Until now, for 8 tasks we have 23 datasets from 11 academic or industrial organizations. We hope more dataset authors would join us to contribute to Chinese NLP and expand its influence worldwide.
+                Datasets are the cornerstone of NLP advances. Most current research focuses on models’ performance on a single general-purpose dataset, while large-scale industrial application of NLP brings domain- and scenario-specific challenges. A more comprehensive collection of data resources is urgently needed. Hence we have LUGE, which collects a wide range of open-source datasets for different NLP tasks. For each task we convert relevant datasets to unified format and provide unified metrics. LUGE aims at comprehensive evaluation that measures models’ accuracy, generalization and robustness. Until now, for 8 tasks we have 28 datasets from 11 academic or industrial organizations. We hope more dataset authors would join us to contribute to Chinese NLP and expand its influence worldwide.
             </p>
             <span class="show-all" @click="handleShowAll" v-if="language === 'zh-CN'">{{ isShowAll ? '收起详情' : '展开全文' }}</span>
             <span class="show-all" @click="handleShowAll" v-else>{{ isShowAll ? 'Pack Up' : 'View More' }}</span>
+            <!-- <div class="new-list-box">
+                <div class="new-list-box-item" :id="item.id" :key="item.id" v-for="item in listInfo">
+                    <div class="container" @click="showDetailList(item.id)">
+                        <div class="item-icon">
+                            <img :src="item.img">
+                        </div>
+                        <div class="item-title">
+                            {{ language === 'zh-CN' ? item.zhTitle : item.enTitle }}
+                        </div>
+                    </div>
+                    <div class="badge">new</div>
+                    <new-list v-if="showTotalList && item.id === 1"></new-list>
+                    <special-list v-if="showSpecialList && item.id === 2"></special-list>
+                </div>
+            </div> -->
             <div class="list-box">
-                <a class="list-box-item" :key="item.title" v-for="item in boxData" :href="item.link" target="_blank">
+                <a class="list-box-item" :key="item.enTitle" v-for="item in boxData" :href="item.link" target="_blank">
                     <div>
                         <img :src="item.img">
                     </div>
@@ -78,7 +93,13 @@
     </div>
 </template>
 <script>
+import newList from './newList.vue';
+import specialList from './specialList.vue';
 export default {
+    components: {
+        newList,
+        specialList
+    },
     props: {
         language: {
             type: String,
@@ -87,6 +108,22 @@ export default {
     },
     data() {
         return {
+            showTotalList: false,
+            showSpecialList: false,
+            listInfo: [
+                {
+                    id: 1,
+                    zhTitle: '理解与生成总榜',
+                    enTitle: 'Sentiment Analysis',
+                    img: require('../assets/total-list.png')
+                },
+                {
+                    id: 2,
+                    zhTitle: '生成专项榜单',
+                    enTitle: 'Machine Reading Comprehension',
+                    img: require('../assets/generate-special-list.png'),
+                },
+            ],
             boxData: [
                 {
                     zhTitle: '情感分析',
@@ -204,6 +241,24 @@ export default {
     methods: {
         handleShowAll() {
             this.isShowAll = !this.isShowAll;
+        },
+        // 查看榜单
+        showDetailList(id) {
+            console.log(id);
+            let dom = document.getElementById(id);
+            console.log(dom.classList);
+            const tempClassList = Array.from(dom.classList);
+            const index = tempClassList.indexOf('current-list');
+            if (index === -1) {
+                dom.classList.add('current-list');
+            } else {
+                dom.classList.remove('current-list');
+            }
+            if (id === 1) {
+                this.showTotalList = !this.showTotalList;
+            } else {
+                this.showSpecialList = !this.showSpecialList;
+            }
         }
     }
 };
@@ -219,6 +274,59 @@ export default {
     margin auto
     .show-all
         display none
+.new-list-box
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    margin 30px 0 0 0
+    transition all .5s ease-in-out
+    .current-list
+        width 100%
+        max-height 1000px
+        transition all .5s ease-in-out
+    &-item
+        width calc(50% - 10px)
+        max-height auto
+        padding 20px 30px 20px 20px
+        margin-bottom 20px
+        border 1px solid #E6ECF0
+        border-radius 10px
+        box-sizing border-box
+        transition all .5s ease-in-out
+        position relative
+        &:hover
+            cursor pointer
+            border 1px solid #0173EB
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1)
+        .container
+            display flex
+            align-items center
+            overflow auto
+            .item-icon
+                width 60px
+                img
+                    width 40px
+            .item-title
+                flex 1
+                font-weight 500
+                color #000
+                font-size 20px
+        .badge
+            position absolute
+            padding 2px 4px
+            right -10px
+            top -10px
+            background #FFF
+            color red
+            border-radius 10px
+            font-weight bold
+            // animation 1s blink-alternate infinite
+            // animation-direction alternate-reverse
+
+@keyframes blink-alternate
+    to
+        color transparent
+
 .list-box
     display flex
     flex-wrap wrap
@@ -355,6 +463,8 @@ h3
     .list-page
         padding-left 32px
         padding-right 32px
+    .new-list-box-item
+        width 100%
     .list-box 
         margin-bottom 20px
     .list-box-item
