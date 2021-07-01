@@ -10,6 +10,8 @@
   "license": "UNLICENSED",
   "homepage": "https://luge-ai.github.io/luge-ai",
   "dependencies": {
+    "async-validator": "^1.11.5",
+    "element-ui": "^2.15.2",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "vuepress": "^1.8.2"
