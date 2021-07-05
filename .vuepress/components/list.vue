@@ -11,21 +11,26 @@
             </p>
             <span class="show-all" @click="handleShowAll" v-if="language === 'zh-CN'">{{ isShowAll ? '收起详情' : '展开全文' }}</span>
             <span class="show-all" @click="handleShowAll" v-else>{{ isShowAll ? 'Pack Up' : 'View More' }}</span>
-            <!-- <div class="new-list-box">
+            <div class="new-list-box">
                 <div class="new-list-box-item" :id="item.id" :key="item.id" v-for="item in listInfo">
                     <div class="container" @click="showDetailList(item.id)">
                         <div class="item-icon">
                             <img :src="item.img">
                         </div>
-                        <div class="item-title">
-                            {{ language === 'zh-CN' ? item.zhTitle : item.enTitle }}
+                        <div class="item-title" v-if="language === 'zh-CN'">
+                            <p>{{item.zhTitle}}</p>
+                            <p>{{item.zhDesc}}</p>
+                        </div>
+                        <div class="item-title" v-else>
+                            <p>{{item.enTitle}}</p>
+                            <p>{{item.enDesc}}</p>
                         </div>
                     </div>
                     <div class="badge">new</div>
                     <new-list v-if="showTotalList && item.id === 1"></new-list>
                     <special-list v-if="showSpecialList && item.id === 2"></special-list>
                 </div>
-            </div> -->
+            </div>
             <div class="list-box">
                 <a class="list-box-item" :key="item.enTitle" v-for="item in boxData" :href="item.link" target="_blank">
                     <div>
@@ -113,14 +118,18 @@ export default {
             listInfo: [
                 {
                     id: 1,
-                    zhTitle: '理解与生成总榜',
-                    enTitle: 'Sentiment Analysis',
+                    zhTitle: '语言理解与生成',
+                    enTitle: '语言理解与生成',
+                    zhDesc: '从情感分析、阅读理解、文本相似度、摘要生成、问题生成、对话生成共6个任务挑战预训练模型的通用语言生成和理解能力。',
+                    enDesc: '从情感分析、阅读理解、文本相似度、摘要生成、问题生成、对话生成共6个任务挑战预训练模型的通用语言生成和理解能力。',
                     img: require('../assets/total-list.png')
                 },
                 {
                     id: 2,
-                    zhTitle: '生成专项榜单',
-                    enTitle: 'Machine Reading Comprehension',
+                    zhTitle: '文本生成',
+                    enTitle: '文本生成',
+                    zhDesc: '从摘要生成、问题生成、对话生成多个任务挑战文本生成模型。',
+                    enDesc: '从摘要生成、问题生成、对话生成多个任务挑战文本生成模型。',
                     img: require('../assets/generate-special-list.png'),
                 },
             ],
@@ -300,7 +309,7 @@ export default {
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1)
         .container
             display flex
-            align-items center
+            align-items flex-start
             overflow auto
             .item-icon
                 width 60px
@@ -308,9 +317,11 @@ export default {
                     width 40px
             .item-title
                 flex 1
-                font-weight 500
-                color #000
-                font-size 20px
+                p:first-of-type
+                    font-weight 500
+                    color #000
+                    font-size 20px
+                    margin-bottom 10px
         .badge
             position absolute
             padding 2px 4px
@@ -331,7 +342,7 @@ export default {
     display flex
     flex-wrap wrap
     justify-content space-between
-    margin 30px 0 70px 0
+    margin 0 0 70px 0
     &-item
         width calc(50% - 10px)
         padding 20px 30px 20px 20px
