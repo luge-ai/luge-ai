@@ -17,26 +17,30 @@ export default {
     data() {
         return {
             listData: [
-                { id: 1, text: '任务名', type: 'header', top: 1, bottom: 2, left: 1, right: 2 },
-                { id: 7, text: '问题生成', type: 'header', top: 1, bottom: 2, left: 2, right: 3 },
-                { id: 8, text: '摘要生成', type: 'header', top: 1, bottom: 2, left: 3, right: 4 },
-                { id: 9, text: '对话生成', type: 'header', top: 1, bottom: 2, left: 4, right: 5 },
-                { id: 10, text: '数据集名称', type: 'header', top: 2, bottom: 3, left: 1, right: 2 },
-                { id: 11, text: '评估指标', type: 'header', top: 3, bottom: 4, left: 1, right: 2 },
-                { id: 12, text: 'RoBERTa Large（复现）', type: 'header', top: 4, bottom: 5, left: 1, right: 2 },
-                { id: 13, text: 'ERNIE 2.0 Large', type: 'header', top: 5, bottom: 6, left: 1, right: 2 },
-                { id: 17, text: 'DuReader-Robust-QG' },
-                { id: 18, text: 'LCSTS'},
-                { id: 19, text: 'kdConv'},
-                { id: 23, text: 'BLEU-4' },
-                { id: 24, text: 'Rouge-L' },
-                { id: 25, text: 'BLEU-4' },
-                { id: 26, text: '' },
-                { id: 27, text: '' },
-                { id: 28, text: '' },
-                { id: 29, text: '' },
-                { id: 30, text: '' },
-                { id: 31, text: '' }
+                { id: 1, text: '排名', type: 'header', top: 1, bottom: 4, left: 1, right: 2 },
+                { id: 2, text: '模型名', type: 'header', top: 1, bottom: 4, left: 2, right: 3 },
+                { id: 3, text: '平均分', type: 'header', top: 1, bottom: 4, left: 3, right: 4 },
+                { id: 4, text: '问题生成', type: 'header', top: 1, bottom: 2, left: 4, right: 5 },
+                { id: 5, text: '摘要生成', type: 'header', top: 1, bottom: 2, left: 5, right: 6 },
+                { id: 6, text: '对话生成', type: 'header', top: 1, bottom: 2, left: 6, right: 7 },
+                { id: 7, text: 'DuReader-Robust-QG', type: 'header' },
+                { id: 8, text: 'LCSTS', type: 'header' },
+                { id: 9, text: 'KdConv', type: 'header' },
+                { id: 10, text: 'BLEU-4', type: 'header' },
+                { id: 11, text: 'Rouge-L', type: 'header' },
+                { id: 12, text: 'BLEU-4', type: 'header' },
+                { id: 13, text: '1' },
+                { id: 14, text: 'ERNIE 2.0 Large' },
+                { id: 15, text: '31.54' },
+                { id: 16, text: '39.30' },
+                { id: 17, text: '41.38' },
+                { id: 18, text: '13.94' },
+                { id: 19, text: '2' },
+                { id: 20, text: 'RoBERTa Large' },
+                { id: 21, text: '31.28' },
+                { id: 22, text: '37.10' },
+                { id: 23, text: '40.98' },
+                { id: 24, text: '15.75' }
             ]
         }
     }
@@ -54,6 +58,9 @@ export default {
             margin-left -1px
             margin-top -1px
             font-size 14px
+            display flex
+            align-items center
+            justify-content center
             &:hover
                 background #fafafa
         .box-header
