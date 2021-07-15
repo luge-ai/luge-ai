@@ -100,27 +100,27 @@ export default {
             operatingInfo: [
                 {
                     id: 1,
+                    title: '千言资讯',
+                    description: '百度技术委员会主席吴华出席WAIC 2021，畅谈AI时代数据开源开放',
+                    url: 'https://mp.weixin.qq.com/s/NkgMI01OUR2pZ1UngVqb4g'
+                },
+                {
+                    id: 2,
                     title: '千言发布',
                     description: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
                     url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
                 },
                 {
-                    id: 2,
+                    id: 3,
                     title: '赛事联动',
                     description: '[评测通知] 2021语言与智能技术竞赛开启报名',
                     url: 'https://mp.weixin.qq.com/s/4Gmvohuzwayhfa-MH1pH0g'
                 },
                 {
-                    id: 3,
+                    id: 4,
                     title: '直播回顾',
                     description: '直播回顾 | 解读机器同传，不容错过的NAACL评测大赛',
                     url: 'https://mp.weixin.qq.com/s/1KBPEtnPoeNzoWO-606Y8g'
-                },
-                {
-                    id: 4,
-                    title: '活动发布',
-                    description: '聚数据人才，助产业腾飞——2020 CCF大数据与计算智能大赛正式起航',
-                    url: 'https://mp.weixin.qq.com/s/r9Y9uq3qgn6Jsz-lLrMiEQ'
                 }
             ],
             isShowAll: false
