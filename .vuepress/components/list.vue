@@ -204,7 +204,7 @@ export default {
                     zhDesc: '从文案生成、摘要生成和问题生成三个任务，挑战文本生成结果与输入的事实一致性水平。',
                     enDesc: 'Three datasets：description generation, automatic summarization and question generation. In those datasets, algorithms are evaluated with specific criteria of fact faithfulness.',
                     img: require('../assets/faithfulness.png'),
-                    link: 'https://aistudio.baidu.com/aistudio/competition'
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/105/?isFromLUGE=TRUE'
                 },
                 {
                     zhTitle: '低资源语言翻译',
