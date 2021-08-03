@@ -197,6 +197,22 @@ export default {
                     enDesc: 'For the task of entity linking, the DuEL dataset was collected and organized.',
                     img: require('../assets/entity.png'),
                     link: 'https://aistudio.baidu.com/aistudio/competition/detail/83/?isFromLUGE=TRUE'
+                },
+                {
+                    zhTitle: '面向事实一致性的文本生成',
+                    enTitle: 'Fact faithfulness in text generation',
+                    zhDesc: '从文案生成、摘要生成和问题生成三个任务，挑战文本生成结果与输入的事实一致性水平。',
+                    enDesc: 'Three datasets：description generation, automatic summarization and question generation. In those datasets, algorithms are evaluated with specific criteria of fact faithfulness.',
+                    img: require('../assets/faithfulness.png'),
+                    link: 'https://aistudio.baidu.com/aistudio/competition'
+                },
+                {
+                    zhTitle: '低资源语言翻译',
+                    enTitle: 'Baidu Low-resource Translation Corpus',
+                    zhDesc: '针对多语种翻译面临的资源稀疏问题，整理了低资源语言翻译数据集，包含俄中，中俄，泰中，中泰，越中和中越六个方向的翻译任务。',
+                    enDesc: 'BLTC dataset provides six translation tasks: Russian-Chinese, Chinese-Russian, Thai-Chinese, Chines-Thai, Vietnamese-Chinese, Chinese-Vietnamese.',
+                    img: require('../assets/lowResource.png'),
+                    link: 'https://aistudio.baidu.com/aistudio/competition/detail/84/?isFromLUGE=TRUE'
                 }
             ],
             tableData: [
