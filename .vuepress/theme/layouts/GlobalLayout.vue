@@ -92,9 +92,9 @@ export default {
             tabsFix: false,
             totalTabs: [
                 {path: '/', label: '千言数据集', value: 1, language: 'zh-CN'},
-                {path: '/dataset.html', label: '其它开源数据集索引', value: 2, language: 'zh-CN'},
+                // {path: '/dataset.html', label: '其它开源数据集索引', value: 2, language: 'zh-CN'},
                 {path: '/en/', label: 'LUGE Datasets', value: 1, language: 'en-US'},
-                {path: '/en/dataset.html', label: 'Other Datasets', value: 2, language: 'en-US'}
+                // {path: '/en/dataset.html', label: 'Other Datasets', value: 2, language: 'en-US'}
             ],
             mes: '',
             operatingInfo: [
@@ -106,9 +106,9 @@ export default {
                 },
                 {
                     id: 2,
-                    title: '千言发布',
-                    description: '百度联合中国计算机学会、中国中文信息学会共同发布“千言”计划',
-                    url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
+                    title: '千言工具',
+                    description: '千言pip安装包（alpha版），一键下载、加载数据集和评测',
+                    url: 'https://github.com/luge-ai/luge-pip'
                 },
                 {
                     id: 3,
