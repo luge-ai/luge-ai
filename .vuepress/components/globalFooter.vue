@@ -26,11 +26,11 @@
                 </div>
                 <div class="code" v-if="language === 'zh-CN'">
                     <div class="title">扫码加入“千言”交流群</div>
-                    <img src="../assets/qrcode.png" />
+                    <img src="../assets/newqrcode.png" />
                 </div>
                 <div class="code" v-else>
                     <div class="title">Join Our Community</div>
-                    <img src="../assets/qrcode.png" />
+                    <img src="../assets/newqrcode.png" />
                 </div>
             </div>
             <div class="footer-bottom">
