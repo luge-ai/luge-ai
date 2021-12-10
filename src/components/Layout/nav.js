@@ -15,7 +15,7 @@ function Nav() {
         <div className='lugeNav'>
             <div className='luge_nav_content'>
                 <div className='luge_nav_left'>
-                    <Link to='/luge/home' className='navTitleLogo'></Link>
+                    <Link to='/' className='navTitleLogo'></Link>
                     <div className='navTitle'>
                         {navTitles.map(item => (
                             <>
