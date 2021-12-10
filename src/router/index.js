@@ -14,7 +14,7 @@ const App = () => {
     return (
         <Suspense fallback={null}>
             <Switch>
-                <Route path="/luge/home" exact component={Home} />
+                <Route path="/" exact component={Home} />
                 <Route path="/luge/task" exact component={Task} />
                 <Route path="/luge/game" exact component={Game} />
                 <Route path="/luge/about" exact component={About} />
@@ -22,7 +22,7 @@ const App = () => {
                 <Route path="/luge/ranking/rankDetail" exact component={RankDetail} />
                 <Route path="/luge/dataDetail" exact component={DataDetail} />
                 <Route path="/luge/task/taskDetail" exact component={TaskDetail} />
-                <Redirect to="/luge/home" />
+                <Redirect to="/" />
             </Switch>
         </Suspense>
     );
