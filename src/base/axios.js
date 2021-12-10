@@ -7,7 +7,7 @@ axios.defaults.timeout = 15 * 60 * 1000;
 axios.defaults.withCredentials = true;
 axios.defaults.crossDomain = true;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; // 'application/json;charset=UTF-8'; // 配置请求头// 表单形式提交数据
-axios.defaults.baseURL = 'https://nlp.baidu.com' // 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088' // 'https://nlp.baidu.com';
+axios.defaults.baseURL = 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088' // 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088' // 'https://nlp.baidu.com';
 // http请求拦截器
 // 添加时间戳 防止缓存
 axios.interceptors.request.use(
