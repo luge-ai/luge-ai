@@ -41,7 +41,7 @@ const lugeAuthorList = [
     {
         icon: () => <img src={'https://fanyiapp.cdn.bcebos.com/cms/image/0113d88e150d74ebfa1656efce2ccf96.png'} alt='图片'/>,
         name: '尚利锋',
-        source: '保密',
+        source: '',
         url: ''
     },
     {
@@ -54,7 +54,7 @@ const lugeAuthorList = [
     {
         icon: () => <img src={'https://fanyiapp.cdn.bcebos.com/cms/image/b3806710dae0e07646862867d6d953bd.png'}  alt='图片'/>,
         name: '谭松波',
-        source: '无',
+        source: '',
         url: 'https://baike.baidu.com/item/%E8%B0%AD%E6%9D%BE%E6%B3%A2/4606211'
     },
     {
