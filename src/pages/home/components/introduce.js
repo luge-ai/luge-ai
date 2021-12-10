@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import personHxySrc from '../assets/person_hxy.png';
 import personCjhSrc from '../assets/person_cjh.png';
@@ -79,11 +80,11 @@ const Introduce = () => (
             <div className='intro_detail'>
                 “千言”是百度联合中国计算机学会自然语言处理专委会、中国中文信息学会评测工作委员会共同发起的，由来自国内多家高校和企业的数据资源研发者共同建设的中文开源数据集及评测项目。
             </div>
-            <a
+            <Link
                 onClick={() => {
                     window._hmt.push(['_trackEvent', '首页', `进一步了解`]);
                 }}
-                href='/luge/about'
+                to='/luge/about'
                 rel="noopener noreferrer"
                 target='_blank'
                 className='intro_under'>
@@ -92,7 +93,7 @@ const Introduce = () => (
                     className='ranks_default_icon'
                     style={{ marginLeft: '6px' }}
                 />
-            </a>
+            </Link>
         </div>
         <div className='intro_swiper'>
             <div className='intro_container_lists'>

@@ -29,7 +29,7 @@ const PageFooter = props => {
     const [prev, setPrev] = useState(-1);
     const [next, setNext] = useState(1);
     useMemo(() => {
-        const dealPage = type => {
+        const dealPage = () => {
             const currentIndex = taskTypes.findIndex(
                 item => item.taskId === params.taskId
             );
@@ -90,7 +90,7 @@ const TaskDetail = () => {
     const taskTypes = JSON.parse(localStorage.getItem('TaskType'));
     return (
         <>
-            <div className='taskDetailCardContainer'>
+            <div className='taskDetailCardContainer' key={window.location.hash}>
                 <Nav />
                 <div className='task_detail_container'>
                     <TaskTitleArea params={params} taskTypes={taskTypes} />

@@ -10,10 +10,8 @@ import {parseUrl} from '../../utils/index';
 
 const Detail = memo(() => {
     // getDateSetDetail
-    const params = useMemo(() => {
-        return parseUrl(window.location.hash);
-    }, []);
-    console.log(params);
+    const params = parseUrl(window.location.hash);
+    // console.log(params);
     const [dataDetail, setDataDetail] = useState({});
     useMemo(async () => {
         let dataSetDetail = await getDateSetDetail(params);
@@ -22,10 +20,10 @@ const Detail = memo(() => {
     useEffect(() => {
         window._hmt.push(['_trackEvent', '千言', '数据集详情']);
         document.documentElement.scrollTop = 0;
-    }, []);
+    }, [params.id]);
     // console.log(dataDetail);
     return (
-        <div className='detailCardContainer'>
+        <div className='detailCardContainer' key={window.location.hash}>
             <Nav/>
             <div className='detail_content'>
                 <DetailTitle dataDetail={dataDetail} taskName={params.taskName} />

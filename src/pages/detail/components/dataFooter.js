@@ -1,4 +1,5 @@
 import React, { memo, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {getDataSetList, getRelateGame} from '../../../base/request';
 import {formatDate} from '../../../utils/index';
 // import { Link } from 'react-router-dom';
@@ -57,11 +58,9 @@ const AboutDataList = props => {
                     <div className='data_footer_cards'>
                         {
                             dataSetList.map((item, index) => (
-                                <div
+                                <Link
                                     key={index}
-                                    onClick={() => {
-                                        window.location.href = `/luge/dataDetail?id=${item.datasetId}`;
-                                    }}
+                                    to={`/luge/dataDetail?id=${item.datasetId}`}
                                     className='data_footer_cards_item'>
                                     <span className='data_feel_sign'>{item.label}</span>
                                     <strong className='data_feel_title'>{item.datasetName}</strong>
@@ -69,7 +68,7 @@ const AboutDataList = props => {
                                         <span className='card_data_icon'></span>
                                         {item.downTimes}
                                     </span>
-                                </div>
+                                </Link>
                             ))
                         }
                     </div>
