@@ -14,9 +14,9 @@ const Detail = memo(() => {
     // console.log(params);
     const [dataDetail, setDataDetail] = useState({});
     useMemo(async () => {
-        let dataSetDetail = await getDateSetDetail(params);
+        let dataSetDetail = await getDateSetDetail({id: params.id});
         setDataDetail(dataSetDetail.data);
-    }, [params]);
+    }, [params.id]);
     useEffect(() => {
         window._hmt.push(['_trackEvent', '千言', '数据集详情']);
         document.documentElement.scrollTop = 0;

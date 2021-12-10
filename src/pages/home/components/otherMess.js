@@ -1,9 +1,9 @@
 import React, { memo, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import {getRankList, getGameList} from '../../../base/request';
 import {formatDate} from '../../../utils/index';
-import { Link } from 'react-router-dom';
 import game_01 from '../assets/game_01.png';
 import game_02 from '../assets/game_02.png';
 import game_03 from '../assets/game_03.png';
@@ -15,7 +15,7 @@ const TaskDesc =  memo(props => {
     return (
         <div className='platform'>
             <div className='platform-title'>
-                <span>{taskDetail.name}<a href={`/luge/task/taskDetail?taskId=${taskType.current.taskId}`}>详情<ArrowRightOutlined /></a></span>
+                <span>{taskDetail.name}<Link to={`/luge/task/taskDetail?taskId=${taskType.current.taskId}`}>详情<ArrowRightOutlined /></Link></span>
             </div>
             <div className='platform-detail'>
                 {taskDetail.description}
@@ -176,7 +176,7 @@ const OtherMess = props => {
         shallowEqual
     );
     return (
-        <div className='othersMess' style={{height: taskType.current.taskId ? '610px' : '590px'}}>
+        <div className='othersMess' style={{height: taskType.current.taskId ? '610px' : '600px'}}>
             {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} /> }
             {taskType.current.taskId &&
                 <GamesCard

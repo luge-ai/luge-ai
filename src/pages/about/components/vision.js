@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const content = [
     '千言希望有更多的数据集作者能够参与共建千言项目，共同推动中文信息处理技术的进步，',
@@ -9,11 +10,11 @@ function vision() {
         <div className='visionContainer'>
             <h6>我们的愿景</h6>
             <p>{content}</p>
-            <a
+            <Link
                 onClick={() => {
                     window._hmt.push(['_trackEvent', '关于千言', `去看任务`]);
                 }}
-                href='/luge/task' className='to_task_list'>去看任务</a>
+                to='/luge/task' className='to_task_list'>去看任务</Link>
         </div>
     );
 }

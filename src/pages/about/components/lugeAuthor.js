@@ -111,7 +111,8 @@ function lugeAuthor() {
     return (
         <>
             <div className='lugeDataAuthContainer'>
-                <h6 className='ab_title'><i className='icon_about'></i>千言学术委员会</h6>
+                <h6 className='ab_title'>
+                    <i className='icon_about'></i>千言学术委员会<span>(按拼音排序)</span></h6>
                 <ul className='luge_cards_list'>
                     {lugeAuthorList.map((item, index) => (
                         <li key={index} className='data_author'>

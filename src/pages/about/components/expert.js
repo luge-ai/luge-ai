@@ -236,7 +236,7 @@ const exprtLists = [
 const Expert = () => {
     return (
         <div className='lugeDataAuthContainer'>
-            <h6 className='ab_title'><i className='icon_about'></i>千言技术专家</h6>
+            <h6 className='ab_title'><i className='icon_about'></i>千言技术专家<span>(按拼音排序)</span></h6>
             <div className='luge_expert_list'>
                 {
                     exprtLists.map(item => (
