@@ -69,9 +69,7 @@ const PageFooter = props => {
 };
 const TaskDetail = () => {
     const dispatch = useDispatch();
-    const params = useMemo(() => {
-        return parseUrl(window.location.hash);
-    }, []);
+    const params = parseUrl(window.location.hash);
     // console.log(params);
     useMemo(() => {
         dispatch(
@@ -82,7 +80,8 @@ const TaskDetail = () => {
     }, [dispatch, params.taskId]);
     useEffect(() => {
         window._hmt.push(['_trackEvent', '千言', '任务-详情']);
-    }, []);
+        document.documentElement.scrollTop = 0;
+    }, [params.taskId]);
     const cardsList = useSelector(
         item => item.dataList.cardsList,
         shallowEqual
