@@ -176,7 +176,7 @@ const OtherMess = props => {
         shallowEqual
     );
     return (
-        <div className='othersMess' style={{height: taskType.current.taskId ? '610px' : '600px'}}>
+        <div className='othersMess' style={{height: taskType.current.taskId ? '620px' : '590px'}}>
             {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} /> }
             {taskType.current.taskId &&
                 <GamesCard
