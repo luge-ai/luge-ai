@@ -28,12 +28,12 @@ const Home = () => {
         bannerRef.current.style = 'filter: blur(0px)';
     };
     useEffect(() => {
-        if (!window.location.pathname.includes('/luge/home')) {
+        if (window.location.pathname !== '/') {
             return;
         }
         const beforeScrollTop = document.documentElement.scrollTop;
         document.body.onscroll = () => {
-            if (!window.location.pathname.includes('/luge/home')) {
+            if (window.location.pathname !== '/') {
                 return;
             }
             // backTopRef.current.style.display = 'none';
