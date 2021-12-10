@@ -74,6 +74,5 @@ Thumbs.db
 /output
 /dist
 /dll
-/scripts
-data-set.tar.gz
-package-lock.json
+/build-cache
+/build

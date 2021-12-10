@@ -1,0 +1,362 @@
+@import '@/styles/mixin.less';
+.aboutContainer {
+    width: @min-width;
+    margin: auto;
+
+    .aboutLugeCard {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        background: #333;
+        border-radius: 8px;
+        padding: 30px;
+        color: #999;
+        font-size: 12px;
+
+        .title {
+            font-size: 20px;
+            color: @color-fff;
+            margin-bottom: 6px;
+        }
+    }
+
+    .aboutContent {
+        padding: 50px 0 30px;
+        h6.ab_title {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #000;
+            word-break: break-all;
+            line-height: 27px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.lugeDataContainer {
+    width: @min-width;
+    margin: 60px auto 30px;
+}
+.luge_data_num {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 10px;
+    color: #ccc;
+    padding: 40px;
+
+    >span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        >strong {
+            font-weight: bold;
+            font-size: 48px;
+            color: #18A0FB;
+            i {
+                font-style: normal;
+                color: #6DEED0;
+            }
+        }
+
+        >span {
+            font-size: 16px;
+            margin-top: 13px;
+            color: #000;
+            font-weight: 400;
+        }
+    }
+}
+.luge_video {
+    position: relative;
+    height: 618px;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    .luge_video_img {
+        height: 618px;
+        border-radius: 15px;
+    }
+    .videoImg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        margin-top: 0;
+    }
+}
+.luge_player {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 87px;
+    height: 87px;
+    margin: auto;
+    background: url('./assets/player_icon.png');
+    cursor: pointer;
+    transition: all .16s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.lugeDataAuthContainer {
+    width: @min-width;
+    margin: 40px auto;
+}
+.common_data {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: url('./assets/comon_data.png') center no-repeat;
+    background-size: cover;
+}
+
+.common_system {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: url('./assets/system.png') center no-repeat;
+    background-size: 100%;
+}
+
+.luge_cards_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -20px;
+
+    >li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 204px;
+        height: 204px;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        background: #fff;
+        border-radius: 8px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: border 0.16s;
+        .data_author_a {
+            width: 204px;
+            height: 204px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: inherit;
+            margin-top: 0 !important;
+        }
+        span {
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+
+            i {
+                font-style: normal;
+                font-size: 12px;
+                color: #bbb;
+            }
+        }
+
+        .desc {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .luge_word {
+            font-size: 12px;
+            color: rgba(0,0,0,.4);
+            margin-top: 8px;
+            max-width: 150px;
+            text-align: center;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+        label {
+            font-size: 18px;
+            color: #000;
+            margin-top: 28px;
+            line-height: 1;
+            font-weight: bold;
+        }
+        img {
+            max-width: 35px;
+            max-height: 35px;
+        }
+    }
+
+    >li.data_author:hover {
+        border-color: #18A0FB;
+    }
+    >li.data_author {
+        img {
+            width: 67px;
+            height: 67px;
+            border-radius: 50%;
+            max-width: 67px;
+            max-height: 67px;
+        }
+        i {
+            font-style: normal;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+    }
+}
+
+.visionContainer {
+    width: 100%;
+    margin: 50px auto 0;
+    background: linear-gradient(106.17deg, #00EDCA -4.95%, #1594FD 96.41%);
+    padding: 40px 40px 64px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: @color-fff;
+    text-align: center;
+    >h6 {
+        font-size: 30px;
+        text-align: center;
+        color: @color-fff;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    p {
+        width: 922px;
+        margin: auto;
+    }
+}
+
+.quick-container {
+    width: 1100px;
+    margin: 0 auto 100px;
+    >h6 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+    }
+
+    .quick-item {
+        display: inline-flex;
+        flex-direction: column;
+        width: 350px;
+        cursor: pointer;
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+        >div {
+            height: 196px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        img {
+           height: 100%;
+           transition: all .16s;
+        }
+        >span {
+            margin-top: 10px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, .6);
+            font-size: 14px;
+        }
+        label {
+            color: #000;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+    }
+
+    .quick-item+.quick-item {
+        margin-left: 30px;
+    }
+
+    .quick-learn {
+        display: flex;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev::after {
+        margin-top: -90px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 30px;
+        color: #999;
+    }
+    .learn_more {
+        color: #18A0FB;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 50px;
+    }
+}
+.to_task_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 35px auto 0;
+}
+.luge_expert_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: 30px;
+    .expert_item {
+        display: flex;
+        align-items: center;
+        width: 204px;
+        height: 100px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        padding: 20px;
+        img {
+            width: 60px;
+            height: auto;
+        }
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    .expert_right {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        height: 60px;
+        span {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            color: #999;
+            height: 40px;
+            line-height: 17px;
+        }
+    }
+}

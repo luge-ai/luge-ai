@@ -1,0 +1,282 @@
+@import '~antd/dist/antd.less'; 
+@import './mixin.less';
+*, h1, h2, h3, h4, h5, h6, p {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset006pxrgba(0,0,0,0.3);
+    border-radius: 6px;
+}
+    /* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #F0F0F0;
+    -webkit-box-shadow: inset006pxrgba(0,0,0,0.8);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Microsoft YaHei, Arial, SimSun, sans-serif;
+    position: absolute;
+    left: 0;
+    right:0;
+    bottom: 0;
+    top: 0;
+    overflow: auto;
+    min-width: 1100px;
+}
+
+a {
+    text-decoration: none;
+}
+#root {
+    overflow: auto;
+    min-width: 1100px;
+}
+.root {
+    margin: 0;
+    min-height: 100vh;
+}
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    min-height: calc(100vh - 675px);
+}
+.swiper-container {
+   height: 240px;
+    .swiper-slide {
+        text-align: center;
+        img {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+    }
+}
+.nav-swiper {
+    margin-top: -50px;
+    height: 460px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+}
+.swiper-pagination-bullet {
+    background: #eee;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navTitleLogo {
+    width: 30px;
+    height: 18px;
+    background: url('../components/Layout/assets/logo.png') no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.lugeHeader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 440px;
+    overflow: hidden;
+}
+.lugeNav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    > .luge_nav_content {
+        display: flex;
+        width: 1100px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navTitle {
+        display: flex;
+        .navTitleItem {
+            color: #000;
+            font-size: 12px;
+            margin-left: 30px;
+        }
+        .navTitleItem:hover {
+            font-weight: bold;
+        }
+        .active {
+            font-weight: bold;
+            color: #18A0FB;
+        }
+    }
+    .luge_nav_left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .luge_nav_right {
+        display: flex;
+        align-items: center;
+        .icon_github {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            background: url('../components/Layout/assets/icons_login.svg') no-repeat;
+            &:hover {
+                background-position: -33px 0;
+            }
+        }
+        .icon_gitee {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            background: url('../components/Layout/assets/icons_login.svg') -66px 0 no-repeat;
+            margin-left: 25px;
+            &:hover {
+                background-position: -99px 0;
+            }
+        }
+    }
+}
+
+.footer {
+    background: url('../components/Layout/assets/footer_bg.png') no-repeat;
+    background-size: 100%;
+    background-color: #000;
+    .footerContainer {
+        display: flex;
+        flex-direction: column;
+        max-width: 1100px;
+        margin: auto;
+        padding-top: 250px;
+        .footerTop {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .footerLogo {
+                background: url("../components/Layout/assets/f_logo.png") no-repeat;
+                background-size: 100%;
+                width: 60px;
+                height: 40px;
+            }
+            .footerLink {
+                display: flex;
+                flex-direction: row;
+                margin-top: 40px;
+                span {
+                    color: #fff;
+                }
+                span + span {
+                    position: relative;
+                    margin-left: 40px;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: -20px;
+                        top: 4px;
+                        width: 1px;
+                        height: 14px;
+                        background: #fff;
+                    }
+                }
+            }
+            .footerTitle {
+                font-size: 14px;
+                color: #999;
+                line-height: 40px;
+            }
+            .footerDisclaimer {
+                font-size: 14px;
+                color: #aaa;
+            }
+        }
+        .footerItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 0;
+            height: 70px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .5);
+            border-top: 1px solid rgba(255, 255, 255, .2);
+        }
+    }
+}
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link, .ant-pagination-item, .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+.ant-pagination-item-active {
+    border: 1px solid #18A0FB;
+}
+.ant-pagination-disabled .ant-pagination-item-link {
+    background: #FAFAFA;
+}
+.page_List {
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+h6.ab_title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.icon_about {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../pages/about/assets/ab_title.png');
+    margin-right: 10px;
+}
+.taskCardContainer {
+    padding: 0;
+    background: #F5F8FC;
+    .footer {
+        .footerContainer {
+            padding-top: 100px;
+        }
+    }
+}
+.taskDetailCardContainer {
+    .footer {
+        .footerContainer {
+            padding-top: 100px;
+        }
+    }
+}
+.taskItemContainer {
+    display: flex;
+    flex-direction: column;
+    width: @min-width;
+    margin: 50px auto 0;
+    background: url('../pages/task/assets/task_bg_line.png') no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 50px;
+    > strong {
+        color: @background-bg;
+        font-size: 40px;
+        margin-bottom: 6px;
+    }
+    p {
+        color:  @background-bg;
+        font-size: 12px;
+    }
+}

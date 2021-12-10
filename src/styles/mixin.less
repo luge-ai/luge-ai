@@ -1,0 +1,62 @@
+@min-width: 1100px;
+@background-bg: #fff;
+@color-fff: #fff;
+@border-color: #ddd;
+
+.ellipsis(@line) when (@line = 1) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ellipsis(@line) when (@line > 1) {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @line;
+    line-clamp: @line;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.flex-layout(@status) when (@status = 'column') {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-layout(@status) when (@status = 'c-justify-center') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-layout(@status) when (@status = 'r-justify-center') {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-layout(@status) when (@status = 'c-all-center') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-layout(@status) when (@status = 'c-align-center') {
+    display: flex;
+    align-items: center
+}
+
+.flex-layout(@status) when (@status = 'c-algjst-center') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.setWh(@width, @height){
+    width: @width;
+    height: @height;
+}
+.add-bg-url(@imgUrl) {
+    background: url(@imgUrl) no-repeat;
+    background-size: 100%;
+}

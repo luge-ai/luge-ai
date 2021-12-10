@@ -1,0 +1,647 @@
+@import '@/styles/mixin.less';
+
+.anim_container {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(255,255,255, .8), rgba(255,255,255, 1));
+    border-radius: 22px 22px 0 0;
+    margin-top: 440px;
+    .footer {
+        margin-top: -136px;
+        padding-bottom: 40px;
+    }
+}
+.taskTotal {
+    width: 1100px;
+    margin: auto;
+}
+.cardsContent {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 22px 0 30px;
+
+    .clickTab {
+        font-size: 14px;
+
+        >span {
+            position: relative;
+            color: #999;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        >span.active {
+            color: #000;
+            font-weight: bold;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 50%;
+                margin-left: -13px;
+                width: 26px;
+                height: 3px;
+                background: linear-gradient(90deg, #07E5D2 0%, #29B4FB 103.85%);
+            }
+        }
+    }
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.othersMess {
+    position: relative;
+    width: 260px;
+    height: 570px;
+    font-size: 14px;
+    background: #F7F8FF;
+    border-radius: 12px;
+    .platform {
+        margin: 20px;
+    }
+
+    .platform + .platform {
+        padding-top: 25px;
+        border-top: 1px solid rgba(24, 160, 251, 0.1);
+    }
+
+    .platform-title {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+        a {
+            float: right;
+            font-size: 12px;
+            color: #18A0FB;
+            font-weight: 400;
+            line-height: 25px;
+            > span {
+                margin-left: 6px;
+                transition: all .16s;
+            }
+            &:hover {
+                font-weight: bold;
+                > span {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .game_desc {
+            font-size: 12px;
+            color: #999;
+            font-weight: 400;
+        }
+    }
+
+    .platform-lists {
+        margin-top: 25px;
+        a {
+            color: inherit;
+            &:hover {
+                color: #18A0FB;
+            }
+        }
+        >li+li {
+            margin-top: 15px;
+        }
+        .icon {
+            display: inline-block;
+            background: rgba(61, 143, 247, 0.12);
+            width: 34px;
+            height: 18px;
+            color: #3D8FF7;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+        >li:first-child {
+            .icon {
+                background: linear-gradient(90.16deg, #F27E16 4.03%, #F24B16 99.74%);
+                color: #fff;
+            }
+        }
+       
+
+        >li {
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+    }
+    .platform-detail {
+        padding: 10px 0 0;
+        font-size: 12px;
+        line-height: 25px;
+        height: 80px;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+    }
+
+    .games-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        >li {
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items:  center;
+                color: inherit;
+            }
+            display: flex;
+            flex-direction: row;
+            align-items:  center;
+            line-height: 25px;
+            img {
+                width: 17px;
+                height: auto;
+            }
+
+            .games_content {
+                width: 90%;
+                font-size: 14px;
+                margin-left: 6px;
+                word-break: break-all;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .ellipsis {
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp:1;
+                line-clamp:1;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+        }
+
+        >li+li {
+            margin-top: 10px;
+        }
+    }
+    .games_data_list {
+        .game_img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 56px;
+            width: 56px;
+            margin-right: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            img {
+                height: 100%;
+                width: auto;
+                transition: all .16s;
+            }
+        }
+        .data_ellipsis {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            transition: all .16s;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+        .game_data_content {
+            position: relative;
+            width: 150px !important;
+            height: 56px;
+            margin-left: 0 !important;
+        }
+        .status_pedding {
+            color: #999;
+        }
+
+        .status_going {
+            color: #18A0FB;
+        }
+        .status_icon {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            line-height: 1;
+            font-size: 12px;
+        }
+        >li+li {
+            margin-top: 18px;
+        }
+        > li {
+            cursor: pointer;
+            .game_li_link {
+                display: flex;
+                flex-direction: row;
+                align-items:  center;
+                line-height: 25px;
+                color: inherit;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+                .data_ellipsis {
+                    color: #18A0FB;
+                }
+            }
+        }
+    }
+}
+
+.intro_container {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    height: 280px;
+    margin: 30px auto 178px;
+    .intro_luge {
+        width: 419px;
+        display: flex;
+        flex-direction: column;
+        background: #F5F8FC;
+        color: #000;
+        font-size: 12px;
+        line-height: 25px;
+        border-radius: 15px;
+        padding: 40px;
+
+        .intro_luge_Logo {
+            margin-right: 0;
+            margin-bottom: 44px;
+            width: 100px;
+            height: 20px;
+            background: url('./assets/Union.png') no-repeat;
+            background-size: contain;
+        }
+
+        .intro_detail {
+            margin-bottom: 37px;
+        }
+        .intro_under {
+            color: #18A0FB;
+            font-size: 12px;
+            > span {
+                transition: all .16s;
+            }
+            &:hover {
+                font-weight: bold;
+                > span {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    .intro_swiper {
+        position: relative;
+        width: 658px;
+        background: #F5F8FC;
+        padding: 20px 40px;
+        border-radius: 15px;
+        overflow: hidden;
+        .intro_container_lists {
+            position: relative;
+            animation: auto-scroll 16s linear infinite;
+            margin-top: 17px;
+            cursor: pointer;
+        }
+        @keyframes auto-scroll {
+            0% {
+                top: -2px;
+            }
+            100% {
+                top: -1200px; 
+            }
+        }
+        .intro_container_lists:hover {
+            animation-play-state: paused;
+        }
+        .intro_container_lists_item {
+            width: 368px;
+            min-height: 115px;
+            background: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 17px;
+            .intro_item_content {
+                font-size: 12px;
+                line-height: 20px;
+            }
+            .intro_item_users {
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                font-size: 12px;
+            }
+            .item_name {
+                display: flex;
+                align-items: center;
+                color: #000;
+                font-weight: bold;
+                margin-right: 6px;
+                img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                }
+            }
+            .item_pos {
+                color: rgba(0, 0, 0, .5);
+            }
+        }
+        .item_float_left {
+            float: left;
+        }
+        .item_float_right {
+            float: right;
+        }
+    }
+}
+.invitation_container {
+    position: relative;
+}
+.invitation {
+    z-index: 2;
+    margin: -158px auto 0;
+    border-radius: 15px;
+    background: url('./assets/home_footer_bg.png') no-repeat;
+    background-size: 100%;
+    width: @min-width;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 52px 0 52px;
+
+    .invitation_left {
+        flex: 1;
+        h6 {
+            font-size: 30px;
+            color: #fff;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .invitation_build {
+            width: 470px;
+            font-size: 18px;
+            color: #fff;
+            margin: 40px 0 14px;
+            line-height: 28px;
+        }
+
+        .invitation_tags {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.26);
+            padding: 6px 15px;
+            border-radius: 8px;
+            width: 600px;
+
+            >span, > a {
+                color: #fff;
+                position: relative;
+                margin-right: 10px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: -7px;
+                    top: 4px;
+                    width: 1px;
+                    height: 10px;
+                    background: #fff;
+                }
+            }
+
+            >a:last-child {
+                &::after {
+                    content: '';
+                    width: 0;
+                }
+            }
+        }
+        .icon_email {
+            display: inline-block;
+            width: 11px;
+            height: 9px;
+            background: url('./assets/email.png') no-repeat;
+            background-size: 100%;
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+    }
+
+    .invitation_right {
+        display: flex;
+        align-items: center;
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            padding-top: 7px;
+            border-radius: 8px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .codeImg {
+            width: 100px;
+            height: 100px;
+        }
+
+        .code_title {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 12px;
+            margin-left: -13px;
+            i {
+                display: inline-block;
+                width: 12px;
+                height: 11px;
+                background: url('./assets/scan.png') center no-repeat;
+                background-size: 100%;
+                margin-right: 4px;
+            }
+        }
+        .code_img_pd {
+            background: #fff;
+            padding: 5px;
+            border-radius: 6px;
+            margin-bottom: 22px;
+        }
+    }
+}
+
+.build_luge {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    .now_build {
+        font-weight: bold;
+        font-size: 20px;
+        width: 100px;
+    }
+
+    .add_wetChat {
+        background: #333;
+        border-radius: 8px;
+        color: #fff;
+        padding: 6px 10px;
+    }
+}
+.tasksTopContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.anim_scroll {
+    position: fixed;
+    width: 100%;
+    top: 48px;
+    margin-top: 0;
+    height: calc(100% - 48px);
+    .tasksTopContainer {
+        position: fixed;
+        justify-content: flex-start;
+        top: 48px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        width: 1100px;
+        margin: auto;
+        overflow: hidden;
+        .tk_icon {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            z-index: 2;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            i {
+                position: absolute;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    background: url('./assets/icon_jian_tou.png') center no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        .left_icon {
+            display: none;
+            left: 0px;
+            transform: rotate(180deg);
+            background: #fff;
+            i {
+                right: 2px;
+                &:hover {
+                    border-radius: 50%;
+                    background: #fff;
+                    box-shadow: 0 -2px 4px rgba(0,0,0,.2);
+                }
+            }
+        }
+        .right_icon {
+            right: 0px;
+            background: #fff;
+            i {
+                right: 2px;
+                &:hover {
+                    border-radius: 50%;
+                    background: #fff;
+                    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+                }
+            }
+        }
+    }
+    .tasksTop {
+        position: relative;
+        display: flex;
+        width: 1108px;
+        transition: transform .16s linear;
+        .spanItem {
+            height: auto;
+            line-height: 40px;
+            height: 40px;
+            width: inherit;
+            white-space: nowrap;
+            text-overflow: initial;
+            overflow: initial;
+            padding: 0;
+        }
+        .spanWord {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 12px;
+            color: #000;
+            &:after {
+                right: -6px;
+            }
+        }
+        .checked::after {
+            right: -6px;
+        }
+        .spanOpacity {
+            display: none;
+        }
+    }
+    .cardsContent {
+        padding-top: 0;
+    }
+    .cardFieldContent {
+        height: calc(100% - 55px);
+        overflow-y: auto;
+        padding-top: 10px;
+    }
+    .taskTotal {
+        height: 100px;
+    }
+}

@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        
+    # react项目为npm run-script build，vue项目改为npm run build
+    - name: Install and Build
+      run: |
+        npm install
+        npm run build
+     
+    # react项目的FOLDER为build，vue项目改为dist
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: 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
+        BRANCH: gh-pages
+        FOLDER: build

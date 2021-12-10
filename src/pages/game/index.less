@@ -1,0 +1,110 @@
+@import '../../components/common/index.less';
+.taskCardContainer {
+    background: #F5F8FC;
+}
+.gameCards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 10px;
+    margin-left: -20px;
+    >li {
+        position: relative;
+        width: 353px;
+        height: 410px;
+        background: #fff;
+        border-radius: 15px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all .16s;
+        .isEndStatus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 27px;
+            top: 22px;
+            width: 50px;
+            height: 22px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 17px;
+            color: #fff;
+            background: rgba(255,255,255,.2);
+            z-index: 2;
+            border-radius: 4px;
+        }
+        a {
+            color: inherit;
+        }
+        img {
+            width: 100%;
+        }
+
+        .gameCardItem {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                padding: 14px 26px;
+
+                .title {
+                    font-weight: bold;
+                    font-size: 18px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .timer {
+                    color: #A6A6A6;
+                    font-size: 12px;
+                    margin-top: 6px;
+                }
+            }
+            .gameBottom {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 42px;
+            }
+
+            .gameNum {
+                font-size: 12px;
+                color: #A6A6A6;
+            }
+            .gameTheme {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 22px;
+                border-radius: 3px;
+                font-size: 12px;
+            }
+            .themeColor {
+                color: #57BFA3;
+                background: rgba(93, 204, 174, 0.12);
+            }
+            .normalColor {
+                color: #3D8FF7;
+                background: rgba(61, 143, 247, 0.12);
+            }
+        }
+        &:hover {
+            box-shadow: 0 2px 2px rgb(45 45 45 / 1%), 0 4px 4px rgb(49 49 49 / 2%), 0 8px 8px rgb(42 42 42 / 3%), 0 16px 16px rgb(32 32 32 / 4%);
+            transform: translateY(-3px);
+        }
+    }
+}
+.game_page {
+    margin-top: 50px;
+}
+.gameCardContainer {
+    width: 1100px;
+    margin: 50px auto 140px;
+    min-height: calc(100vh - 780px);
+}
