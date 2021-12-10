@@ -2,6 +2,7 @@
   "name": "luge-2.0",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://luge-ai.github.io/luge-ai",
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
     "@ant-design/pro-form": "^1.16.2",
