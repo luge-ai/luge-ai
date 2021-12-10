@@ -8,7 +8,7 @@ const dataIntro = props => {
     // console.log(pre);
     return (
         <div className=''>
-            {dataDetail.author && dataDetail.author[0] && (
+            {dataDetail.datasetId !== '26' && dataDetail.author && dataDetail.author[0] && (
                 <div className='intro_card'>
                     <h6 className='ab_title'>
                         <i className='icon_about'></i>作者

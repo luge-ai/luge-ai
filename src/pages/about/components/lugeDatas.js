@@ -6,6 +6,9 @@ import icon_wenbenxiangsidu from '../assets/icon_wenbenxiangsidu.png';
 import icon_yuyijiexi from '../assets/icon_yuyijiexi.png';
 import icon_jiqitongchuan from '../assets/icon_jiqitongchuan.png';
 import icon_xinxichouqu from '../assets/icon_xinxichouqu.png';
+import shi_ti_lian_jie from '../assets/shi_ti_lian_jie.png';
+import wen_ben_sheng_cheng from '../assets/wen_ben_sheng_cheng.png';
+import di_zi_yuan from '../assets/di_zi_yuan.png';
 
 const lugeCardsList = [
     {
@@ -46,17 +49,17 @@ const lugeCardsList = [
     {
         title: '实体链指',
         desc: '针对实体链指任务，收集和整理了DuEL数据集。',
-        icon: () => <img src={icon_xinxichouqu} alt='图片'/>
+        icon: () => <img src={shi_ti_lian_jie} alt='图片'/>
     },
     {
         title: '文本生成',
         desc: '从文案生成、摘要生成和问题生成三个任务，挑战文本生成结果与输入的事实一致性水平。',
-        icon: () => <img src={icon_xinxichouqu} alt='图片'/>
+        icon: () => <img src={wen_ben_sheng_cheng} alt='图片'/>
     },
     {
         title: '低资源语言翻译',
         desc: '针对多语种翻译面临的资源稀疏问题，整理了低资源语言翻译数据集，包含俄中，中俄，泰中，中泰，越中和中越六个方向的翻译任务。',
-        icon: () => <img src={icon_xinxichouqu} alt='图片'/>
+        icon: () => <img src={di_zi_yuan} alt='图片'/>
     },
 ];
 function LugeDatas() {

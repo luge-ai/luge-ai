@@ -33,7 +33,7 @@ function CardList(props) {
                             onClick={() => {
                                 window._hmt.push(['_trackEvent', '数据集卡片', `点击${item.datasetName}`]);
                             }}
-                            to={`/luge/dataDetail?id=${item.datasetId}&&taskName=${item.taskName}`}>
+                            to={`/luge/dataDetail?id=${item.datasetId}`}>
                             <div className='cardItem'>
                                 <div className='cardItemTop'>
                                     <span className='cardItemSign'>
@@ -51,14 +51,18 @@ function CardList(props) {
                                 <div className='cardBottom'>
                                     <span className='cardItemDetail'>
                                         {
-                                            item.author[0] &&
+                                            item.author[0] && item.datasetId !== '26' &&
                                             <>
-                                                <img
+                                                {item.author[0].logo && <img
                                                     className='card_logo'
-                                                    src={item.author[0].logo} alt='图片' />
+                                                    src={item.author[0].logo} alt='图片' />}
                                                 <span>{`${item.author[0].authorName}${item.author[0].authorName && item.author[0].company ? '.' : ''}`}</span>
                                                 {item.author[0].company}
                                             </>
+                                        }
+                                        {
+                                            item.datasetId === '26' &&
+                                            item.author.map(item => item.authorName).join('.')
                                         }
                                     </span>
                                 </div>

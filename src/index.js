@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 // import { WeirwoodErrorBoundary } from '@/components/common/weirwood';
 import { ConfigProvider } from 'antd';
@@ -15,13 +15,13 @@ moment.locale('zh-cn');
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             {/* <WeirwoodErrorBoundary> */}
                 <ConfigProvider locale={zhCN}>
                     <App />
                 </ConfigProvider>
             {/* </WeirwoodErrorBoundary> */}
-        </BrowserRouter>
+        </HashRouter>
     </Provider>,
     document.getElementById('root')
 );

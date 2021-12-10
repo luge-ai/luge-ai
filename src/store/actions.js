@@ -29,6 +29,16 @@ export const actions = {
                                 type: '资讯',
                                 desc: '“千言”计划发布',
                                 url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
+                            },
+                            {
+                                type: '其它',
+                                desc: '如何加入千言技术专家',
+                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992437'
+                            },
+                            {
+                                type: '其它',
+                                desc: '如何使用千言数据集',
+                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992438'
                             }
                         ],
                         gamesMessNormal: {

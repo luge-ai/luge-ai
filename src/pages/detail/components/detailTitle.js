@@ -2,6 +2,14 @@ import React, { memo, lazy, useState } from 'react';
 import {message} from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import {formatDate} from '../../..//utils/index';
+import detail_icon1 from '../assets/img/detail_icon1.png';
+import detail_icon2 from '../assets/img/detail_icon2.png';
+import detail_icon3 from '../assets/img/detail_icon3.png';
+import detail_icon4 from '../assets/img/detail_icon4.png';
+import detail_icon5 from '../assets/img/detail_icon5.png';
+import load_icon from '../assets/img/load_icon.png';
+import share_icons from '../assets/img/share_icons.png';
+// import share_load_icon from '../assets/img/share_load_icon.svg';
 const BaiduRule = lazy(() => import('../../../components/common/BaiduRule'));
 
 const DetailTitle = props => {
@@ -27,44 +35,44 @@ const DetailTitle = props => {
                     <CopyToClipboard
                         text={dataDetail.downUrl}
                         onCopy={copyHandle}>
-                        <span className='to_share'>分享</span>
+                        <span className='to_share'><img src={share_icons} alt=''/>分享</span>
                     </CopyToClipboard>
                    <span className='to_load' onClick={() => {
                         handleUserDetail(true);
-                    }}>下载</span>
+                    }}><img src={load_icon} alt=''/>下载</span>
                </div>
             </div>
             <ul className='detail_card'>
                 <li className='detail_card_li'>
-                    <img src={require('../assets/img/detail_icon1.png')} alt='' />
+                    <img src={detail_icon1} alt='' />
                     <span className='d_card_item'>
                         <strong>{dataDetail.taskName}</strong>
                         <span>任务类型</span>
                     </span>
                 </li>
                 <li className='detail_card_li'>
-                    <img src={require('../assets/img/detail_icon2.png')} alt='' />
+                    <img src={detail_icon2} alt='' />
                     <span className='d_card_item'>
                         <strong>{dataDetail.downTimes}</strong>
                         <span>下载量</span>
                     </span>
                 </li>
                 <li className='detail_card_li'>
-                    <img src={require('../assets/img/detail_icon3.png')} alt='' />
+                    <img src={detail_icon3} alt='' />
                     <span className='d_card_item'>
                         <strong>{dataDetail.size}</strong>
                         <span>数据集大小</span>
                     </span>
                 </li>
                 <li className='detail_card_li'>
-                    <img src={require('../assets/img/detail_icon4.png')} alt=''/>
+                    <img src={detail_icon4} alt=''/>
                     <span className='d_card_item'>
                         <strong>{dataDetail.license === '0' ? '学术' : '商业'}</strong>
                         <span>使用权限</span>
                     </span>
                 </li>
                 <li className='detail_card_li'>
-                    <img src={require('../assets/img/detail_icon5.png')} alt='' />
+                    <img src={detail_icon5} alt='' />
                     <span className='d_card_item'>
                         <strong>{dataDetail.feature}</strong>
                         <span>特点</span>

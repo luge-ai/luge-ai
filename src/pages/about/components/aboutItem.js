@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ab_bg from '../assets/ab_bg.png';
+import task_bg_line from '@/pages/task/assets/task_bg_line.png';
+import about_video from '../assets/about_video.mp4';
 
 const content = [
     '目前的许多自然语言处理技术的研发大多数只关注模型在单一数据集上的效果，',
@@ -64,10 +66,13 @@ function AboutItem() {
     return (
         <div className='aboutContainer'>
             <div className='taskItemContainer'>
-                <strong>关于千言</strong>
-                <p>
-                    目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
-                </p>
+                <img src={task_bg_line} alt='' />
+                <div className='taskItem_about'>
+                    <strong>关于千言</strong>
+                    <p>
+                        目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
+                    </p>
+                </div>
             </div>
             <div className='aboutContent'>
                 <h6 className='ab_title'>
@@ -97,7 +102,7 @@ function AboutItem() {
             <div className='luge_video'>
                 <video
                     ref={lugeVideoRef}
-                    src={require('../assets/about_video.mp4')}
+                    src={about_video}
                     preload='auto'
                     className='luge_video_img'
                     controls

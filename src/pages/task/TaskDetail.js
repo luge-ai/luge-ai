@@ -1,4 +1,5 @@
 import React, { memo, useMemo, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import './index.less';
 import CardList from '../../components/common/CardList';
@@ -10,13 +11,13 @@ import Footer from '../../components/Layout/footer';
 const TaskTitleArea = props => {
     const { params, taskTypes } = props;
     const taskTypesItem = taskTypes.find(
-        item => item.taskId === params.taskId
+        item => +item.taskId === +params.taskId
     );
     return (
         <div className='task_title_top'>
-            <strong className='task_detail_title'>{taskTypesItem.name}</strong>
+            <strong className='task_detail_title'>{taskTypesItem && taskTypesItem.name}</strong>
             <span className='task_detail_desc'>
-                {taskTypesItem.description}
+                {taskTypesItem && taskTypesItem.description}
                 {/* <a href='#'>展开更多<RightOutlined /></a> */}
             </span>
         </div>
@@ -40,28 +41,28 @@ const PageFooter = props => {
     return (
         <div className='task_pages'>
             {taskTypes[prev] && (
-                <span
+                <Link
                     className='task_page_item task_left'
                     onClick={() => {
                         window._hmt.push(['_trackEvent', '任务详情', `上一个任务:${taskTypes[prev].name}`]);
-                        window.location.href = `/luge/task/taskDetail?taskId=${taskTypes[prev].taskId}`;
                     }}
+                    to={`/luge/task/taskDetail?taskId=${taskTypes[prev].taskId}`}
                 >
                     <i></i>
                     {taskTypes[prev].name}
-                </span>
+                </Link>
             )}
             {taskTypes[next] && (
-                <span
+                <Link
                     className='task_page_item icon_right'
                     onClick={() => {
                         window._hmt.push(['_trackEvent', '任务详情', `下一个任务:${taskTypes[next].name}`]);
-                        window.location.href = `/luge/task/taskDetail?taskId=${taskTypes[next].taskId}`;
                     }}
+                    to={`/luge/task/taskDetail?taskId=${taskTypes[next].taskId}`}
                 >
                     {taskTypes[next].name}
                     <i></i>
-                </span>
+                </Link>
             )}
         </div>
     );
@@ -69,7 +70,7 @@ const PageFooter = props => {
 const TaskDetail = () => {
     const dispatch = useDispatch();
     const params = useMemo(() => {
-        return parseUrl(window.location.search);
+        return parseUrl(window.location.hash);
     }, []);
     // console.log(params);
     useMemo(() => {

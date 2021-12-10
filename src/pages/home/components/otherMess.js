@@ -4,6 +4,9 @@ import {ArrowRightOutlined} from '@ant-design/icons';
 import {getRankList, getGameList} from '../../../base/request';
 import {formatDate} from '../../../utils/index';
 import { Link } from 'react-router-dom';
+import game_01 from '../assets/game_01.png';
+import game_02 from '../assets/game_02.png';
+import game_03 from '../assets/game_03.png';
 
 const TaskDesc =  memo(props => {
     const {taskType} = props;
@@ -25,9 +28,9 @@ const GamesCard = memo(props => {
     let {taskType} = props;
     const [rankData, setRankData] = useState({top: []});
     const imgs = [
-        require('../assets/game_01.png'),
-        require('../assets/game_02.png'),
-        require('../assets/game_03.png')
+        game_01,
+        game_02,
+        game_03
     ];
     useMemo(async () => {
         const res = await getRankList({taskId: taskType.current.taskId});
@@ -173,7 +176,7 @@ const OtherMess = props => {
         shallowEqual
     );
     return (
-        <div className='othersMess' style={{height: taskType.current.taskId ? '544px' : '510px'}}>
+        <div className='othersMess' style={{height: taskType.current.taskId ? '610px' : '590px'}}>
             {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} /> }
             {taskType.current.taskId &&
                 <GamesCard

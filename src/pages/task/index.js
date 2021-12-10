@@ -1,26 +1,33 @@
 import React, {memo, useMemo, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import './index.less';
 import Nav from '../../components/Layout/nav';
 import Footer from '../../components/Layout/footer';
 import {actions} from '../../store/actions';
+import task_bg_line from '@/pages/task/assets/task_bg_line.png';
+import data_icon from './assets/data_icon.svg';
 
 const TaskItem = memo(() => {
     return (
         <div className='taskItemContainer'>
-            <strong>任务</strong>
-            <p>
-                目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
-            </p>
+            <img src={task_bg_line} alt='' />
+            <div className='taskItem_about'>
+                <strong>任务</strong>
+                <p>
+                    目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
+                </p>
+            </div>
         </div>
     );
 });
 
 const TaskCard = memo(() => {
     const taskCards = useSelector(item => item.dataList.taskList, shallowEqual);
+    console.log(taskCards);
     const handleToDetail = item => {
         window._hmt.push(['_trackEvent', '任务', `点击具体任务：${item.name}`]);
-        window.location.href = `/luge/task/taskDetail?taskId=${item.taskId}`;
+        // window.location.hash = `/luge/task/taskDetail?taskId=${item.taskId}`;
     };
     return (
         <div className='taskCard'>
@@ -32,26 +39,30 @@ const TaskCard = memo(() => {
                                 handleToDetail(item);
                             }}
                         >
-                        <div className='initItem'>
-                            <img src={item.logo} alt='' />
-                            <div className='cardContent'>
-                                <strong>{item.name}</strong>
-                                <span>
-                                    {item.datasetCnt}
-                                    <i className='data_icon'></i>
-                                </span>
+                        <Link to={`/luge/task/taskDetail?taskId=${item.taskId}`}>
+                            <div className='initItem'>
+                                <img src={item.logo} alt='' />
+                                <div className='cardContent'>
+                                    <strong>{item.name}</strong>
+                                    <span>
+                                        {item.datasetCnt}
+                                        {/* <i className='data_icon'></i> */}
+                                        <img src={data_icon} alt='' className='data_icon'/> 
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div className='hoverItemShow'>
-                            <div className='hoverItemShowContent'>
-                                <strong className='hoverTitle'>{item.name}</strong>
-                                <span className='hoverNum'>
-                                    {item.datasetCnt}
-                                    <i className='data_icon'></i>
-                                </span>
-                                <div className='hoverDesc'>{item.description}</div>
+                            <div className='hoverItemShow'>
+                                <div className='hoverItemShowContent'>
+                                    <strong className='hoverTitle'>{item.name}</strong>
+                                    <span className='hoverNum'>
+                                        {item.datasetCnt}
+                                        {/* <i className='data_icon'></i> */}
+                                        <img src={data_icon} alt='' className='data_icon'/> 
+                                    </span>
+                                    <div className='hoverDesc'>{item.description}</div>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </li>)
                 )}
                 <li className='moreTask'>

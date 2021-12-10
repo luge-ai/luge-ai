@@ -11,9 +11,9 @@ import {parseUrl} from '../../utils/index';
 const Detail = memo(() => {
     // getDateSetDetail
     const params = useMemo(() => {
-        return parseUrl(window.location.search);
+        return parseUrl(window.location.hash);
     }, []);
-    // console.log(params);
+    console.log(params);
     const [dataDetail, setDataDetail] = useState({});
     useMemo(async () => {
         let dataSetDetail = await getDateSetDetail(params);

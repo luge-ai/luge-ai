@@ -5,10 +5,13 @@ import {parseUrl, formatDate} from '../../utils/index';
 import './index.less';
 import Nav from '../../components/Layout/nav';
 import Footer from '../../components/Layout/footer';
+import game_01 from '../home/assets/game_01.png';
+import game_02 from '../home/assets/game_02.png';
+import game_03 from '../home/assets/game_03.png';
 // import {ArrowDownOutlined} from '@ant-design/icons';
 function RankDetail() {
     const params = useMemo(() => {
-        return parseUrl(window.location.search);
+        return parseUrl(window.location.hash);
     }, []);
     const [rankDetailData, setRankDetailData] = useState([]);
     const [gameData, setGameData] = useState({});
@@ -26,21 +29,21 @@ function RankDetail() {
             key: 'teamName',
             // fixed: 'left',
             // width: 180
-        },
-        {
-            title: 'Score',
-            dataIndex: 'score',
-            key: 'score',
-            // fixed: 'left',
-            width: 80
         }
+        // {
+        //     title: 'Score',
+        //     dataIndex: 'score',
+        //     key: 'score',
+        //     // fixed: 'left',
+        //     width: 80
+        // }
     ]);
     useMemo(() => {
         getRankDetail(params).then(res => {
             const dataLists = [];
             const {list} = res.data;
             for (let key in JSON.parse(list[0].result)) {
-                if (key !== 'Score') {
+                if (key !== 'Score' && key !== 'score') {
                     columns.push({
                         title: key,
                         dataIndex: key,
@@ -48,6 +51,15 @@ function RankDetail() {
                         // width: 130
                     });
                 }
+            }
+            if (![65, 66, 67, 105].includes(+params.matchId)) {
+                columns.push({
+                    title: 'Score',
+                    dataIndex: 'score',
+                    key: 'score',
+                    // fixed: 'left',
+                    width: 80
+                });
             }
             columns.push({
                 title: '提交时间',
@@ -68,13 +80,13 @@ function RankDetail() {
                 };
             }
             if (dataLists[0]) {
-                dataLists[0].rank = <img src={require('../home/assets/game_01.png')} alt='' />;
+                dataLists[0].rank = <img src={game_01} alt='' />;
             }
             if (dataLists[1]) {
-                dataLists[1].rank = <img src={require('../home/assets/game_02.png')} alt='' />;
+                dataLists[1].rank = <img src={game_02} alt='' />;
             }
             if (dataLists[2]) {
-                dataLists[2].rank = <img src={require('../home/assets/game_03.png')} alt='' />;
+                dataLists[2].rank = <img src={game_03} alt='' />;
             }
             setRankDetailData(dataLists);
             setGameData({

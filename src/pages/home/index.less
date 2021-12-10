@@ -389,18 +389,28 @@
     position: relative;
 }
 .invitation {
+    position: relative;
     z-index: 2;
     margin: -158px auto 0;
     border-radius: 15px;
-    background: url('./assets/home_footer_bg.png') no-repeat;
-    background-size: 100%;
     width: @min-width;
     height: 280px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 52px 0 52px;
-
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .invitation_content {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 52px 0 52px;
+        width: 100%;
+    }
     .invitation_left {
         flex: 1;
         h6 {

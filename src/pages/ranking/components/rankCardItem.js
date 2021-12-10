@@ -1,14 +1,17 @@
 import React, {memo} from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import game_01 from '../../home/assets/game_01.png';
+import game_02 from '../../home/assets/game_02.png';
+import game_03 from '../../home/assets/game_03.png';
 
 
 function RankCardItem(props) {
     let {gamesMessNormalItem} = props;
     const imgs = [
-        require('../../home/assets/game_01.png'),
-        require('../../home/assets/game_02.png'),
-        require('../../home/assets/game_03.png')
+        game_01,
+        game_02,
+        game_03
     ];
     const pushData = gamesMessNormalItem => {
         window._hmt.push(['_trackEvent', '排行榜', `${gamesMessNormalItem.matchName}-查看全部`]);
