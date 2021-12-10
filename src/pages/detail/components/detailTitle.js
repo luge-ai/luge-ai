@@ -33,7 +33,7 @@ const DetailTitle = props => {
                </div>
                <div className='detail_top_right'>
                     <CopyToClipboard
-                        text={dataDetail.downUrl}
+                        text={window.location.href}
                         onCopy={copyHandle}>
                         <span className='to_share'><img src={share_icons} alt=''/>分享</span>
                     </CopyToClipboard>
