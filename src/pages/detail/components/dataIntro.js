@@ -133,8 +133,11 @@ const dataIntro = props => {
                     <h6 className='ab_title'>
                         <i className='icon_about'></i>基线系统
                     </h6>
-                    {dataDetail.sys.desc && <div className='basic_system_content'>
-                        {dataDetail.sys.desc}
+                    {dataDetail.sys.desc &&
+                    <div className='basic_system_content'
+                        dangerouslySetInnerHTML={{ // bca-disable-line
+                            __html: dataDetail.sys.desc
+                        }}>
                     </div>}
                     {
                         dataDetail.sys.demo && dataDetail.sys.demo.map((subItem, index) => (

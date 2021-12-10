@@ -49,7 +49,7 @@ const AboutDataList = props => {
         const res = await getDataSetList({taskId: dataDetail.taskId});
         const data = res.data.list.filter((item, index) => item.datasetId !== dataDetail.datasetId && index < 4);
         setDataSetList(data || []);
-    }, [dataDetail.taskId, dataDetail.datasetId]);
+    }, [dataDetail.datasetId, dataDetail.taskId]);
     return (
         <>
             {dataSetList.length &&
