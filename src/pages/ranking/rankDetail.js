@@ -42,6 +42,13 @@ function RankDetail() {
         getRankDetail(params).then(res => {
             const dataLists = [];
             const {list} = res.data;
+            if (![65, 66, 67, 105].includes(+params.matchId)) {
+                columns.push({
+                    title: 'Score',
+                    dataIndex: 'score',
+                    key: 'score'
+                });
+            }
             for (let key in JSON.parse(list[0].result)) {
                 if (key !== 'Score' && key !== 'score') {
                     columns.push({
@@ -51,15 +58,6 @@ function RankDetail() {
                         // width: 130
                     });
                 }
-            }
-            if (![65, 66, 67, 105].includes(+params.matchId)) {
-                columns.push({
-                    title: 'Score',
-                    dataIndex: 'score',
-                    key: 'score',
-                    // fixed: 'left',
-                    width: 80
-                });
             }
             columns.push({
                 title: '提交时间',
