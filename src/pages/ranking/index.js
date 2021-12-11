@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import './index.less';
 import Nav from '../../components/Layout/nav';
 import Footer from '../../components/Layout/footer';
-import Banner from './components/banner';
+// import Banner from './components/banner';
+import CommonTitle from '../../components/common/CommonTitle';
 import RankCard from './components/rankCard';
 
 function Ranking() {
@@ -12,7 +13,7 @@ function Ranking() {
     return (
         <div className='taskCardContainer'>
             <Nav />
-            <Banner />
+            <CommonTitle title='排行' />
             <RankCard />
             <Footer />
         </div>

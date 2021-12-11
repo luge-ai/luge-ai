@@ -5,22 +5,8 @@ import './index.less';
 import Nav from '../../components/Layout/nav';
 import Footer from '../../components/Layout/footer';
 import {actions} from '../../store/actions';
-import task_bg_line from '@/pages/task/assets/task_bg_line.png';
+import CommonTitle from '../../components/common/CommonTitle';
 import data_icon from './assets/data_icon.svg';
-
-const TaskItem = memo(() => {
-    return (
-        <div className='taskItemContainer'>
-            <img src={task_bg_line} alt='' />
-            <div className='taskItem_about'>
-                <strong>任务</strong>
-                <p>
-                    目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
-                </p>
-            </div>
-        </div>
-    );
-});
 
 const TaskCard = memo(() => {
     const taskCards = useSelector(item => item.dataList.taskList, shallowEqual);
@@ -99,7 +85,7 @@ function TaskIndex() {
         <div className='taskCardContainer'>
             <Nav />
             {/* <Back /> */}
-            <TaskItem />
+            <CommonTitle title='任务'/>
             <TaskCard />
             <Footer />
         </div>

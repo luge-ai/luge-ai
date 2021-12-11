@@ -5,8 +5,7 @@ import { getGameList } from '../../base/request';
 import {formatDate} from '../../utils/index';
 import { Pagination } from 'antd';
 import './index.less';
-import task_bg_line from '@/pages/task/assets/task_bg_line.png';
-
+import CommonTitle from '../../components/common/CommonTitle';
 
 const tabs = [
     {
@@ -119,26 +118,12 @@ const GameCard = memo(() => {
     );
 });
 
-const GameItem = memo(() => {
-    return (
-        <div className='taskItemContainer'>
-            <img src={task_bg_line} alt='' />
-            <div className='taskItem_about'>
-                <strong>比赛</strong>
-                <p>
-                    目前，千言平台已经针对10个任务，汇集了来自14所高校和企业的36个开源数据集。
-                </p>
-            </div>
-        </div>
-    );
-});
-
 const GameIndex = () => {
     return (
         <div className='taskCardContainer'>
             <Nav />
             {/* <Back /> */}
-            <GameItem />
+            <CommonTitle title='比赛'/>
             <GameCard />
             <Footer />
         </div>
