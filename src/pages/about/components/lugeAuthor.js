@@ -137,7 +137,7 @@ function lugeAuthor() {
                                     {item.icon()}
                                     <label>
                                         {item.name}
-                                        <i>等</i>
+                                        {/* <i>等</i> */}
                                     </label>
                                     <span className='luge_word'>{item.source}</span>
                                 </span>
