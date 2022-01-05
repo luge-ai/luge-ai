@@ -17,6 +17,11 @@ export const actions = {
                         announcements: [
                             {
                                 type: 'HOT',
+                                desc: '千言数据集项目全面升级',
+                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/993142'
+                            },
+                            {
+                                type: 'HOT',
                                 desc: '情感分析2.0升级',
                                 url: 'https://mp.weixin.qq.com/s/NRlCs9CSFNw31V_cFjzV7Q'
                             },
@@ -25,11 +30,11 @@ export const actions = {
                                 desc: '千言pip安装包发布',
                                 url: 'https://github.com/luge-ai/luge-pip'
                             },
-                            {
-                                type: '资讯',
-                                desc: '“千言”计划发布',
-                                url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
-                            },
+                            // {
+                            //     type: '资讯',
+                            //     desc: '“千言”计划发布',
+                            //     url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
+                            // },
                             {
                                 type: '其它',
                                 desc: '如何加入千言技术专家',

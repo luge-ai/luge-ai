@@ -97,7 +97,9 @@ const PlatformCard = memo(props => {
                                 }}
                                 href={item.url}
                                 rel="noopener noreferrer"
-                                target='_blank'>
+                                target='_blank'
+                                className={item.type === 'HOT' ? 'hot_cls' : ''}
+                            >
                                 <span className='icon'>{item.type}</span>
                                 {item.desc}
                             </a>
