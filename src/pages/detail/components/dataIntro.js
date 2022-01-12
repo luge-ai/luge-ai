@@ -68,8 +68,8 @@ const dataIntro = props => {
                 </h6>
                 <div className='intro_relize_content'
                     dangerouslySetInnerHTML={{ // bca-disable-line
-                            __html: dataDetail.detail && dataDetail.detail.replace(/\n/g, '</br>')
-                        }}
+                         __html: dataDetail.detail && dataDetail.detail.replace(/\n/g, '</br>')
+                    }}
                 ></div>
             </div>
             {dataDetail.pre &&

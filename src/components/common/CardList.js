@@ -39,9 +39,11 @@ function CardList(props) {
                                     <span className='cardItemSign'>
                                         {item.label}
                                     </span>
-                                    <strong className='cardItemTitle'>
-                                        {item.datasetName}
-                                    </strong>
+                                    <strong
+                                        dangerouslySetInnerHTML={{ // bca-disable-line
+                                            __html: item.datasetName.replace(/##1/g, '<i>').replace(/1##/g, '</i>')
+                                        }}
+                                        className='cardItemTitle'></strong>
                                     <span className='cardItemNum'>
                                         {/* <VerticalAlignBottomOutlined /> */}
                                         <i className='icon_load'></i>

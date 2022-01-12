@@ -66,7 +66,11 @@ const AboutDataList = props => {
                                     to={`/luge/dataDetail?id=${item.datasetId}`}
                                     className='data_footer_cards_item'>
                                     <span className='data_feel_sign'>{item.label}</span>
-                                    <strong className='data_feel_title'>{item.datasetName}</strong>
+                                    <strong className='data_feel_title'
+                                        dangerouslySetInnerHTML={{ // bca-disable-line
+                                            __html: item.datasetName.replace(/##1/g, '<i>').replace(/1##/g, '</i>')
+                                        }}
+                                    ></strong>
                                     <span className='cardItemNum'>
                                         <span className='card_data_icon'></span>
                                         {item.downTimes}

@@ -10,7 +10,7 @@ import data_icon from './assets/data_icon.svg';
 
 const TaskCard = memo(() => {
     const taskCards = useSelector(item => item.dataList.taskList, shallowEqual);
-    console.log(taskCards);
+    // console.log(taskCards);
     const handleToDetail = item => {
         window._hmt.push(['_trackEvent', '任务', `点击具体任务：${item.name}`]);
         // window.location.hash = `/luge/task/taskDetail?taskId=${item.taskId}`;

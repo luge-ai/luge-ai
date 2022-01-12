@@ -27,7 +27,11 @@ const DetailTitle = props => {
         <div className='detail_title_container'>
             <div className='detail_top'>
                <div className='detail_top_left'>
-                    <strong className='detail_title'>{dataDetail.name}</strong>
+                    <strong className='detail_title'
+                        dangerouslySetInnerHTML={{ // bca-disable-line
+                            __html: dataDetail.name && dataDetail.name.replace(/##1/g, '<i>').replace(/1##/g, '</i>')
+                        }}
+                    ></strong>
                     <span className='detail_desc'>{dataDetail.description}</span>
                     <span className='detail_time'>发布时间：{formatDate(dataDetail.publishDate * 1000, true)}</span>
                </div>
