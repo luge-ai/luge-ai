@@ -9,6 +9,7 @@ const About = lazy(() => import('../pages/about'));
 const Ranking = lazy(() => import('../pages/ranking/index'));
 const RankDetail = lazy(() => import('../pages/ranking/rankDetail'));
 const TaskDetail = lazy(() => import('../pages/task/TaskDetail'));
+const MatchIndex = lazy(() => import('../pages/match'));
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/luge/ranking/rankDetail" exact component={RankDetail} />
                 <Route path="/luge/dataDetail" exact component={DataDetail} />
                 <Route path="/luge/task/taskDetail" exact component={TaskDetail} />
+                <Route path="/luge/match" exact component={MatchIndex} />
                 <Redirect to="/" />
             </Switch>
         </Suspense>

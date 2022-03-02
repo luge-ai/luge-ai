@@ -60,6 +60,10 @@ function Nav() {
                     </div>
                 </div>
                 <div className='luge_nav_right'>
+                    <Link className='match_icon' to={'/luge/match'}>
+                        <span className='match_word'>语言与智能技术竞赛</span>
+                        <i className='icon_fire'></i>
+                    </Link>
                     <a
                         onClick={
                             () => {
