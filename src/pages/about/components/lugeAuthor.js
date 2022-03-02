@@ -1,6 +1,7 @@
 import React from 'react';
 import qin_li_po from '../assets/uses/qin_li_po.png';
 import baidu_zhangyimin from '../assets/uses/baidu_zhangyimin.png';
+import baidu_zhangzihao from '../assets/uses/zhang_zi_hao.png';
 
 const lugeAuthorList = [
     {
@@ -104,6 +105,12 @@ const lugeBudaos = [
         icon: () => <img src={baidu_zhangyimin}  alt='图片'/>,
         name: '张一鸣',
         source: '百度',
+        url: ''
+    },
+    {
+        icon: () => <img src={baidu_zhangzihao}  alt='图片'/>,
+        name: '张子豪',
+        source: 'OpenMMLab',
         url: ''
     }
 ];
