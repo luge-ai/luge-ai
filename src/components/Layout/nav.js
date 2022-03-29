@@ -9,13 +9,14 @@ const navTitles = [
     { name: '讨论', url: 'https://aistudio.baidu.com/paddle/forum/topic/list?boardId=235', type: 1 },
     { name: '关于千言', url: '/luge/about', checked: '#/luge/about' },
 ];
-function Nav() {
+function Nav(props) {
     let urlStatus = (checked) => window.location.hash === checked;
+    const {game} = props;
     return (
         <div className='lugeNav'>
             <div className='luge_nav_content'>
                 <div className='luge_nav_left'>
-                    <Link to='/' className='navTitleLogo'></Link>
+                    <Link to='/' className={['navTitleLogo', game ? 'new-logo' : ''].join(' ')}></Link>
                     <div className='navTitle'>
                         {navTitles.map(item => (
                             <>
@@ -70,7 +71,7 @@ function Nav() {
                                 window._hmt.push(['_trackEvent', '首页', `icon_github`]);
                             }
                         }
-                        className='icon_github'
+                        className={['icon_github', game ? 'new-icon_github' : ''].join(' ')}
                         href='https://github.com/luge-ai/luge-ai'
                         rel="noopener noreferrer"
                         target='_blank'> </a>
@@ -80,7 +81,7 @@ function Nav() {
                                 window._hmt.push(['_trackEvent', '首页', `icon_gitee`]);
                             }
                         }
-                        className='icon_gitee'
+                        className={['icon_gitee', game ? 'new-icon_gitee' : ''].join(' ')}
                         href='https://gitee.com/luge-ai/luge-ai'
                         target='_blank'
                         rel="noopener noreferrer"> </a>
