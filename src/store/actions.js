@@ -17,8 +17,8 @@ export const actions = {
                         announcements: [
                             {
                                 type: 'HOT',
-                                desc: '千言数据集项目全面升级',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/993142'
+                                desc: 'NAACL2022 机器同传竞赛',
+                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/148/0/introduction'
                             },
                             {
                                 type: 'HOT',
