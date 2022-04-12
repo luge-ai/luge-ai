@@ -17,13 +17,13 @@ export const actions = {
                         announcements: [
                             {
                                 type: 'HOT',
-                                desc: 'NAACL2022 机器同传竞赛',
-                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/148/0/introduction'
+                                desc: '2022语言与智能技术竞赛',
+                                url: 'http://lic2022.cipsc.org.cn/'
                             },
                             {
                                 type: 'HOT',
-                                desc: '情感分析2.0升级',
-                                url: 'https://mp.weixin.qq.com/s/NRlCs9CSFNw31V_cFjzV7Q'
+                                desc: 'NAACL2022 机器同传竞赛',
+                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/148/0/introduction'
                             },
                             {
                                 type: '工具',
