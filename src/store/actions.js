@@ -38,12 +38,12 @@ export const actions = {
                             {
                                 type: '其它',
                                 desc: '如何加入千言技术专家',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992437'
+                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729200'
                             },
                             {
                                 type: '其它',
                                 desc: '如何使用千言数据集',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992438'
+                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729201'
                             }
                         ],
                         gamesMessNormal: {
