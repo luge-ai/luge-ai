@@ -22,8 +22,13 @@ export const actions = {
                             },
                             {
                                 type: 'HOT',
-                                desc: 'NAACL2022 机器同传竞赛',
-                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/148/0/introduction'
+                                desc: '中文医疗推理数据集上线',
+                                url: 'https://www.luge.ai/#/luge/dataDetail?id=40'
+                            },
+                            {
+                                type: 'HOT',
+                                desc: 'CCKS通用信息抽取竞赛',
+                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/161/0/introduction'
                             },
                             {
                                 type: '工具',
@@ -40,11 +45,11 @@ export const actions = {
                                 desc: '如何加入千言技术专家',
                                 url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729200'
                             },
-                            {
-                                type: '其它',
-                                desc: '如何使用千言数据集',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729201'
-                            }
+                            // {
+                            //     type: '其它',
+                            //     desc: '如何使用千言数据集',
+                            //     url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729201'
+                            // }
                         ],
                         gamesMessNormal: {
                             title: '常规赛-排行榜',
