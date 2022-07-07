@@ -72,7 +72,7 @@ const GamesCard = memo(props => {
         </div>
     );
 });
-
+const signsCls = {HOT: 'hot_cls', NEW: 'new_cls'};
 const PlatformCard = memo(props => {
     let {announcements} = props;
     return (
@@ -98,7 +98,7 @@ const PlatformCard = memo(props => {
                                 href={item.url}
                                 rel="noopener noreferrer"
                                 target='_blank'
-                                className={item.type === 'HOT' ? 'hot_cls' : ''}
+                                className={signsCls[item.type]}
                             >
                                 <span className='icon'>{item.type}</span>
                                 {item.desc}

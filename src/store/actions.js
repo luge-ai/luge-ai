@@ -4,7 +4,6 @@ export const actions = {
         return async dispatch => {
             try {
                 const res = await getDataSetList(params);
-                // console.log(res);
                 dispatch({
                     type: 'datalist',
                     payload: {
@@ -16,40 +15,30 @@ export const actions = {
                     payload: {
                         announcements: [
                             {
-                                type: 'HOT',
-                                desc: '2022语言与智能技术竞赛',
-                                url: 'http://lic2022.cipsc.org.cn/'
+                                type: 'NEW',
+                                desc: '中文任务导向对话数据集',
+                                url: 'https://www.luge.ai/#/luge/dataDetail?id=43'
                             },
                             {
-                                type: 'HOT',
-                                desc: '中文医疗推理数据集上线',
-                                url: 'https://www.luge.ai/#/luge/dataDetail?id=40'
+                                type: 'NEW',
+                                desc: '多模态命名实体识别数据集',
+                                url: 'https://www.luge.ai/#/luge/dataDetail?id=42'
                             },
                             {
-                                type: 'HOT',
-                                desc: 'CCKS通用信息抽取竞赛',
-                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/161/0/introduction'
+                                type: 'NEW',
+                                desc: '中文个性情感对话数据集',
+                                url: 'https://www.luge.ai/#/luge/dataDetail?id=41'
                             },
                             {
                                 type: '工具',
                                 desc: '千言pip安装包发布',
                                 url: 'https://github.com/luge-ai/luge-pip'
                             },
-                            // {
-                            //     type: '资讯',
-                            //     desc: '“千言”计划发布',
-                            //     url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
-                            // },
                             {
                                 type: '其它',
                                 desc: '如何加入千言技术专家',
                                 url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729200'
-                            },
-                            // {
-                            //     type: '其它',
-                            //     desc: '如何使用千言数据集',
-                            //     url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729201'
-                            // }
+                            }
                         ],
                         gamesMessNormal: {
                             title: '常规赛-排行榜',
