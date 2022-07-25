@@ -6,7 +6,7 @@ const navTitles = [
     { name: '任务', url: '/luge/task', checked: '#/luge/task'},
     { name: '排行', url: '/luge/ranking', checked: '#/luge/ranking' },
     { name: '比赛', url: '/luge/game', checked: '#/luge/game' },
-    { name: '讨论', url: 'https://aistudio.baidu.com/paddle/forum/topic/list?boardId=235', type: 1 },
+    { name: '讨论', url: 'https://aistudio.baidu.com/aistudio/forum/topiclist?boardId=235', type: 1 },
     { name: '关于千言', url: '/luge/about', checked: '#/luge/about' },
 ];
 function Nav(props) {
