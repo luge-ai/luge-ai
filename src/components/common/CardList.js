@@ -2,12 +2,12 @@ import React from 'react';
 import { Pagination } from 'antd';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {actions} from '../../store/actions';
+import { actions } from '../../store/actions';
 import './index.less';
 // const UserDetail = lazy(() => import('@/components/common/UserDetail'));
 
 function CardList(props) {
-    const {cardsList, taskType, changeTab} = props;
+    const { cardsList, taskType, changeTab, tabType } = props;
     // const [visible, setVisible] = useState(false);
     // const usersRef = useRef(null);
     // const handleUserDetail = (status, item) => {
@@ -38,6 +38,7 @@ function CardList(props) {
                                 <div className='cardItemTop'>
                                     <span className='cardItemSign'>
                                         {item.label}
+                                        {index < 3 && <i>{tabType === 'new' ? '更新' : '热门'}</i>}
                                     </span>
                                     <strong
                                         dangerouslySetInnerHTML={{ // bca-disable-line
@@ -81,10 +82,6 @@ function CardList(props) {
                     />
                 </li>}
             </ul>
-            {/* <UserDetail
-                usersRef={usersRef}
-                visible={visible}
-                handleUserDetail={handleUserDetail} /> */}
         </>
     );
 }

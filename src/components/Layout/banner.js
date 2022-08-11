@@ -1,56 +1,26 @@
-import React, { useRef, memo, useEffect } from 'react';
-import firstVideoSrc from './assets/firstVideo.mp4';
-import secondVideo from './assets/secondVideo.mp4';
-import wordVideo from './assets/wordVideo.mp4';
+import React, { useState, memo, useEffect } from 'react';
+import { Carousel } from 'antd';
+import { useSelector } from 'react-redux';
 
 const Banner = props => {
-    const videoRef = useRef(null);
-    const videoRefSecond = useRef(null);
-    const logoRef = useRef(null);
-    const {bannerRef} = props;
-    useEffect(() => {
-        videoRef.current.addEventListener('ended', function () {
-            console.log('播放结束');
-            videoRef.current.style.display = 'none';
-            videoRefSecond.current.play();
-            videoRefSecond.current.style.display = 'block';
-        }, false);
-        setTimeout(() => {
-            if (logoRef.current) {
-                logoRef.current.className = 'banner_logo logo_admin';
-            }
-        }, 2200);
-    }, []);
+    const { bannerRef } = props;
+    const banners = useSelector(item => item.dataList.bannerList);
     return (
         <div className='nav-swiper' ref={bannerRef}>
             <div className='video_total'>
-                <video
-                    ref={videoRef}
-                    src={firstVideoSrc}
-                    muted
-                    autoPlay='autoplay'
-                    preload='auto'
-                    className='videoAnim videoImg'
-                ></video>
-                <video
-                    ref={videoRefSecond}
-                    src={secondVideo}
-                    style={{display: 'none'}}
-                    muted
-                    loop
-                    preload='auto'
-                    className='videoImg'
-                ></video>
-            </div>
-            <div className='video_content'>
-                <video
-                    src={wordVideo}
-                    muted
-                    autoPlay='autoplay'
-                    preload='auto'
-                    className='videoAnim wordAnim'
-                ></video>
-                <span className='banner_logo' ref={logoRef}></span>
+                <Carousel autoplay>
+                    {
+                        banners && banners.map(
+                            (item, index) => (
+                                <div className='banner_img' key={index}>
+                                    <a href={item.pageUrl} style={{ background: item.imgBg }}>
+                                        <img src={item.imgUrl} alt='' />
+                                    </a>
+                                </div>
+                            )
+                        )
+                    }
+                </Carousel>
             </div>
         </div>
     );

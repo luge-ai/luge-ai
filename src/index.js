@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 // import { WeirwoodErrorBoundary } from '@/components/common/weirwood';
 import { ConfigProvider } from 'antd';
@@ -17,9 +17,9 @@ ReactDOM.render(
     <Provider store={store}>
         <HashRouter>
             {/* <WeirwoodErrorBoundary> */}
-                <ConfigProvider locale={zhCN}>
-                    <App />
-                </ConfigProvider>
+            <ConfigProvider locale={zhCN}>
+                <App />
+            </ConfigProvider>
             {/* </WeirwoodErrorBoundary> */}
         </HashRouter>
     </Provider>,

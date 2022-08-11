@@ -21,29 +21,27 @@ const lugeItems = [
     '千言项目针对每个自然语言处理问题，均收集和整理多个开源数据集，',
     '进行统一的处理并提供统一的测评方式，帮助加速模型的研发。',
 ].join('');
-const cardsDataList = [
-    {
-        num: 10,
-        type: '任务',
-    },
-    {
-        num: (
-            <>
-                36<i>+</i>
-            </>
-        ),
-        type: '中文开源数据集',
-    },
-    {
-        num: () => <i className='common_data'></i>,
-        type: '统一数据格式和评测',
-    },
-    {
-        num: () => <i className='common_system'></i>,
-        type: '提供基线系统',
-    },
-];
-function AboutItem() {
+const cardsDataList = (applyEnter) => {
+    return [
+        {
+            num: applyEnter.taskNum,
+            type: '任务',
+        },
+        {
+            num: applyEnter.dataset,
+            type: '中文开源数据集',
+        },
+        {
+            num: () => <i className='common_data'></i>,
+            type: '统一数据格式和评测',
+        },
+        {
+            num: () => <i className='common_system'></i>,
+            type: '提供基线系统',
+        },
+    ];
+};
+function AboutItem({ applyEnter }) {
     const lugeVideoRef = useRef(null);
     const videoIconRef = useRef(null);
     const videoImgRef = useRef(null);
@@ -81,7 +79,7 @@ function AboutItem() {
                 <p>{lugeItems}</p>
             </div>
             <div className='luge_data_num'>
-                {cardsDataList.map((item, index) => (
+                {cardsDataList(applyEnter).map((item, index) => (
                     <span key={index}>
                         {typeof item.num !== 'function' && (
                             <strong>{item.num}</strong>

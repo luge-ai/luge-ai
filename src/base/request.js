@@ -33,3 +33,11 @@ export const getUserDetail = async params => {
 export const getRelateGame = async params => {
     return await getRequest('/luge/api/matchlast', params);
 };
+
+export const getBannerList = async params => {
+    return await getRequest('/luge/api/paddlecms?requestUrl=/luge/getBannerList', params);
+};
+
+export const getJoinList = async params => {
+    return await getRequest('/luge/api/paddlecms?requestUrl=/luge/joinList', params);
+};

@@ -1,4 +1,5 @@
 @import '@/styles/mixin.less';
+
 .aboutContainer {
     width: @min-width;
     margin: auto;
@@ -22,9 +23,11 @@
 
     .aboutContent {
         padding: 50px 0 30px;
+
         h6.ab_title {
             margin-bottom: 15px;
         }
+
         p {
             margin-bottom: 15px;
             font-size: 14px;
@@ -32,15 +35,18 @@
             word-break: break-all;
             line-height: 27px;
         }
+
         p:last-child {
             margin-bottom: 0;
         }
     }
 }
+
 .lugeDataContainer {
     width: @min-width;
     margin: 60px auto 30px;
 }
+
 .luge_data_num {
     display: flex;
     flex-direction: row;
@@ -56,10 +62,13 @@
         flex-direction: column;
         align-items: center;
         flex: 1;
+
         >strong {
             font-weight: bold;
             font-size: 48px;
             color: #18A0FB;
+            height: 70px;
+
             i {
                 font-style: normal;
                 color: #6DEED0;
@@ -74,16 +83,19 @@
         }
     }
 }
+
 .luge_video {
     position: relative;
     height: 618px;
     margin-top: 30px;
     border-radius: 10px;
     overflow: hidden;
+
     .luge_video_img {
         height: 618px;
         border-radius: 15px;
     }
+
     .videoImg {
         position: absolute;
         top: 0;
@@ -92,6 +104,7 @@
         margin-top: 0;
     }
 }
+
 .luge_player {
     position: absolute;
     left: 0;
@@ -104,13 +117,16 @@
     background: url('./assets/player_icon.png');
     cursor: pointer;
     transition: all .16s;
+
     &:hover {
         transform: scale(1.1);
     }
 }
+
 .lugeDataAuthContainer {
     width: @min-width;
     margin: 40px auto;
+
     .ab_title {
         >span {
             font-size: 14px;
@@ -119,6 +135,7 @@
         }
     }
 }
+
 .common_data {
     display: inline-block;
     width: 70px;
@@ -156,6 +173,7 @@
         margin-bottom: 20px;
         cursor: pointer;
         transition: border 0.16s;
+
         .data_author_a {
             width: 204px;
             height: 204px;
@@ -166,6 +184,7 @@
             color: inherit;
             margin-top: 0 !important;
         }
+
         span {
             margin-top: 20px;
         }
@@ -184,10 +203,11 @@
             color: #aaa;
             font-size: 14px;
         }
+
         .luge_word {
             height: 56px;
             font-size: 12px;
-            color: rgba(0,0,0,.4);
+            color: rgba(0, 0, 0, .4);
             margin-top: 8px;
             max-width: 150px;
             text-align: center;
@@ -200,9 +220,11 @@
             -webkit-box-orient: vertical;
             word-break: break-all;
         }
+
         .auto_h {
             height: auto;
         }
+
         label {
             font-size: 18px;
             color: #000;
@@ -210,6 +232,7 @@
             line-height: 1;
             font-weight: bold;
         }
+
         img {
             max-width: 35px;
             max-height: 35px;
@@ -219,6 +242,7 @@
     >li.data_author:hover {
         border-color: #18A0FB;
     }
+
     >li.data_author {
         img {
             width: 67px;
@@ -227,11 +251,13 @@
             max-width: 67px;
             max-height: 67px;
         }
+
         i {
             font-style: normal;
             font-size: 12px;
             margin-left: 4px;
         }
+
         .luge_word {
             height: auto;
         }
@@ -247,6 +273,7 @@
     border-radius: 8px;
     color: @color-fff;
     text-align: center;
+
     >h6 {
         font-size: 30px;
         text-align: center;
@@ -254,6 +281,7 @@
         font-weight: bold;
         margin-bottom: 20px;
     }
+
     p {
         width: 922px;
         margin: auto;
@@ -263,6 +291,7 @@
 .quick-container {
     width: 1100px;
     margin: 0 auto 100px;
+
     >h6 {
         font-size: 30px;
         text-align: center;
@@ -275,26 +304,31 @@
         flex-direction: column;
         width: 350px;
         cursor: pointer;
+
         &:hover {
             img {
                 transform: scale(1.2);
             }
         }
+
         >div {
             height: 196px;
             border-radius: 10px;
             overflow: hidden;
         }
+
         img {
-           height: 100%;
-           transition: all .16s;
+            height: 100%;
+            transition: all .16s;
         }
+
         >span {
             margin-top: 10px;
             line-height: 24px;
             color: rgba(0, 0, 0, .6);
             font-size: 14px;
         }
+
         label {
             color: #000;
             font-size: 20px;
@@ -322,6 +356,7 @@
         font-size: 30px;
         color: #999;
     }
+
     .learn_more {
         color: #18A0FB;
         font-size: 12px;
@@ -329,6 +364,7 @@
         margin-top: 50px;
     }
 }
+
 .to_task_list {
     display: flex;
     justify-content: center;
@@ -339,11 +375,13 @@
     border-radius: 8px;
     margin: 35px auto 0;
 }
+
 .luge_expert_list {
     display: flex;
     flex-wrap: wrap;
     margin-left: -20px;
     margin-top: 30px;
+
     .expert_item {
         display: flex;
         align-items: center;
@@ -352,18 +390,22 @@
         background: #FFFFFF;
         border-radius: 12px;
         padding: 20px;
+
         img {
             width: 60px;
             height: auto;
         }
+
         margin-left: 20px;
         margin-bottom: 20px;
     }
+
     .expert_right {
         display: flex;
         flex-direction: column;
         margin-left: 15px;
         height: 60px;
+
         span {
             display: flex;
             align-items: center;

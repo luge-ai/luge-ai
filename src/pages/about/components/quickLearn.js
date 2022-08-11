@@ -24,13 +24,14 @@ const quickList = [
         img: common_question
     }
 ]
-function quickLearn() {
+function quickLearn({ quickList }) {
+    const { lists } = quickList;
     return (
         <div className='quick-container'>
             <h6>快速上手</h6>
             <div className='quick-learn'>
                 {
-                    quickList.map((item, key) => (
+                    lists && lists.map((item, key) => (
                         <a
                             key={item.key}
                             href={item.url}

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import Types from '../../../components/common/Types';
 
 const TaskTypes = props => {
-    const {typesRef, leftRef, rightRef, taskType, changeTab} = props;
+    const { typesRef, leftRef, rightRef, taskType, changeTab } = props;
     const scrollContent = sign => {
         if (sign === 'right') {
             window._hmt.push(['_trackEvent', '任务类型', `点击右边箭头`]);
@@ -23,7 +23,7 @@ const TaskTypes = props => {
                 <span className='tk_icon left_icon'
                     onClick={() => {
                         scrollContent('left');
-                }} ref={leftRef}><i></i></span>
+                    }} ref={leftRef}><i></i></span>
                 <div className="tasksTop" ref={typesRef}>
                     <Types taskType={taskType} changeTab={changeTab} />
                 </div>

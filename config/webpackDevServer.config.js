@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
@@ -101,7 +101,21 @@ module.exports = function (proxy, allowedHost) {
     },
     public: allowedHost,
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
-    proxy,
+    proxy: [
+      {
+        context: ['/luge/'],
+        target: 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088',
+        changeOrigin: true,
+        logLevel: 'info'
+      },
+      {
+        context: ['/paddlecms'],
+        target: 'https://www.paddlepaddle.org.cn',
+        changeOrigin: true,
+        logLevel: 'info',
+        pathRewrite: { '^/paddlecms': 'platform' }
+      }
+    ],
     before(app, server) {
       // Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect
@@ -128,3 +142,5 @@ module.exports = function (proxy, allowedHost) {
     },
   };
 };
+
+

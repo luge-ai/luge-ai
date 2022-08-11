@@ -1,5 +1,5 @@
-import React, {memo, Suspense, lazy} from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import React, { memo, Suspense, lazy } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // const Home = lazy(() => import('@/pages/home'));
 import Home from '../pages/home';
 import DataDetail from '../pages/detail';
@@ -10,6 +10,7 @@ const Ranking = lazy(() => import('../pages/ranking/index'));
 const RankDetail = lazy(() => import('../pages/ranking/rankDetail'));
 const TaskDetail = lazy(() => import('../pages/task/TaskDetail'));
 const MatchIndex = lazy(() => import('../pages/match'));
+const JoinIndex = lazy(() => import('../pages/join'));
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/luge/dataDetail" exact component={DataDetail} />
                 <Route path="/luge/task/taskDetail" exact component={TaskDetail} />
                 <Route path="/luge/match" exact component={MatchIndex} />
+                <Route path="/luge/join" exact component={JoinIndex} />
                 <Redirect to="/" />
             </Switch>
         </Suspense>

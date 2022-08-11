@@ -1,4 +1,4 @@
-import {getTaskList, getDataSetList} from '../base/request';
+import { getTaskList, getDataSetList, getBannerList } from '../base/request';
 export const actions = {
     getDataList: params => {
         return async dispatch => {
@@ -11,68 +11,6 @@ export const actions = {
                         cardsList: res.data
                     }
                 });
-                dispatch({
-                    type: 'datalist',
-                    payload: {
-                        announcements: [
-                            {
-                                type: 'HOT',
-                                desc: 'NAACL2022 机器同传竞赛',
-                                url: 'https://aistudio.baidu.com/aistudio/competition/detail/148/0/introduction'
-                            },
-                            {
-                                type: 'HOT',
-                                desc: '情感分析2.0升级',
-                                url: 'https://mp.weixin.qq.com/s/NRlCs9CSFNw31V_cFjzV7Q'
-                            },
-                            {
-                                type: '工具',
-                                desc: '千言pip安装包发布',
-                                url: 'https://github.com/luge-ai/luge-pip'
-                            },
-                            // {
-                            //     type: '资讯',
-                            //     desc: '“千言”计划发布',
-                            //     url: 'https://mp.weixin.qq.com/s/oBMCHkUn4emTToT8014Mdg'
-                            // },
-                            {
-                                type: '其它',
-                                desc: '如何加入千言技术专家',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992437'
-                            },
-                            {
-                                type: '其它',
-                                desc: '如何使用千言数据集',
-                                url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992438'
-                            }
-                        ],
-                        gamesMessNormal: {
-                            title: '常规赛-排行榜',
-                            list: [
-                                {
-                                    url: require('../pages/home/assets/game_01.png'),
-                                    title: '第二界数据集大赛挑战赛-阅读理解分场比赛',
-                                    status: '进行中'
-                                },
-                                {
-                                    url: require('../pages/home/assets/game_02.png'),
-                                    title: '开放域对话挑战赛',
-                                    status: '进行中'
-                                },
-                                {
-                                    url: require('../pages/home/assets/game_03.png'),
-                                    title: '合作赛：第一届千言',
-                                    status: '待开始：2021.06.19'
-                                }
-                            ]
-                        },
-                        taskDetail: {
-                            title: '开放域对话',
-                            desc: '针对多种场景的对话任务：包括网络日常对话，情感对话，知识对话和有目标的开放域对话等任务'
-                        }
-                    }
-                });
-                // console.log(res.data);
             } catch (err) {
                 throw err;
             }
@@ -193,5 +131,28 @@ export const actions = {
                 ]
             }
         };
-    }
+    },
+    getLugeList: params => {
+        return async dispatch => {
+            const { result: {
+                pageData: {
+                    qianyanBanner: { bannerList },
+                    advertise,
+                    announcements: { lists },
+                    hotMatch,
+                    HomeRecommend
+                }
+            } } = await getBannerList();
+            dispatch({
+                type: 'datalist',
+                payload: {
+                    bannerList,
+                    advertise,
+                    announcements: lists,
+                    hotMatch,
+                    HomeRecommend: HomeRecommend.lists
+                }
+            });
+        };
+    },
 };

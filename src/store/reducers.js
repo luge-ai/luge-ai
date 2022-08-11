@@ -4,7 +4,7 @@ function createReducers(initialValue = {}) {
     return (state = initialValue, { type, payload } = {}) => {
         switch (type) {
             case type:
-                return {...state, ...payload};
+                return { ...state, ...payload };
             default:
                 return state;
         }
@@ -19,7 +19,11 @@ const initDataList = {
     announcements: [],
     gamesMessNormal: {},
     taskDetail: {},
-    taskList: []
+    taskList: [],
+    bannerList: [],
+    advertise: {},
+    hotMatch: {},
+    HomeRecommend: []
 };
 
 const combineReducersObj = {

@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navTitles = [
-    { name: '首页', url: '/', checked: '#/'},
-    { name: '任务', url: '/luge/task', checked: '#/luge/task'},
+    { name: '首页', url: '/', checked: '#/' },
+    { name: '任务', url: '/luge/task', checked: '#/luge/task' },
     { name: '排行', url: '/luge/ranking', checked: '#/luge/ranking' },
     { name: '比赛', url: '/luge/game', checked: '#/luge/game' },
-    { name: '讨论', url: 'https://aistudio.baidu.com/paddle/forum/topic/list?boardId=235', type: 1 },
+    { name: '讨论', url: 'https://aistudio.baidu.com/aistudio/forum/topiclist?boardId=235', type: 1 },
     { name: '关于千言', url: '/luge/about', checked: '#/luge/about' },
 ];
 function Nav(props) {
     let urlStatus = (checked) => window.location.hash === checked;
-    const {game} = props;
+    const { game } = props;
     return (
         <div className='lugeNav'>
             <div className='luge_nav_content'>

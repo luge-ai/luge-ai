@@ -1,15 +1,15 @@
 import React, { memo, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
-import {ArrowRightOutlined} from '@ant-design/icons';
-import {getRankList, getGameList} from '../../../base/request';
-import {formatDate} from '../../../utils/index';
+import { ArrowRightOutlined } from '@ant-design/icons';
+import { getRankList, getGameList } from '../../../base/request';
+import { formatDate } from '../../../utils/index';
 import game_01 from '../assets/game_01.png';
 import game_02 from '../assets/game_02.png';
 import game_03 from '../assets/game_03.png';
 
-const TaskDesc =  memo(props => {
-    const {taskType} = props;
+const TaskDesc = memo(props => {
+    const { taskType } = props;
     const localTasks = JSON.parse(localStorage.getItem('TaskType'));
     const taskDetail = localTasks.find(item => item.taskId === taskType.current.taskId);
     return (
@@ -25,23 +25,23 @@ const TaskDesc =  memo(props => {
 });
 
 const GamesCard = memo(props => {
-    let {taskType} = props;
-    const [rankData, setRankData] = useState({top: []});
+    let { taskType } = props;
+    const [rankData, setRankData] = useState({ top: [] });
     const imgs = [
         game_01,
         game_02,
         game_03
     ];
     useMemo(async () => {
-        const res = await getRankList({taskId: taskType.current.taskId});
+        const res = await getRankList({ taskId: taskType.current.taskId });
         if (res.data.list && res.data.list[0]) {
             setRankData(res.data.list[0]);
         }
     }, [taskType]);
     return (
-        <div className='platform' style={{height: '186px'}}>
+        <div className='platform' style={{ height: '210px' }}>
             <div className='platform-title'>
-                <span>常规赛-排行榜<Link
+                <span className='platform-title-top'><strong className='platform-title-name platform-title-name-other'>常规赛-排行榜</strong><Link
                     onClick={() => {
                         window._hmt.push(['_trackEvent', '首页-排行榜', `点击全部`]);
                     }}
@@ -56,7 +56,7 @@ const GamesCard = memo(props => {
                     rankData.top && rankData.top.map(
                         (item, index) => (
                             <li key={index}>
-                                <img src={imgs[index]} alt=''/>
+                                <img src={imgs[index]} alt='' />
                                 <div className='games_content'>
                                     <span className='ellipsis'>{item.teamName}</span>
                                     {/* <span className={
@@ -74,11 +74,11 @@ const GamesCard = memo(props => {
 });
 
 const PlatformCard = memo(props => {
-    let {announcements} = props;
+    let { announcements } = props;
     return (
         <div className='platform'>
             <div className='platform-title'>
-                <span>平台公告
+                <span className='platform-title-top'><strong className='platform-title-name'>平台公告</strong>
                     <a
                         onClick={() => {
                             window._hmt.push(['_trackEvent', '首页-平台公告', `点击全部`]);
@@ -98,7 +98,7 @@ const PlatformCard = memo(props => {
                                 href={item.url}
                                 rel="noopener noreferrer"
                                 target='_blank'
-                                className={item.type === 'HOT' ? 'hot_cls' : ''}
+                                className={item.type === 'Hot' ? 'hot_cls' : ''}
                             >
                                 <span className='icon'>{item.type}</span>
                                 {item.desc}
@@ -122,7 +122,7 @@ const GameMess = memo(() => {
     return (
         <div className='platform'>
             <div className='platform-title'>
-                <span>比赛信息
+                <span className='platform-title-top'><strong className='platform-title-name platform-title-name-other'>比赛信息</strong>
                     <Link
                         onClick={() => {
                             window._hmt.push(['_trackEvent', '首页-比赛信息', `点击全部`]);
@@ -145,7 +145,7 @@ const GameMess = memo(() => {
                                 rel="noopener noreferrer"
                                 target='_blank' className='game_li_link'>
                                 <div className='game_img'>
-                                    <img src={item.logo} alt=''/>
+                                    <img src={item.logo} alt='' />
                                 </div>
                                 <div className='games_content game_data_content'>
                                     <span className='data_ellipsis'>{item.name}</span>
@@ -171,22 +171,56 @@ const GameMess = memo(() => {
     );
 });
 
+const HotMatch = memo((props) => {
+    const { hotMatch } = props;
+    return (
+        <div className='platform'>
+            <div className='platform-title'>
+                <span className='platform-title-top'>
+                    <strong className='platform-title-name'>热门比赛</strong>
+                </span>
+            </div>
+            <div className='hot_match'>
+                <a href={hotMatch.pageUrl} target="_blank">
+                    <img src={hotMatch.imgUrl} alt="" />
+                </a>
+            </div>
+        </div>
+    )
+});
+
+const DataEnter = memo(({ hotMatch }) => {
+    return (
+        <div className='data_enter'>
+            <Link to='/luge/join' onClick={() => {
+                window._hmt.push(['_trackEvent', '首页-数据集征集', '数据集征集']);
+            }}>
+                <img src={hotMatch?.enterImgUrl} alt="" />
+            </Link>
+        </div>
+    )
+});
+
 const OtherMess = props => {
-    const {taskType} = props;
-    const { announcements, gamesMessNormal } = useSelector(
+    const { taskType } = props;
+    const { announcements, gamesMessNormal, hotMatch } = useSelector(
         item => item.dataList,
         shallowEqual
     );
     return (
-        <div className='othersMess' style={{height: taskType.current.taskId ? '620px' : '590px'}}>
-            {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} /> }
-            {taskType.current.taskId &&
-                <GamesCard
-                    gamesMessNormal={gamesMessNormal}
-                    key={taskType.current.taskId}
-                    taskType={taskType} /> }
-            {announcements && <PlatformCard announcements={announcements} /> }
-            {!taskType.current.taskId && <GameMess />}
+        <div className='othersMess_total'>
+            <div className='othersMess' style={{ height: taskType.current.taskId ? '640px' : '830px' }}>
+                {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} />}
+                {taskType.current.taskId &&
+                    <GamesCard
+                        gamesMessNormal={gamesMessNormal}
+                        key={taskType.current.taskId}
+                        taskType={taskType} />}
+                {announcements && <PlatformCard announcements={announcements} />}
+                {hotMatch && !taskType.current.taskId && <HotMatch hotMatch={hotMatch} />}
+                {!taskType.current.taskId && <GameMess />}
+            </div>
+            <DataEnter hotMatch={hotMatch} />
         </div>
     );
 };
