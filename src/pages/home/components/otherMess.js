@@ -72,7 +72,7 @@ const GamesCard = memo(props => {
         </div>
     );
 });
-
+const signsCls = { HOT: 'hot_cls', NEW: 'new_cls' };
 const PlatformCard = memo(props => {
     let { announcements } = props;
     return (

@@ -4,8 +4,6 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import JSONPretty from 'react-json-pretty';
 const dataIntro = props => {
     const { dataDetail } = props;
-    // const pre = decodeURI(dataDetail.pre);
-    // console.log(pre);
     return (
         <div className=''>
             {dataDetail.datasetId !== '26' && dataDetail.author && dataDetail.author[0] && (
@@ -14,51 +12,80 @@ const dataIntro = props => {
                         <i className='icon_about'></i>作者
                     </h6>
                     <div className='intro_content'>
-                        <img src={dataDetail.author[0].authorName ? dataDetail.author[0].authorPic : dataDetail.author[0].logo} alt=''/>
-                        {dataDetail.author[0].authorName && (
-                            <div className='intro_content_right'>
-                                <strong className='intro_title'>
-                                    {dataDetail.author[0].authorName}
-                                    <i>等</i>
-                                </strong>
-                                <span className='intro_tle_row'>
-                                    {dataDetail.author[0].title}
-                                </span>
-                                <span className='intro_company'>
-                                    {dataDetail.author[0].company &&
-                                        <>
-                                            <i>单位：</i>{dataDetail.author[0].company}
-                                        </>
-                                    }
-                                    <img
-                                        src={dataDetail.author[0].logo}
-                                        className='icon_logo'
-                                        alt=''
-                                    />
-                                </span>
-                                {dataDetail.author[0].url &&
-                                    <a target='_blank'
-                                    rel="noopener noreferrer"
-                                    href={dataDetail.author[0].url}
-                                    className='author_index'>
-                                    作者主页
-                                    <ArrowRightOutlined />
-                                </a>}
-                            </div>
-                        )}
-                        {!dataDetail.author[0].authorName && (
-                            <div className='inner_intro_company'>
-                                {dataDetail.author[0].company}
-                                {dataDetail.author[0].url &&
-                                <a target='_blank'
-                                    rel="noopener noreferrer"
-                                    href={dataDetail.author[0].url}
-                                    className='author_index'>
-                                    了解更多
-                                    <ArrowRightOutlined />
-                                </a>}
-                            </div>
-                        )}
+                        {
+                            dataDetail.author.length > 1 && 
+                            <>
+                                <img src={dataDetail.author[0].logo} alt=''/>
+                                <div className='intro_content_right'>
+                                    <span className='intro_tle_row'>
+                                        {
+                                            dataDetail.author.map((item, index) => {
+                                                if (index < dataDetail.author.length - 1) {
+                                                    return <>{item.authorName}({item.title})、</>
+                                                } else {
+                                                    return <>{item.authorName}({item.title})</>
+                                                }
+                                            }
+                                                
+                                            )
+                                        }
+                                    </span>
+                                    <span className='intro_tle_row'>
+                                        {dataDetail.author[0].company}
+                                    </span>
+                                </div>
+                            </>
+                        }
+                        {dataDetail.author.length === 1 && 
+                            <>
+                                <img src={dataDetail.author[0].authorName ? dataDetail.author[0].authorPic : dataDetail.author[0].logo} alt=''/>
+                                {dataDetail.author[0].authorName && (
+                                    <div className='intro_content_right'>
+                                        <strong className='intro_title'>
+                                            {dataDetail.author[0].authorName}
+                                            <i>等</i>
+                                        </strong>
+                                        <span className='intro_tle_row'>
+                                            {dataDetail.author[0].title}
+                                        </span>
+                                        <span className='intro_company'>
+                                            {dataDetail.author[0].company &&
+                                                <>
+                                                    <i>单位：</i>{dataDetail.author[0].company}
+                                                </>
+                                            }
+                                            <img
+                                                src={dataDetail.author[0].logo}
+                                                className='icon_logo'
+                                                alt=''
+                                            />
+                                        </span>
+                                        {dataDetail.author[0].url &&
+                                            <a target='_blank'
+                                            rel="noopener noreferrer"
+                                            href={dataDetail.author[0].url}
+                                            className='author_index'>
+                                            作者主页
+                                            <ArrowRightOutlined />
+                                        </a>}
+                                    </div>
+                                )}
+                                {!dataDetail.author[0].authorName && (
+                                    <div className='inner_intro_company'>
+                                        {dataDetail.author[0].company}
+                                        {dataDetail.author[0].url &&
+                                        <a target='_blank'
+                                            rel="noopener noreferrer"
+                                            href={dataDetail.author[0].url}
+                                            className='author_index'>
+                                            了解更多
+                                            <ArrowRightOutlined />
+                                        </a>}
+                                    </div>
+                                )}
+                            </>
+                        }
+                        
                     </div>
                 </div>
             )}

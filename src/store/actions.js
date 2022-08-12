@@ -4,7 +4,6 @@ export const actions = {
         return async dispatch => {
             try {
                 const res = await getDataSetList(params);
-                // console.log(res);
                 dispatch({
                     type: 'datalist',
                     payload: {

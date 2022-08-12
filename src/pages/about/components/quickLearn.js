@@ -6,19 +6,19 @@ import common_question from '../assets/common_question.png';
 
 const quickList = [
     {
-        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992437',
+        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729200',
         question: '如何加入千言技术专家？',
         desc: '千言技术专家是什么？有哪些申请条件和专属权益？如何申请？',
         img: luge_expert_user
     },
     {
-        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992438',
+        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729201',
         question: '如何使用千言数据集？',
         desc: '怎样下载和搜索数据集？怎样参加千言评测比赛？',
         img: use_luge_data
     },
     {
-        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/992439',
+        url: 'https://aistudio.baidu.com/paddle/forum/topic/show/1729199',
         question: '常见问题汇总',
         desc: 'AI Studio平台使用过程中的常见问题',
         img: common_question
