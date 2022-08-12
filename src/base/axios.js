@@ -9,7 +9,11 @@ axios.defaults.crossDomain = true;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; // 'application/json;charset=UTF-8'; // 配置请求头// 表单形式提交数据
 axios.defaults.baseURL = setUrl(); // 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088' // 'https://nlp.baidu.com';
 function setUrl() {
-    if (window.location.origin.includes('https://nlp.baidu.com')) {
+    if (window.location.origin.includes('127.0.0.1')) {
+        return 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088';
+    } else if (window.location.origin.includes('szwg-rp-nlpgpu03.szwg01.baidu.com')) {
+        return '';
+    } else {
         return 'https://nlp.baidu.com';
     }
 }
