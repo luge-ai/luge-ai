@@ -1,4 +1,4 @@
-import React, { useState, memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import { Carousel } from 'antd';
 import { useSelector } from 'react-redux';
 
@@ -8,7 +8,9 @@ const Banner = props => {
     return (
         <div className='nav-swiper' ref={bannerRef}>
             <div className='video_total'>
-                <Carousel autoplay>
+                <Carousel
+                    dots={true}
+                    autoplay>
                     {
                         banners && banners.map(
                             (item, index) => (
