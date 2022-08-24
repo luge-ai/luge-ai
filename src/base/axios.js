@@ -11,7 +11,7 @@ axios.defaults.baseURL = setUrl(); // 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:
 function setUrl() {
     if (window.location.origin.includes('127.0.0.1') || window.location.origin.includes('localhost:3000')) {
         return 'http://szwg-rp-nlpgpu03.szwg01.baidu.com:8088';
-    } else if (window.location.origin.includes('szwg-rp-nlpgpu03.szwg01.baidu.com')) {
+    } else if (window.location.origin.includes('szwg-rp-nlpgpu03.szwg01.baidu.com') || window.location.origin.includes('http://172.24.146.110')) {
         return '';
     } else {
         return 'https://nlp.baidu.com';

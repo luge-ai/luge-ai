@@ -13,9 +13,9 @@ const dataIntro = props => {
                     </h6>
                     <div className='intro_content'>
                         {
-                            dataDetail.author.length > 1 && 
+                            dataDetail.author.length > 1 &&
                             <>
-                                <img src={dataDetail.author[0].logo} alt=''/>
+                                <img src={dataDetail.author[0].logo} alt='' />
                                 <div className='intro_content_right'>
                                     <span className='intro_tle_row'>
                                         {
@@ -26,19 +26,29 @@ const dataIntro = props => {
                                                     return <>{item.authorName}({item.title})</>
                                                 }
                                             }
-                                                
+
                                             )
                                         }
                                     </span>
                                     <span className='intro_tle_row'>
-                                        {dataDetail.author[0].company}
+                                        {
+                                            dataDetail.author.map((item, index) => {
+                                                if (index < dataDetail.author.length - 1) {
+                                                    return <>{item.company}、</>
+                                                } else {
+                                                    return <>{item.company}</>
+                                                }
+                                            }
+
+                                            )
+                                        }
                                     </span>
                                 </div>
                             </>
                         }
-                        {dataDetail.author.length === 1 && 
+                        {dataDetail.author.length === 1 &&
                             <>
-                                <img src={dataDetail.author[0].authorName ? dataDetail.author[0].authorPic : dataDetail.author[0].logo} alt=''/>
+                                <img src={dataDetail.author[0].authorName ? dataDetail.author[0].authorPic : dataDetail.author[0].logo} alt='' />
                                 {dataDetail.author[0].authorName && (
                                     <div className='intro_content_right'>
                                         <strong className='intro_title'>
@@ -62,30 +72,30 @@ const dataIntro = props => {
                                         </span>
                                         {dataDetail.author[0].url &&
                                             <a target='_blank'
-                                            rel="noopener noreferrer"
-                                            href={dataDetail.author[0].url}
-                                            className='author_index'>
-                                            作者主页
-                                            <ArrowRightOutlined />
-                                        </a>}
+                                                rel="noopener noreferrer"
+                                                href={dataDetail.author[0].url}
+                                                className='author_index'>
+                                                作者主页
+                                                <ArrowRightOutlined />
+                                            </a>}
                                     </div>
                                 )}
                                 {!dataDetail.author[0].authorName && (
                                     <div className='inner_intro_company'>
                                         {dataDetail.author[0].company}
                                         {dataDetail.author[0].url &&
-                                        <a target='_blank'
-                                            rel="noopener noreferrer"
-                                            href={dataDetail.author[0].url}
-                                            className='author_index'>
-                                            了解更多
-                                            <ArrowRightOutlined />
-                                        </a>}
+                                            <a target='_blank'
+                                                rel="noopener noreferrer"
+                                                href={dataDetail.author[0].url}
+                                                className='author_index'>
+                                                了解更多
+                                                <ArrowRightOutlined />
+                                            </a>}
                                     </div>
                                 )}
                             </>
                         }
-                        
+
                     </div>
                 </div>
             )}
@@ -95,7 +105,7 @@ const dataIntro = props => {
                 </h6>
                 <div className='intro_relize_content'
                     dangerouslySetInnerHTML={{ // bca-disable-line
-                         __html: dataDetail.detail && dataDetail.detail.replace(/\n/g, '</br>')
+                        __html: dataDetail.detail && dataDetail.detail.replace(/\n/g, '</br>')
                     }}
                 ></div>
             </div>
@@ -107,49 +117,49 @@ const dataIntro = props => {
                     <div className='intro_card_content'>
                         {
                             dataDetail.pre.map((item, index) => {
-                                    return (
-                                        <div key={index}>
-                                            <span
-                                                className='before_show_desc'
-                                                dangerouslySetInnerHTML={{ // bca-disable-line
-                                                    __html: item.desc.replace(/\n/g, '</br>')
-                                                }}
-                                            ></span>
-                                            {
-                                                item.table && (
-                                                    <Table
-                                                        columns={
-                                                            item.table.titles && item.table.titles.map(subItem => {
-                                                                return {
-                                                                    title: subItem,
-                                                                    dataIndex: subItem,
-                                                                    key: subItem
-                                                                };
-                                                            })
-                                                        }
-                                                        dataSource={
-                                                            item.table.lists && item.table.lists.map(subItem => {
-                                                                let newFormate = {};
-                                                                for (let key in subItem) {
-                                                                    newFormate[item.table.titles[key]] = subItem[key];
-                                                                }
-                                                                return newFormate;
-                                                            })
-                                                        }
-                                                        pagination={false}
-                                                    />
-                                                )
-                                            }
-                                            {
-                                                item.json && (
-                                                    <div className='data_demo_desc'>
-                                                        <JSONPretty data={item.json}></JSONPretty>
-                                                    </div>
-                                                )
-                                            }
-                                        </div>
-                                    );
-                                }
+                                return (
+                                    <div key={index}>
+                                        <span
+                                            className='before_show_desc'
+                                            dangerouslySetInnerHTML={{ // bca-disable-line
+                                                __html: item.desc?.replace(/\n/g, '</br>')
+                                            }}
+                                        ></span>
+                                        {
+                                            item.table && (
+                                                <Table
+                                                    columns={
+                                                        item.table.titles && item.table.titles.map(subItem => {
+                                                            return {
+                                                                title: subItem,
+                                                                dataIndex: subItem,
+                                                                key: subItem
+                                                            };
+                                                        })
+                                                    }
+                                                    dataSource={
+                                                        item.table.lists && item.table.lists.map(subItem => {
+                                                            let newFormate = {};
+                                                            for (let key in subItem) {
+                                                                newFormate[item.table.titles[key]] = subItem[key];
+                                                            }
+                                                            return newFormate;
+                                                        })
+                                                    }
+                                                    pagination={false}
+                                                />
+                                            )
+                                        }
+                                        {
+                                            item.json && (
+                                                <div className='data_demo_desc'>
+                                                    <JSONPretty data={item.json}></JSONPretty>
+                                                </div>
+                                            )
+                                        }
+                                    </div>
+                                );
+                            }
                             )
                         }
                     </div>
@@ -161,11 +171,11 @@ const dataIntro = props => {
                         <i className='icon_about'></i>基线系统
                     </h6>
                     {dataDetail.sys.desc &&
-                    <div className='basic_system_content'
-                        dangerouslySetInnerHTML={{ // bca-disable-line
-                            __html: dataDetail.sys.desc
-                        }}>
-                    </div>}
+                        <div className='basic_system_content'
+                            dangerouslySetInnerHTML={{ // bca-disable-line
+                                __html: dataDetail.sys.desc
+                            }}>
+                        </div>}
                     {
                         dataDetail.sys.demo && dataDetail.sys.demo.map((subItem, index) => (
                             <div key={index} className='basic_system_item'>
