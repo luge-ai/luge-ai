@@ -53,8 +53,10 @@ function CardList(props) {
                                 </div>
                                 <div className='cardBottom'>
                                     <span className='cardItemDetail'>
+
+
                                         {
-                                            item.author[0] && item.datasetId !== '26' &&
+                                            item.author.length === 1 &&
                                             <>
                                                 {item.author[0].logo && <img
                                                     className='card_logo'
@@ -64,7 +66,7 @@ function CardList(props) {
                                             </>
                                         }
                                         {
-                                            item.datasetId === '26' &&
+                                            item.author.length > 1 &&
                                             item.author.map(item => item.authorName).join('.')
                                         }
                                     </span>
