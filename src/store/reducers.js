@@ -12,6 +12,7 @@ function createReducers(initialValue = {}) {
 }
 
 const initDataList = {
+    taskId: '',
     cardsList: {
         total: 0,
         list: []

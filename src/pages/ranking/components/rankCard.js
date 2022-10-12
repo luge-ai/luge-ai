@@ -1,18 +1,18 @@
-import React, {useRef, useMemo, useState, memo} from 'react';
+import React, { useRef, useMemo, useState, memo } from 'react';
 import { Link } from 'react-router-dom';
-import {Pagination} from 'antd';
-import { useDispatch } from 'react-redux';
+import { Pagination } from 'antd';
+import { useDispatch, shallowEqual, useSelector } from 'react-redux';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import Types from '../../../components/common/Types';
-import {getRankList} from '../../../base/request';
-import {actions} from '../../../store/actions';
+import { getRankList } from '../../../base/request';
+import { actions } from '../../../store/actions';
 import game_01 from '../../home/assets/game_01.png';
 import game_02 from '../../home/assets/game_02.png';
 import game_03 from '../../home/assets/game_03.png';
 
 
 const RankCardItem = memo(props => {
-    let {gamesMessNormalItem} = props;
+    let { gamesMessNormalItem } = props;
     const imgs = [
         game_01,
         game_02,
@@ -109,25 +109,28 @@ const RankCardItem = memo(props => {
 
 
 function RankCard() {
-    const taskType = useRef({
-        taskId: ''
-    });
+    const {
+        taskId
+    } = useSelector(
+        ({
+            dataList: { taskId }
+        }) => ({ taskId }),
+        shallowEqual
+    );
     const [rankData, setRankData] = useState({});
     const dispatch = useDispatch();
     const dealChange = async params => {
-        const paramsObj = taskType.current.taskId ? {taskId: taskType.current.taskId} : {};
-        const res = await getRankList({...paramsObj, ...params});
+        const paramsObj = taskId ? { taskId } : {};
+        const res = await getRankList({ ...paramsObj, ...params });
         setRankData(res.data);
     };
     useMemo(async () => {
         dispatch(actions.getTaskList());
         dealChange();
-    }, [dispatch]);
+    }, [taskId]);
     const changePage = async page => {
-        const params = {page};
-        if (taskType.current.taskId) {
-            params.taskId = taskType.current.taskId;
-        }
+        const params = { page };
+        params.taskId = taskId;
         const res = await getRankList(params);
         setRankData(res.data);
         document.documentElement.scrollTop = 0;
@@ -137,9 +140,11 @@ function RankCard() {
         <div className='rankCardContainer'>
             <div className='tasksTop rankTop'>
                 <Types
-                    taskType={taskType}
-                    rankStatus={true}
-                    dealChange={dealChange}
+                    {
+                    ...{
+                        rankStatus: true
+                    }
+                    }
                 />
             </div>
             <div className='rank_cards'>
@@ -147,13 +152,17 @@ function RankCard() {
                     {rankData.list && rankData.list.map((gamesMessNormalItem, index) => (
                         <RankCardItem
                             gamesMessNormalItem={gamesMessNormalItem}
-                            key={index}/>
+                            key={index} />
                     ))}
                     {rankData.total > 9 && <div className='rank_page'>
                         <Pagination
-                            total={rankData.total}
-                            defaultCurrent={1}
-                            onChange={changePage}
+                            {
+                            ...{
+                                total: rankData.total,
+                                defaultCurrent: 1,
+                                onChange: changePage
+                            }
+                            }
                         />
                     </div>}
                 </div>

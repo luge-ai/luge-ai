@@ -338,7 +338,7 @@
     justify-content: space-between;
     width: 1100px;
     height: 280px;
-    margin: 100px auto 178px;
+    margin: 100px auto 170px;
 
     .intro_luge {
         width: 419px;
@@ -462,13 +462,16 @@
 }
 
 .invitation_container {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .invitation {
     position: relative;
     z-index: 2;
-    margin: -158px auto 0;
+    margin: -145px auto 0;
     border-radius: 15px;
     width: @min-width;
     height: 280px;
@@ -755,11 +758,16 @@
         height: calc(100% - 55px);
         overflow-y: auto;
         padding-top: 10px;
+        padding-bottom: 1px;
     }
 
     .taskTotal {
         height: 100px;
     }
+}
+
+.cardFieldContent {
+    padding-bottom: 1px;
 }
 
 .advertise_content {
@@ -914,7 +922,7 @@
         line-height: 22px;
         color: #000000;
         margin: 11px 0;
-        min-height: 40px;
+        min-height: 44px;
     }
 
     span {

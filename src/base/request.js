@@ -41,3 +41,7 @@ export const getBannerList = async params => {
 export const getJoinList = async params => {
     return await getRequest('/luge/api/paddlecms?requestUrl=/luge/joinList', params);
 };
+
+export const getSelectedList = async params => {
+    return await getRequest('/luge/api/paddlecms?requestUrl=/luge/selected', params);
+};

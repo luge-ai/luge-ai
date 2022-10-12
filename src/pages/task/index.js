@@ -1,30 +1,26 @@
-import React, {memo, useMemo, useEffect} from 'react';
+import React, { memo, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import './index.less';
-import Nav from '../../components/Layout/nav';
-import Footer from '../../components/Layout/footer';
-import {actions} from '../../store/actions';
+import { actions } from '../../store/actions';
 import CommonTitle from '../../components/common/CommonTitle';
 import data_icon from './assets/data_icon.svg';
 
 const TaskCard = memo(() => {
     const taskCards = useSelector(item => item.dataList.taskList, shallowEqual);
-    // console.log(taskCards);
     const handleToDetail = item => {
         window._hmt.push(['_trackEvent', '任务', `点击具体任务：${item.name}`]);
-        // window.location.hash = `/luge/task/taskDetail?taskId=${item.taskId}`;
     };
     return (
         <div className='taskCard'>
             <ul className='cardLists'>
                 {taskCards && taskCards.map(item =>
-                    (item.taskId &&
-                        <li key={item.taskId}
-                            onClick={() => {
-                                handleToDetail(item);
-                            }}
-                        >
+                (item.taskId &&
+                    <li key={item.taskId}
+                        onClick={() => {
+                            handleToDetail(item);
+                        }}
+                    >
                         <Link to={`/luge/task/taskDetail?taskId=${item.taskId}`}>
                             <div className='initItem'>
                                 <img src={item.logo} alt='' />
@@ -32,8 +28,7 @@ const TaskCard = memo(() => {
                                     <strong>{item.name}</strong>
                                     <span>
                                         {item.datasetCnt}
-                                        {/* <i className='data_icon'></i> */}
-                                        <img src={data_icon} alt='' className='data_icon'/> 
+                                        <img src={data_icon} alt='' className='data_icon' />
                                     </span>
                                 </div>
                             </div>
@@ -42,8 +37,7 @@ const TaskCard = memo(() => {
                                     <strong className='hoverTitle'>{item.name}</strong>
                                     <span className='hoverNum'>
                                         {item.datasetCnt}
-                                        {/* <i className='data_icon'></i> */}
-                                        <img src={data_icon} alt='' className='data_icon'/> 
+                                        <img src={data_icon} alt='' className='data_icon' />
                                     </span>
                                     <div className='hoverDesc'>{item.description}</div>
                                 </div>
@@ -76,18 +70,15 @@ const TaskCard = memo(() => {
 function TaskIndex() {
     const dispatch = useDispatch();
     useMemo(() => {
-        dispatch(actions.getTaskList({isDetail: 1}));
+        dispatch(actions.getTaskList({ isDetail: 1 }));
     }, [dispatch]);
     useEffect(() => {
         window._hmt.push(['_trackEvent', '千言', '任务']);
     }, []);
     return (
         <div className='taskCardContainer'>
-            <Nav />
-            {/* <Back /> */}
-            <CommonTitle title='任务'/>
+            <CommonTitle {...{ title: '任务' }} />
             <TaskCard />
-            <Footer />
         </div>
     );
 }

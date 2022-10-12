@@ -1,33 +1,33 @@
 import React from 'react';
 import { Pagination } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actions } from '../../store/actions';
 import './index.less';
 // const UserDetail = lazy(() => import('@/components/common/UserDetail'));
 
 function CardList(props) {
-    const { cardsList, taskType, changeTab, tabType } = props;
-    // const [visible, setVisible] = useState(false);
-    // const usersRef = useRef(null);
-    // const handleUserDetail = (status, item) => {
-    //     if (item) {
-    //         usersRef.current = item;
-    //     }
-    //     setVisible(status);
-    // };
+    const { cardsList, tabType } = props;
     const dispatch = useDispatch();
+    const {
+        taskId
+    } = useSelector(
+        ({
+            dataList: { taskId }
+        }) => ({ taskId }),
+        shallowEqual
+    );
     const changePage = page => {
         dispatch(actions.getDataList({
-            taskId: taskType.current.taskId,
-            page
+            taskId,
+            page,
+            type: tabType
         }));
-        changeTab();
     };
     return (
         <>
             <ul className='cardsLists'>
-                {cardsList && cardsList.list.map((item, index) => (
+                {cardsList && cardsList.list && cardsList.list.map((item, index) => (
                     <li key={index} className='cardItemLi'>
                         <Link
                             onClick={() => {

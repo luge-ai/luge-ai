@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import './index.less';
 
 const Share = props => {
-    const {backTop, backTopRef} = props;
+    const { backTop } = props;
     return (
         <div className='share_right'>
             {/* <div className='share_right_top'>
@@ -13,8 +13,7 @@ const Share = props => {
             </div> */}
             <div
                 className='share_right_bottom'
-                onClick={backTop}
-                ref={backTopRef}>
+                onClick={backTop}>
                 <span className='icon_top'></span>
             </div>
         </div>

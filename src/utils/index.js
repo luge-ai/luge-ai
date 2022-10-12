@@ -27,11 +27,16 @@ export const parseUrl = url => {
 
 export const formatDate = (newDate, type) => {
     let date = new Date(+newDate);
-    let YY = date.getFullYear() ;
-    let MM =  '.' + (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    let YY = date.getFullYear();
+    let MM = '.' + (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
     let DD = '.' + (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
-    // let hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-    // let mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
-    // let ss = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
     return type ? YY + MM : YY + MM + DD;
-  };
+};
+
+export const pageCLick = ({ pageUrl, eventName }) => {
+    if (!pageUrl) {
+        return;
+    }
+    window.open(pageUrl);
+    window._hmt.push(['_trackEvent', '千言', eventName]);
+}

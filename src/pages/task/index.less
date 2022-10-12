@@ -3,14 +3,16 @@
 .taskCard {
     width: @min-width;
     min-height: calc(100vh - 760px);
-    margin: 30px auto 140px;
+    margin: 30px auto 0;
+    padding-bottom: 140px;
 }
 
 .cardLists {
     display: flex;
     flex-wrap: wrap;
     margin-left: -20px;
-    > li {
+
+    >li {
         position: relative;
         width: 260px;
         height: 260px;
@@ -21,34 +23,41 @@
         margin-top: 20px;
         cursor: pointer;
         border-radius: 15px;
+
         .initItem {
             display: flex;
             flex-direction: column;
+
             img {
                 width: 100%;
             }
+
             .cardContent {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 padding: 27px 25px;
                 font-size: 16px;
-                > strong {
+
+                >strong {
                     color: #000;
                     font-weight: bold;
                 }
-                > span {
+
+                >span {
                     display: flex;
                     align-items: center;
                     font-size: 12px;
                     color: #aaa;
                     margin-top: 6px;
-                    > span {
+
+                    >span {
                         margin-right: 10px;
                     }
                 }
             }
         }
+
         .data_icon {
             display: inline-block;
             width: 12px;
@@ -56,6 +65,7 @@
             background: url('./assets/data_icon.svg') no-repeat;
             margin-left: 3px;
         }
+
         .hoverItemShow {
             position: absolute;
             bottom: -120%;
@@ -64,19 +74,23 @@
             color: #fff;
             width: 100%;
             height: 100%;
-            > div.hoverItemShowContent {
+
+            >div.hoverItemShowContent {
                 position: relative;
                 z-index: 2;
                 display: flex;
                 flex-direction: column;
             }
+
             .hoverTitle {
                 font-size: 16px;
             }
+
             .hoverNum {
                 font-size: 12px;
                 margin-top: 6px;
             }
+
             .hoverDesc {
                 text-overflow: -o-ellipsis-lastline;
                 overflow: hidden;
@@ -90,6 +104,7 @@
                 font-size: 12px;
                 line-height: 25px;
             }
+
             .data_icon {
                 width: 10px;
                 height: 11px;
@@ -97,6 +112,7 @@
                 background-size: cover;
                 margin-left: 4px;
             }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -104,28 +120,33 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
-                background: rgba(0,0,0,.8);
+                background: rgba(0, 0, 0, .8);
             }
         }
     }
-    > li:not(.moreTask):hover {
-        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+
+    >li:not(.moreTask):hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
         .hoverItemShow {
             position: absolute;
             bottom: 0;
         }
     }
+
     li.moreTask {
         .moreTaskItem {
             display: flex;
             flex-direction: column;
             justify-content: center;
             height: 100%;
+
             .moreTop {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: #ccc;
+
                 .taskBtn {
                     display: flex;
                     flex-direction: column;
@@ -135,6 +156,7 @@
                     background-size: 100%;
                 }
             }
+
             .moreBottom {
                 font-size: 12px;
                 text-align: center;
@@ -144,18 +166,20 @@
         }
     }
 }
- 
+
 // 任务详情
 .task_detail_container {
     display: flex;
     flex-direction: column;
     width: 1100px;
-    margin: auto;
+    margin: 50px auto 0;
     min-height: calc(100vh - 365px);
+
     .cardsLists {
         margin-right: 0;
     }
 }
+
 .task_title_top {
     display: flex;
     flex-direction: column;
@@ -163,34 +187,41 @@
     border-radius: 8px;
     padding: 35px;
     margin: 50px 0;
+
     .task_detail_title {
         font-weight: 600;
         font-size: 40px;
         line-height: 56px;
         color: #000;
     }
+
     .task_detail_desc {
         font-size: 14px;
         line-height: 25px;
         color: #999;
         margin-top: 8px;
+
         a {
             margin-left: 8px;
+
             span {
                 margin-left: 4px;
             }
         }
     }
 }
+
 .task_pages {
     overflow: hidden;
     margin: 100px 0 80px;
 }
+
 .task_page_item {
     display: flex;
     align-items: center;
     color: #18A0FB;
     cursor: pointer;
+
     i {
         width: 30px;
         height: 30px;
@@ -199,27 +230,33 @@
         margin-right: 9px;
         transition: all .16s;
     }
+
     &:hover {
         i {
             transform: rotate(135deg);
         }
     }
 }
+
 .task_left {
     float: left;
+
     &:hover {
         i {
             transform: rotate(45deg);
         }
     }
 }
+
 .icon_right {
     float: right;
+
     i {
         transform: rotate(180deg);
         margin-right: 0;
         margin-left: 9px;
     }
+
     &:hover {
         i {
             transform: rotate(135deg);

@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useRef, useMemo, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import Header from '../../components/Layout/header';
-import Footer from '../../components/Layout/footer';
+import Banner from '../../components/Layout/banner';
 import TaskTypes from './components/taskTypes';
 import Introduce from './components/introduce';
 import Invitation from './components/invitation';
@@ -77,79 +76,69 @@ const TabChange = memo(props => {
 });
 
 const Home = () => {
-    const animRef = useRef(null);
-    const animCtRef = useRef(null);
-    const typesRef = useRef(null);
-    const taskType = useRef({ taskId: '' });
-    const leftRef = useRef(null);
-    const rightRef = useRef(null);
-    const bannerRef = useRef(null);
-    const backTopRef = useRef(null);
+    const {
+        cardsList,
+        taskId
+    } = useSelector(
+        ({
+            dataList: { cardsList, taskId }
+        }) => ({ cardsList, taskId }),
+        shallowEqual
+    );
     const [tabType, settabType] = useState('new');
-    const cancelDeal = () => {
-        animRef.current.className = 'anim_container';
-        typesRef.current.style = 'transform: translateX(0px)';
-        bannerRef.current.style = 'filter: blur(0px)';
-    };
     useEffect(() => {
         window._hmt.push(['_trackEvent', '千言', '数据集-首页']);
     }, []);
-    const changeTab = () => {
-        animCtRef.current.scrollTop = 1;
-    };
     const backTop = () => {
-        cancelDeal();
         document.documentElement.scrollTop = 0;
     };
     const dispatch = useDispatch();
     useMemo(() => {
         dispatch(actions.getTaskList());
         dispatch(actions.getDataList({
-            taskId: taskType.current.taskId,
+            taskId: taskId,
             type: tabType
         }));
         dispatch(actions.getLugeList())
-    }, [dispatch]);
+    }, []);
     const updateTab = type => {
         dispatch(actions.getDataList({
-            taskId: taskType.current.taskId,
+            taskId: taskId,
             type
         }));
         settabType(type);
     };
-    const cardsList = useSelector(item => item.dataList.cardsList, shallowEqual);
     return (
         <div className='root'>
-            <Header bannerRef={bannerRef} />
-            <div className='anim_container' ref={animRef}>
-                <TaskTypes
-                    typesRef={typesRef}
-                    leftRef={leftRef}
-                    rightRef={rightRef}
-                    changeTab={changeTab}
-                    taskType={taskType} />
-                <div className='cardFieldContent' ref={animCtRef}>
+            <Banner />
+            <div className='anim_container'>
+                <TaskTypes tabType={tabType} />
+                <div className='cardFieldContent'>
                     <div className='cardsContent'>
-                        <TabChange state={tabType} setstate={updateTab} />
+                        <TabChange {...{ state: tabType, setstate: updateTab }} />
                         <div className='cardContainer'>
                             <CardList
-                                taskType={taskType}
-                                cardsList={cardsList}
-                                changeTab={changeTab}
-                                tabType={tabType} />
-                            <OtherMess taskType={taskType} />
+                                {
+                                ...{
+                                    cardsList,
+                                    tabType
+                                }
+                                } />
+                            <OtherMess />
                         </div>
                     </div>
                     <Advertisement />
                     <HomeRecommend />
                     <Introduce />
                     <Invitation />
-                    <Footer />
                 </div>
             </div>
             <ShareComponent
-                backTop={backTop}
-                backTopRef={backTopRef} />
+                {
+                ...{
+                    backTop
+                }
+                } />
         </div>
     );
 };

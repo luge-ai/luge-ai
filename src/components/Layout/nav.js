@@ -1,62 +1,59 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useMemo } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import LinkA from '../common/LinkA';
 const navTitles = [
-    { name: '首页', url: '/', checked: '#/' },
-    { name: '任务', url: '/luge/task', checked: '#/luge/task' },
-    { name: '排行', url: '/luge/ranking', checked: '#/luge/ranking' },
-    { name: '比赛', url: '/luge/game', checked: '#/luge/game' },
+    { name: '首页', url: '/', checked: ['#/'] },
+    { name: '精选', url: '/luge/selected', checked: ['#/luge/selected'] },
+    { name: '排行', url: '/luge/ranking', checked: ['#/luge/ranking'] },
+    { name: '比赛', url: '/luge/game', checked: ['#/luge/game'] },
     { name: '讨论', url: 'https://aistudio.baidu.com/aistudio/forum/topiclist?boardId=235', type: 1 },
-    { name: '关于千言', url: '/luge/about', checked: '#/luge/about' },
+    {
+        name: '入驻',
+        url: '/luge/join',
+        checked: ['#/luge/join', '#/luge/join?type=2'],
+        titleList: [
+            {
+                name: '贡献数据集',
+                url: '/luge/join',
+                checked: ['#/luge/join']
+            },
+            {
+                name: '入驻技术专家',
+                url: '/luge/join?type=2',
+                checked: ['#/luge/join?type=2']
+            }
+        ]
+    },
+    { name: '关于千言', url: '/luge/about', checked: ['#/luge/about'] },
 ];
 function Nav(props) {
-    let urlStatus = (checked) => window.location.hash === checked;
-    const { game } = props;
+    const [update, setUpdate] = useState(new Date());
+    const history = useHistory();
+    const dispatch = useDispatch();
+    useMemo(() => {
+        const unlisten = history.listen((historyLocation) => {
+            setUpdate(new Date());
+            dispatch({
+                type: 'datalist',
+                payload: {
+                    taskId: ''
+                }
+            });
+        });
+        return () => {
+            unlisten();
+        };
+    }, [history]);
+    let game = window.location.hash === '#/luge/match';
     return (
-        <div className='lugeNav'>
+        <div className={['lugeNav', game ? 'matchNav' : ''].join(' ')}>
             <div className='luge_nav_content'>
                 <div className='luge_nav_left'>
                     <Link to='/' className={['navTitleLogo', game ? 'new-logo' : ''].join(' ')}></Link>
-                    <div className='navTitle'>
-                        {navTitles.map(item => (
-                            <>
-                                {!item.type &&
-                                    <Link
-                                        onClick={
-                                            () => {
-                                                window._hmt.push(['_trackEvent', '导航点击', `${item.name}`]);
-                                            }
-                                        }
-                                        to={item.url}
-                                        key={item.name}
-                                        className={[
-                                            'navTitleItem',
-                                            urlStatus(item.checked) ? 'active' : ''
-                                        ].join(' ')}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                }
-                                {item.type &&
-                                    <a
-                                        onClick={
-                                            () => {
-                                                window._hmt.push(['_trackEvent', '导航点击', `${item.name}`]);
-                                            }
-                                        }
-                                        href={item.url}
-                                        key={item.name}
-                                        className={[
-                                            'navTitleItem',
-                                            urlStatus(item.url) ? 'active' : ''
-                                        ].join(' ')}
-                                        rel="noopener noreferrer"
-                                        target='_blank'
-                                    >
-                                        {item.name}
-                                    </a>
-                                }
-                            </>
+                    <div className='navTitle' key={update}>
+                        {navTitles.map((item, index) => (
+                            <LinkA {...item} key={index} />
                         ))}
                     </div>
                 </div>

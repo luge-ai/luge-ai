@@ -2,7 +2,7 @@
 
 .aboutContainer {
     width: @min-width;
-    margin: auto;
+    margin: auto auto 100px;
 
     .aboutLugeCard {
         display: flex;
@@ -415,4 +415,317 @@
             line-height: 17px;
         }
     }
+}
+
+.contentCom {
+    height: 252px;
+    background-color: #fff;
+    padding: 24px 32px;
+    width: 1100px;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contentCom+.contentCom {
+    margin-top: 30px;
+}
+
+.contentComTitle {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #333333;
+}
+
+.contentComDesc {
+    display: flex;
+    flex-direction: column;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #333333;
+    margin: 24px 0 30px;
+
+    b {
+        font-weight: bold;
+        color: #000;
+        margin-right: 6px;
+    }
+}
+
+.contentComRdm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 128px;
+    height: 50px;
+    background: #18A0FB;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 0;
+    padding-bottom: 143px;
+    width: 1100px;
+    align-items: center;
+}
+
+.questionTitle {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.questionItem {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    >strong {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: #000000;
+        margin-bottom: 15px;
+    }
+}
+
+.questionItem+.questionItem {
+    margin-top: 30px;
+}
+
+.questionDesc {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #5A5A5A;
+}
+
+.bgFirst {
+    background-image: url('./assets/bgFirst.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 10px 10px;
+}
+
+.bgSecond {
+    background-image: url('./assets/bgSecond.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 10px 10px;
+}
+
+.bgThird {
+    background-image: url('./assets/bgThird.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 10px 10px;
+}
+
+.lotsMatch {
+    width: 1100px;
+    height: 410px;
+    margin: 100px auto 0;
+    background-image: url('./assets/data_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.lotsContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.lotsContentItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lotsIconData {
+    width: 72px;
+    height: 69px;
+    background-repeat: no-repeat;
+}
+
+.lotsIconTech {
+    width: 72px;
+    height: 69px;
+    background-image: url('./assets/icon_tech.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.lotsItemDesc {
+    width: 388px;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #5A5A5A;
+}
+
+.lotsName {
+    margin: 30px 0 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.expertCardsList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+
+    >li {
+        width: 326px;
+        background: #F5F8FC;
+        border-radius: 10px;
+    }
+
+    >li.expertCardItem {
+        padding: 24px;
+        margin-right: 24px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+}
+
+.expertCardItemTop {
+    display: flex;
+    align-items: center;
+}
+
+.expertPersonRT {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+
+    >strong {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #000000;
+    }
+
+    >span {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: #999999;
+        margin-top: 4px;
+    }
+}
+
+.expertCardItemBottom {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #EBECED;
+    height: 67px;
+    padding-top: 24px;
+    margin-top: 29px;
+}
+
+.expertCardArticle,
+.expertCardVideo {
+    display: flex;
+    align-items: center;
+}
+
+.expertCardArticle+.expertCardVideo {
+    margin-top: 8px;
+}
+
+.articleTab,
+.videoTab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 18px;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #FFFFFF;
+    background-color: #0183FF;
+    border-radius: 2px;
+}
+
+.videoTab {
+    background-color: #00E3BC;
+}
+
+.expertPersonLF {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.expertItemDesc {
+    margin-left: 4px;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    transition: all .16s;
+}
+
+.expertCardArticle {
+    cursor: pointer;
+
+    &:hover {
+        .expertItemDesc {
+            color: #0183FF;
+        }
+    }
+}
+
+.expertCardVideo {
+    cursor: pointer;
+
+    &:hover {
+        .expertItemDesc {
+            color: #04c7a7;
+        }
+    }
+}
+
+.questionContent {
+    width: 100%;
 }

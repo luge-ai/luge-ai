@@ -41,7 +41,8 @@ const cardsDataList = (applyEnter) => {
         },
     ];
 };
-function AboutItem({ applyEnter }) {
+
+function AboutItem({ applyEnter, topCard: { aboutLuge } }) {
     const lugeVideoRef = useRef(null);
     const videoIconRef = useRef(null);
     const videoImgRef = useRef(null);
@@ -63,7 +64,11 @@ function AboutItem({ applyEnter }) {
     }, []);
     return (
         <div className='aboutContainer'>
-            <CommonTitle title='关于千言' />
+            <CommonTitle {
+                ... {
+                    ...aboutLuge
+                }
+            } />
             <div className='aboutContent'>
                 <h6 className='ab_title'>
                     <i className='icon_about'></i>什么是千言

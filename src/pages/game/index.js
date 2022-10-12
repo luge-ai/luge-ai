@@ -1,8 +1,7 @@
 import React, { memo, useState, useMemo, useEffect } from 'react';
-import Nav from '../../components/Layout/nav';
-import Footer from '../../components/Layout/footer';
 import { getGameList } from '../../base/request';
-import {formatDate} from '../../utils/index';
+import { formatDate } from '../../utils/index';
+import { getJoinList } from '../../base/request';
 import { Pagination } from 'antd';
 import './index.less';
 import CommonTitle from '../../components/common/CommonTitle';
@@ -78,7 +77,7 @@ const GameCard = memo(() => {
                                     window._hmt.push(['_trackEvent', '比赛', `点击具体比赛：${item.name}`]);
                                 }}>
                                 <div className='gameCardItem'>
-                                    <img src={item.logo} alt=''/>
+                                    <img src={item.logo} alt='' />
                                     <div>
                                         <span className='title' title={item.name}>
                                             {item.name}
@@ -119,13 +118,18 @@ const GameCard = memo(() => {
 });
 
 const GameIndex = () => {
+    const [topCard, setTopCard] = useState({});
+    const getInitData = async () => {
+        const { result: { pageData: { topCard } } } = await getJoinList();
+        setTopCard(topCard);
+    }
+    useMemo(() => {
+        getInitData();
+    }, []);
     return (
         <div className='taskCardContainer'>
-            <Nav />
-            {/* <Back /> */}
-            <CommonTitle title='比赛'/>
+            <CommonTitle {...{ ...topCard.match }} />
             <GameCard />
-            <Footer />
         </div>
     );
 };

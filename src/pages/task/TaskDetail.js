@@ -5,8 +5,6 @@ import './index.less';
 import CardList from '../../components/common/CardList';
 import { actions } from '../../store/actions';
 import { parseUrl } from '../../utils';
-import Nav from '../../components/Layout/nav';
-import Footer from '../../components/Layout/footer';
 
 const TaskTitleArea = props => {
     const { params, taskTypes } = props;
@@ -18,7 +16,6 @@ const TaskTitleArea = props => {
             <strong className='task_detail_title'>{taskTypesItem && taskTypesItem.name}</strong>
             <span className='task_detail_desc'>
                 {taskTypesItem && taskTypesItem.description}
-                {/* <a href='#'>展开更多<RightOutlined /></a> */}
             </span>
         </div>
     );
@@ -70,7 +67,6 @@ const PageFooter = props => {
 const TaskDetail = () => {
     const dispatch = useDispatch();
     const params = parseUrl(window.location.hash);
-    // console.log(params);
     useMemo(() => {
         dispatch(
             actions.getDataList({
@@ -90,13 +86,11 @@ const TaskDetail = () => {
     return (
         <>
             <div className='taskDetailCardContainer' key={window.location.hash}>
-                <Nav />
                 <div className='task_detail_container'>
-                    <TaskTitleArea params={params} taskTypes={taskTypes} />
-                    <CardList cardsList={cardsList} />
-                    <PageFooter taskTypes={taskTypes} params={params} />
+                    <TaskTitleArea {...{ params, taskTypes }} />
+                    <CardList {...{ cardsList }} />
+                    <PageFooter {...{ taskTypes, params }} />
                 </div>
-                <Footer />
             </div>
         </>
     );

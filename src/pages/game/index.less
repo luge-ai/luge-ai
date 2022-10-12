@@ -1,12 +1,15 @@
 @import '../../components/common/index.less';
+
 .taskCardContainer {
     background: #F5F8FC;
 }
+
 .gameCards {
     display: flex;
     flex-wrap: wrap;
     margin: 20px 0 10px;
     margin-left: -20px;
+
     >li {
         position: relative;
         width: 353px;
@@ -18,6 +21,7 @@
         cursor: pointer;
         overflow: hidden;
         transition: all .16s;
+
         .isEndStatus {
             display: flex;
             justify-content: center;
@@ -31,13 +35,15 @@
             font-size: 12px;
             line-height: 17px;
             color: #fff;
-            background: rgba(255,255,255,.2);
+            background: rgba(255, 255, 255, .2);
             z-index: 2;
             border-radius: 4px;
         }
+
         a {
             color: inherit;
         }
+
         img {
             width: 100%;
         }
@@ -66,6 +72,7 @@
                     margin-top: 6px;
                 }
             }
+
             .gameBottom {
                 display: flex;
                 justify-content: space-between;
@@ -76,6 +83,7 @@
                 font-size: 12px;
                 color: #A6A6A6;
             }
+
             .gameTheme {
                 display: flex;
                 justify-content: center;
@@ -85,26 +93,32 @@
                 border-radius: 3px;
                 font-size: 12px;
             }
+
             .themeColor {
                 color: #57BFA3;
                 background: rgba(93, 204, 174, 0.12);
             }
+
             .normalColor {
                 color: #3D8FF7;
                 background: rgba(61, 143, 247, 0.12);
             }
         }
+
         &:hover {
             box-shadow: 0 2px 2px rgb(45 45 45 / 1%), 0 4px 4px rgb(49 49 49 / 2%), 0 8px 8px rgb(42 42 42 / 3%), 0 16px 16px rgb(32 32 32 / 4%);
             transform: translateY(-3px);
         }
     }
 }
+
 .game_page {
     margin-top: 50px;
 }
+
 .gameCardContainer {
     width: 1100px;
-    margin: 50px auto 140px;
+    margin: 50px auto 0;
     min-height: calc(100vh - 780px);
+    padding-bottom: 140px;
 }

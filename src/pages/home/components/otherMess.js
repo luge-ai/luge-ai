@@ -9,13 +9,13 @@ import game_02 from '../assets/game_02.png';
 import game_03 from '../assets/game_03.png';
 
 const TaskDesc = memo(props => {
-    const { taskType } = props;
+    const { taskId } = props;
     const localTasks = JSON.parse(localStorage.getItem('TaskType'));
-    const taskDetail = localTasks.find(item => item.taskId === taskType.current.taskId);
+    const taskDetail = localTasks.find(item => item.taskId === taskId);
     return (
         <div className='platform'>
             <div className='platform-title'>
-                <span>{taskDetail.name}<Link to={`/luge/task/taskDetail?taskId=${taskType.current.taskId}`}>详情<ArrowRightOutlined /></Link></span>
+                <span>{taskDetail.name}<Link to={`/luge/task/taskDetail?taskId=${taskId}`}>详情<ArrowRightOutlined /></Link></span>
             </div>
             <div className='platform-detail'>
                 {taskDetail.description}
@@ -25,7 +25,7 @@ const TaskDesc = memo(props => {
 });
 
 const GamesCard = memo(props => {
-    let { taskType } = props;
+    let { taskId } = props;
     const [rankData, setRankData] = useState({ top: [] });
     const imgs = [
         game_01,
@@ -33,11 +33,11 @@ const GamesCard = memo(props => {
         game_03
     ];
     useMemo(async () => {
-        const res = await getRankList({ taskId: taskType.current.taskId });
+        const res = await getRankList({ taskId: taskId });
         if (res.data.list && res.data.list[0]) {
             setRankData(res.data.list[0]);
         }
-    }, [taskType]);
+    }, [taskId]);
     return (
         <div className='platform' style={{ height: '210px' }}>
             <div className='platform-title'>
@@ -72,7 +72,6 @@ const GamesCard = memo(props => {
         </div>
     );
 });
-const signsCls = { HOT: 'hot_cls', NEW: 'new_cls' };
 const PlatformCard = memo(props => {
     let { announcements } = props;
     return (
@@ -83,7 +82,7 @@ const PlatformCard = memo(props => {
                         onClick={() => {
                             window._hmt.push(['_trackEvent', '首页-平台公告', `点击全部`]);
                         }}
-                        href='https://aistudio.baidu.com/paddle/forum/topic/list?boardId=235'
+                        href='https://aistudio.baidu.com/aistudio/forum/topiclist?boardId=235'
                         rel="noopener noreferrer"
                         target='_blank'>全部<ArrowRightOutlined /></a></span>
             </div>
@@ -181,7 +180,7 @@ const HotMatch = memo((props) => {
                 </span>
             </div>
             <div className='hot_match'>
-                <a href={hotMatch.pageUrl} target="_blank">
+                <a href={hotMatch.pageUrl} target="_blank" rel="noreferrer">
                     <img src={hotMatch.imgUrl} alt="" />
                 </a>
             </div>
@@ -203,22 +202,26 @@ const DataEnter = memo(({ hotMatch }) => {
 
 const OtherMess = props => {
     const { taskType } = props;
-    const { announcements, gamesMessNormal, hotMatch } = useSelector(
-        item => item.dataList,
+    const {
+        announcements, gamesMessNormal, hotMatch, taskId
+    } = useSelector(
+        ({
+            dataList: { announcements, gamesMessNormal, hotMatch, taskId }
+        }) => ({ announcements, gamesMessNormal, hotMatch, taskId }),
         shallowEqual
     );
     return (
         <div className='othersMess_total'>
-            <div className='othersMess' style={{ height: taskType.current.taskId ? '640px' : '830px' }}>
-                {taskType.current.taskId && <TaskDesc taskType={taskType} key={Math.random()} />}
-                {taskType.current.taskId &&
+            <div className='othersMess' style={{ height: taskId ? '640px' : '830px' }}>
+                {taskId && <TaskDesc taskId={taskId} key={Math.random()} />}
+                {taskId &&
                     <GamesCard
                         gamesMessNormal={gamesMessNormal}
-                        key={taskType.current.taskId}
-                        taskType={taskType} />}
+                        key={taskId}
+                        taskId={taskId} />}
                 {announcements && <PlatformCard announcements={announcements} />}
-                {hotMatch && !taskType.current.taskId && <HotMatch hotMatch={hotMatch} />}
-                {!taskType.current.taskId && <GameMess />}
+                {hotMatch && !taskId && <HotMatch hotMatch={hotMatch} />}
+                {!taskId && <GameMess />}
             </div>
             <DataEnter hotMatch={hotMatch} />
         </div>

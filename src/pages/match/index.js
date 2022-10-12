@@ -1,11 +1,9 @@
-import React, {useEffect, memo, useState, useMemo} from 'react';
-import {yearCurrent, yearData, gamesShowList} from './config';
+import React, { useEffect, memo, useState, useMemo } from 'react';
+import { yearCurrent, yearData, gamesShowList } from './config';
 import './index.less';
-import Nav from '../../components/Layout/nav';
-import Footer from '../../components/Layout/footer';
-import {ArrowRightOutlined} from '@ant-design/icons';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
-const HistoryMatch =  memo(() => {
+const HistoryMatch = memo(() => {
     const [currentIndex, setCurrentIndex] = useState(2021);
     const [gameNum, setGameNum] = useState(0);
     const activeData = useMemo(() => {
@@ -98,24 +96,24 @@ const MatchDetails = memo(() => {
                         <span className='num-award-title'>总奖池</span>
                         <span className='num-award'>¥220,000</span>
                     </span>
-                    <a href='http://lic2022.cipsc.org.cn/' className='match_btn' target="_blank"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
+                    <a href='http://lic2022.cipsc.org.cn/' className='match_btn' target="_blank" rel="noreferrer"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
                 </span>
             </div>
             <ul className='match_detail_ul'>
                 {
-                    gamesShowList.map((item, index) => 
+                    gamesShowList.map((item, index) =>
                         <li
                             onMouseEnter={() => {
                                 setCheckIndex(index);
                             }}
                             className='match__detail_item'
                             key={index}>
-                                <div className='img-detail'>
-                                    <img src={item.imgUrl} alt=''/>
-                                </div>
-                                <span className='match_detail_title'>{item.title}</span>
-                                <span className='match_desc'>{item.desc}</span>
-                                {/* <span>{item.time}</span> */}
+                            <div className='img-detail'>
+                                <img src={item.imgUrl} alt='' />
+                            </div>
+                            <span className='match_detail_title'>{item.title}</span>
+                            <span className='match_desc'>{item.desc}</span>
+                            {/* <span>{item.time}</span> */}
                         </li>
                     )
                 }
@@ -132,13 +130,10 @@ const MatchCom = () => {
     return (
         <div className='taskCardContainer match-content'>
             <div className='banner-display'></div>
-            <Nav game={true} />
             <div className='match_container'>
-                {/* <MatchBanner /> */}
                 <MatchDetails />
                 <HistoryMatch />
             </div>
-            <Footer />
         </div>
     );
 }

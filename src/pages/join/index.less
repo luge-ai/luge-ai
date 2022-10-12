@@ -1,7 +1,5 @@
 .join_container {
-    .taskItem_about {
-        width: 577px;
-    }
+    padding-bottom: 100px;
 
     .taskItemContainer {
         position: relative;
@@ -11,6 +9,62 @@
         width: 1100px;
         margin: 80px auto;
     }
+
+    .addTabBg {
+        background-color: #fff;
+    }
+}
+
+.tabContainer {
+    display: flex;
+    height: 60px;
+    align-items: center;
+
+    .tabItem {
+        cursor: pointer;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8fafd;
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .tabActive {
+        position: relative;
+        background-color: #fff;
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #18A0FB;
+
+        i {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 0;
+            width: 94px;
+            height: 4px;
+            background: #18A0FB;
+            border-radius: 17px;
+        }
+    }
+}
+
+.joinTabContainer {
+    padding: 60px 40px;
 }
 
 .apply_btn_content {
@@ -153,7 +207,7 @@ h6.join_author_title {
 
 .hot_container {
     width: 1100px;
-    margin: auto auto 90px;
+    margin: auto auto 0;
 }
 
 .hot_cards {
@@ -416,13 +470,33 @@ h6.join_author_title {
 
 .owners_container_join {
     .luge_cards_list {
-        margin-left: -26px;
+        margin-left: -20px;
     }
 
     .luge_cards_list>li {
-        width: 256px;
-        height: 256px;
-        margin-left: 25px;
-        margin-bottom: 25px;
+        width: 240px;
+        height: 240px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        background: #F5F8FC;
+        border-radius: 10px;
     }
+}
+
+.joinUser {
+    .luge_cards_list>li {
+        width: 240px;
+        height: 240px;
+        background: #F5F8FC;
+        border-radius: 10px;
+    }
+
+    .lugeDataAuthContainer {
+        width: auto;
+    }
+}
+
+.enterBg {
+    width: 1100px;
+    margin: 0 auto 100px;
 }
