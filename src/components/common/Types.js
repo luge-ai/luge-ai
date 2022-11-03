@@ -5,7 +5,7 @@ import './index.less';
 
 function Types(props) {
     let { type, tabType } = props;
-    const [checked, setChecked] = useState(0);
+    const [checked, setChecked] = useState(1);
     const dispatch = useDispatch();
     const {
         taskId

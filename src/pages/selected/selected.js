@@ -216,13 +216,13 @@ function Selected() {
     useMemo(async () => {
         const { result: { pageData: { selectedList: { selectedTypeList, selectedCard }, taskList } } } = await getSelectedList();
         setSelectedList(selectedTypeList);
-        const selectedItem = selectedTypeList.find(item => item.taskType === taskList.lists[0].taskId);
+        const selectedItem = selectedTypeList.find(item => item.taskType === taskList.lists[1].taskId);
         setSelectedItem(selectedItem);
         dispatch({
             type: 'datalist',
             payload: {
                 taskList: taskList.lists,
-                taskId: taskList.lists[0].taskId
+                taskId: taskList.lists[1].taskId
             }
         });
         setTopCard(selectedCard);
