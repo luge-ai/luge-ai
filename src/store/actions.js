@@ -39,6 +39,7 @@ export const actions = {
                 pageData: {
                     qianyanBanner: { bannerList },
                     advertise,
+                    advertiseList,
                     announcements: { lists },
                     hotMatch,
                     HomeRecommend
@@ -49,6 +50,7 @@ export const actions = {
                 payload: {
                     bannerList,
                     advertise,
+                    advertiseList: advertiseList.lists,
                     announcements: lists,
                     hotMatch,
                     HomeRecommend: HomeRecommend.lists

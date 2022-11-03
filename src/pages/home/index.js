@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useRef, useMemo, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { Carousel } from 'antd';
 import Banner from '../../components/Layout/banner';
 import TaskTypes from './components/taskTypes';
 import Introduce from './components/introduce';
@@ -12,13 +13,24 @@ import './index.less';
 
 
 const Advertisement = memo(() => {
-    const advertise = useSelector(item => item.dataList.advertise);
+    const advertiseList = useSelector(item => item.dataList.advertiseList);
     return (
         <div className='advertise_content'>
-            {advertise && <a href={advertise.pageUrl} >
-                <img src={advertise.imgUrl} alt='' />
-            </a>
-            }
+            <Carousel
+                dots={true}
+                autoplay>
+                {
+                    advertiseList && advertiseList.map(
+                        (item, index) => (
+                            <div key={index}>
+                                <a href={item.pageUrl} style={{ background: item.imgBg }}>
+                                    <img src={item.imgUrl} alt='' />
+                                </a>
+                            </div>
+                        )
+                    )
+                }
+            </Carousel>
         </div>
     );
 });
