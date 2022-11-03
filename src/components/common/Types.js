@@ -5,7 +5,7 @@ import './index.less';
 
 function Types(props) {
     let { type, tabType } = props;
-    const [checked, setChecked] = useState(1);
+    const [checked, setChecked] = useState(0);
     const dispatch = useDispatch();
     const {
         taskId
@@ -39,7 +39,6 @@ function Types(props) {
         <>
             {typesList && typesList.map((item, index) => {
                 return (
-                    ((type === 'selected' && item.name !== '全部任务') || type !== 'selected') &&
                     <span
                         key={index}
                         className={

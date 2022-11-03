@@ -216,13 +216,13 @@ function Selected() {
     useMemo(async () => {
         const { result: { pageData: { selectedList: { selectedTypeList, selectedCard }, taskList } } } = await getSelectedList();
         setSelectedList(selectedTypeList);
-        const selectedItem = selectedTypeList.find(item => item.taskType === taskList.lists[1].taskId);
+        const selectedItem = selectedTypeList.find(item => item.taskType === taskList.lists[0].taskId);
         setSelectedItem(selectedItem);
         dispatch({
             type: 'datalist',
             payload: {
                 taskList: taskList.lists,
-                taskId: taskList.lists[1].taskId
+                taskId: taskList.lists[0].taskId
             }
         });
         setTopCard(selectedCard);
@@ -232,7 +232,22 @@ function Selected() {
         if (selectedList.length < 1) {
             return;
         }
-        const selectedItem = selectedList.find(item => item.taskType === taskId);
+        let selectedItem = {
+            activityList: [],
+            articleList: [],
+            caseList: [],
+            paperList: []
+        };
+        if (taskId === 'quanburenwu') {
+            for (let { activityList, articleList, caseList, paperList } of selectedList) {
+                selectedItem.activityList = [...selectedItem.activityList, ...activityList];
+                selectedItem.articleList = [...selectedItem.articleList, ...articleList];
+                selectedItem.caseList = [...selectedItem.caseList, ...caseList];
+                selectedItem.paperList = [...selectedItem.paperList, ...paperList];
+            }
+        } else {
+            selectedItem = selectedList.find(item => item.taskType === taskId);
+        }
         setSelectedItem(selectedItem);
     }, [taskId]);
 
