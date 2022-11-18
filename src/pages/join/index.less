@@ -386,10 +386,17 @@ h6.join_author_title {
     flex-direction: column;
     align-items: center;
 
-    >i {
-        width: 70px;
-        height: 50px;
+    .icon_data {
+        >img {
+            max-width: 70px !important;
+            max-height: 50px !important;
+            width: auto !important;
+            height: auto !important;
+            border-radius: 0 !important;
+            ;
+        }
     }
+
 }
 
 .luge_word_desc {
@@ -425,10 +432,16 @@ h6.join_author_title {
 }
 
 .enter_ul {
+    .luge_cards_list {
+        margin-left: -20px;
+    }
+
     .luge_cards_list>li.data_author {
-        width: 247px;
-        height: 222px;
+        width: 326px;
+        height: 240px;
+        margin-left: 20px;
         border: none !important;
+        background: #F5F8FC;
 
         &:hover {
             background: url('./assets/hover_card_img.png') #fff center no-repeat;
@@ -440,7 +453,7 @@ h6.join_author_title {
                 display: flex;
             }
 
-            .enter_card_item>i {
+            .enter_card_item>.icon_data {
                 display: none;
             }
         }

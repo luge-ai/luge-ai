@@ -12,12 +12,31 @@ import { useHistory } from 'react-router-dom';
 let hashStatus = true;
 let recordData = {};
 
-const EnterLuge = memo(({ applyEnter }) => {
+const EnterLuge = memo(({ applyEnter, hashStatus, applyEnterList: { dataList, enterTechnician } }) => {
+    const dataSets = hashStatus ? dataList : enterTechnician;
     return (
         <div className='owners_container enter_ul'>
-            <h6 className='ab_title'><i className='icon_about'></i>入驻千言</h6>
+            <h6 className='ab_title'>
+                <i className='icon_about'></i>
+                {hashStatus ? '贡献数据集' : '加入技术专家'}
+            </h6>
             <ul className='luge_cards_list'>
-                <li className='data_author'>
+                {
+                    dataSets && dataSets.map(({ icon, desc, pageUrl, title }) => (
+                        <li className='data_author'>
+                            <div className='enter_card_item'>
+                                {/* <i className={icon}></i> */}
+                                <span className='icon_data'>
+                                    <img src={icon} alt='图标' />
+                                </span>
+                                <span className='luge_word_join'>{title}</span>
+                                <span className='luge_word_desc'>{desc}</span>
+                                {pageUrl && <a href={pageUrl} className='luge_word_btn' target="_blank" rel="noreferrer">立即入驻</a>}
+                            </div>
+                        </li>
+                    ))
+                }
+                {/* <li className='data_author'>
                     <div className='enter_card_item'>
                         <i className='icon_sub'></i>
                         <span className='luge_word_join'>1.提交申请</span>
@@ -34,18 +53,11 @@ const EnterLuge = memo(({ applyEnter }) => {
                 </li>
                 <li className='data_author'>
                     <div className='enter_card_item'>
-                        <i className='icon_offer'></i>
-                        <span className='luge_word_join'>3.提供材料</span>
-                        <span className='luge_word_desc'>请按邮件要求提供数据集上线相关材料，包括数据集介绍、作者介绍、数据集预览等</span>
-                    </div>
-                </li>
-                <li className='data_author'>
-                    <div className='enter_card_item'>
                         <i className='icon_line'></i>
-                        <span className='luge_word_join'>4.数据集上线</span>
+                        <span className='luge_word_join'>3.数据集上线</span>
                         <span className='luge_word_desc'>材料提交完毕后，由项目组完成数据集的上线并根据您的需求启动后续宣传、榜单开设等</span>
                     </div>
-                </li>
+                </li> */}
             </ul>
 
         </div>
@@ -96,7 +108,8 @@ const LugeUsers = memo(({
     expertList,
     applyEnter,
     committeeList,
-    youthCommitteeList
+    youthCommitteeList,
+    applyEnterList
 }) => {
     return (
         <>
@@ -127,14 +140,14 @@ const LugeUsers = memo(({
                             }
                         />
                     </div>
+                    <EnterLuge
+                        {...{
+                            applyEnter,
+                            hashStatus,
+                            applyEnterList
+                        }}
+                    />
                 </div>
-            </div>
-            <div className='enterBg'>
-                <EnterLuge
-                    {...{
-                        applyEnter
-                    }}
-                />
             </div>
         </>
     );
@@ -206,8 +219,9 @@ function JoinIndex() {
     const [youthCommitteeList, setyouthCommitteeList] = useState({});
     const [expertList, setexpertList] = useState({});
     const [topCard, setTopCard] = useState({});
+    const [applyEnterList, setApplyEnterList] = useState({});
     const getInitData = async () => {
-        const { result: { pageData: { hotList, equityList, expertEquityList, applyEnter, committeeList, youthCommitteeList, expertList, topCard } } } = await getJoinList();
+        const { result: { pageData: { hotList, equityList, expertEquityList, applyEnter, committeeList, youthCommitteeList, expertList, topCard, applyEnterMess } } } = await getJoinList();
         recordData = {
             equityList,
             expertEquityList
@@ -220,6 +234,7 @@ function JoinIndex() {
         setyouthCommitteeList(youthCommitteeList);
         setexpertList(expertList);
         setTopCard(topCard);
+        setApplyEnterList(applyEnterMess.items);
     }
     useMemo(() => {
         dispatch(actions.getTaskList({ isDetail: 1 }));
@@ -255,7 +270,8 @@ function JoinIndex() {
                     applyEnter,
                     committeeList,
                     youthCommitteeList,
-                    expertList
+                    expertList,
+                    applyEnterList
                 }} />}
             {hotList && <HotContent {...{ hotList }} />}
         </div>
