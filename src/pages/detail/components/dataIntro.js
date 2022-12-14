@@ -21,9 +21,9 @@ const dataIntro = props => {
                                         {
                                             dataDetail.author.map((item, index) => {
                                                 if (index < dataDetail.author.length - 1) {
-                                                    return <>{item.authorName}({item.title})、</>
+                                                    return <>{item.authorName}{item.title ? (item.title) : ''}、</>
                                                 } else {
-                                                    return <>{item.authorName}({item.title})</>
+                                                    return <>{item.authorName}{item.title ? (item.title) : ''}</>
                                                 }
                                             }
 
