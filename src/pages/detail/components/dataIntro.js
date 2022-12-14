@@ -33,7 +33,7 @@ const dataIntro = props => {
                                     <span className='intro_tle_row'>
                                         {
                                             dataDetail.author.map((item, index) => {
-                                                if (index < dataDetail.author.length - 1) {
+                                                if ((index < dataDetail.author.length - 1) && item.company) {
                                                     return <>{item.company}、</>
                                                 } else {
                                                     return <>{item.company}</>
