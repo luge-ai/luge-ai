@@ -1,8 +1,100 @@
-import duanLuoSrc from './assets/duan-luo-01.jpg';
-import zhiShiSrc from './assets/zhi-shi-02.jpg';
-import qiangGanSrc from './assets/qing-gan-03.jpg';
+// import duanLuoSrc from './assets/duan-luo-01.jpg';
+// import zhiShiSrc from './assets/zhi-shi-02.jpg';
+// import qiangGanSrc from './assets/qing-gan-03.jpg';
 import shiPinSrc from './assets/shi-pin-04.jpg';
+import tongyihuida from './assets/tongyihuida.png';
 export const yearsList = [
+    {
+        current: 2022,
+        lists: [
+            {
+                name: '段落检索',
+                desc: '提供大规模的段落检索评测集，挑战机器检索相关段落的能力。',
+                rankList: [
+                    {
+                        name: 'younger的团队',
+                        team: '中国科学技术大学',
+                        cls: ''
+                    },
+                    {
+                        name: 'Zhengyang Tang',
+                        team: '腾讯',
+                        cls: 'card_rank_icon_two'
+                    },
+                    {
+                        name: 'OPPO小布助手',
+                        team: 'oppo-小布助手',
+                        cls: 'card_rank_icon_three'
+                    }
+                ]
+            },
+            {
+                name: '知识对话',
+                desc: '让系统具备利用搜索引擎知识进行开放域对话交互的能力，提升对话的丰富性与知识准确性。',
+                rankList: [
+                    {
+                        name: '拿件T恤就溜',
+                        team: '腾讯科技有限公司',
+                        cls: ''
+                    },
+                    {
+                        name: '小米NLP应用组',
+                        team: '小米公司',
+                        cls: 'card_rank_icon_two'
+                    },
+                    {
+                        name: '北交阿凡提',
+                        team: '北京交通大学&北方工业大学',
+                        cls: 'card_rank_icon_three'
+                    }
+                ]
+            },
+            {
+                name: '情感可解释评测',
+                desc: '从合理性、一致性、忠诚性等多个维度评测模型预测所依赖证据的可解释性。',
+                rankList: [
+                    {
+                        name: 'Ali_农民工',
+                        team: '阿里巴巴&苏州大学',
+                        cls: ''
+                    },
+                    {
+                        name: '去哪吃',
+                        team: '哈尔滨工业大学（深圳）',
+                        cls: 'card_rank_icon_two'
+                    },
+                    {
+                        name: 'HIKNLU_G',
+                        team: '杭州海康威视数字科技技术有限公司等',
+                        cls: 'card_rank_icon_three'
+                    }
+                ]
+            },
+            {
+                name: '视频语义理解',
+                desc: '融合知识、语言、视觉、语音等多模信息，为视频生成语义标签。',
+                rankList: [
+                    {
+                        name: '商汤NLP×LaVi的团队',
+                        team: '商汤科技&香港中文大学',
+                        cls: ''
+                    },
+                    {
+                        name: 'NetEase_AI',
+                        team: '网易(杭州)网络有限公司',
+                        cls: 'card_rank_icon_two'
+                    },
+                    {
+                        name: 'IDEA x DataStory',
+                        team: '粤港澳大湾区数字经济研究院 (福田)&数说故事',
+                        cls: 'card_rank_icon_three'
+                    }
+                ]
+            },
+        ],
+        rank: [[1, 2, 3, 4, 5], []],
+        link: 'http://lic2022.cipsc.org.cn/'
+    },
     {
         current: 2021,
         lists: [
@@ -70,7 +162,7 @@ export const yearsList = [
                 ]
             },
         ],
-        rank: [[1,2,3,4,5], []],
+        rank: [[1, 2, 3, 4, 5], []],
         link: 'http://lic2021.ccf.org.cn/'
     },
     {
@@ -256,30 +348,35 @@ export const yearsList = [
 
 export const yearData = yearsList.map(item => item.current);
 
-export function yearCurrent(year){
+export function yearCurrent(year) {
     const newArr = yearsList.filter(item => item.current === +year);
     return newArr;
 }
 
 export const gamesShowList = [
+    // {
+    //     title: '段落检索',
+    //     desc: '提供大规模的段落检索评测集，挑战机器检索相关段落的能力。',
+    //     imgUrl: duanLuoSrc,
+    // },
+    // {
+    //     title: '知识对话',
+    //     desc: '让系统具备利用搜索引擎知识进行开放域对话交互的能力，提升对话的丰富性与知识准确性。',
+    //     imgUrl: zhiShiSrc,
+    // },
+    // {
+    //     title: '情感可解释评测',
+    //     desc: '从合理性、一致性、忠诚性等多个维度评测模型预测所依赖证据的可解释性。',
+    //     imgUrl: qiangGanSrc,
+    // },
     {
-        title: '段落检索',
-        desc: '提供大规模的段落检索评测集，挑战机器检索相关段落的能力。',
-        imgUrl: duanLuoSrc,
-    },
-    {
-        title: '知识对话',
-        desc: '让系统具备利用搜索引擎知识进行开放域对话交互的能力，提升对话的丰富性与知识准确性。',
-        imgUrl: zhiShiSrc,
-    },
-    {
-        title: '情感可解释评测',
-        desc: '从合理性、一致性、忠诚性等多个维度评测模型预测所依赖证据的可解释性。',
-        imgUrl: qiangGanSrc,
+        title: '大语言模型评估',
+        desc: '从通用人工智能发展与应用的角度，对大语言模型进行系统性、可量化的评估体系建设。',
+        imgUrl: tongyihuida,
     },
     {
         title: '视频语义理解',
-        desc: '在感知内容分析的基础上，融合知识、语言、视觉、语音等多模信息，结合知识计算与推理，为视频生成相应的语义标签。',
+        desc: '融合知识、语言、视觉、语音等多模信息，为视频生成语义标签。',
         imgUrl: shiPinSrc,
     }
 ]

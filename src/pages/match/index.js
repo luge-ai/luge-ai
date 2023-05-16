@@ -4,7 +4,7 @@ import './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
 
 const HistoryMatch = memo(() => {
-    const [currentIndex, setCurrentIndex] = useState(2021);
+    const [currentIndex, setCurrentIndex] = useState(2022);
     const [gameNum, setGameNum] = useState(0);
     const activeData = useMemo(() => {
         return yearCurrent(currentIndex);
@@ -88,15 +88,15 @@ const MatchDetails = memo(() => {
         <div className='match-detail-content'>
             <div className='match-content-top'>
                 <span className='match_detail_title'>
-                    <strong>2022<i className='match_status'>正在进行中</i></strong>
+                    <strong>2023<i className='match_status'>正在进行中</i></strong>
                     语言与智能技术竞赛
                 </span>
                 <span className='match_detail_award'>
                     <span className='match_award'>
                         <span className='num-award-title'>总奖池</span>
-                        <span className='num-award'>¥220,000</span>
+                        <span className='num-award'>¥130,000</span>
                     </span>
-                    <a href='http://lic2022.cipsc.org.cn/' className='match_btn' target="_blank" rel="noreferrer"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
+                    <a href='http://lic2023.cipsc.org.cn/' className='match_btn' target="_blank" rel="noreferrer"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
                 </span>
             </div>
             <ul className='match_detail_ul'>
