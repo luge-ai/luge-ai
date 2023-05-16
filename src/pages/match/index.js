@@ -96,7 +96,7 @@ const MatchDetails = memo(() => {
                         <span className='num-award-title'>总奖池</span>
                         <span className='num-award'>¥130,000</span>
                     </span>
-                    <a href='http://lic2023.cipsc.org.cn/' className='match_btn' target="_blank" rel="noreferrer"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
+                    <a href='http://lic2023.ccf.org.cn/' className='match_btn' target="_blank" rel="noreferrer"><span className='match_btn_inner'>立即查看<ArrowRightOutlined /></span></a>
                 </span>
             </div>
             <ul className='match_detail_ul'>
