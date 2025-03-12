@@ -27,20 +27,20 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           BUILD_SCRIPT: npm install && npm run build
-      - name: sync to gitee
-        uses: wearerequired/git-mirror-action@v1
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        with:
-          source-repo: 'git@github.com:luge-ai/luge-ai.git'
-          destination-repo: 'git@gitee.com:luge-ai/luge-ai.git'
-      - name: Build Gitee Pages
-        uses: yanglbme/gitee-pages-action@master
-        with:
-          branch: gh-pages
-          gitee-username: lugeAi
-          gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: luge-ai/luge-ai
+      # - name: sync to gitee
+      #   uses: wearerequired/git-mirror-action@v1
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   with:
+      #     source-repo: 'git@github.com:luge-ai/luge-ai.git'
+      #     destination-repo: 'git@gitee.com:luge-ai/luge-ai.git'
+      # - name: Build Gitee Pages
+      #   uses: yanglbme/gitee-pages-action@master
+      #   with:
+      #     branch: gh-pages
+      #     gitee-username: lugeAi
+      #     gitee-password: ${{ secrets.GITEE_PASSWORD }}
+      #     gitee-repo: luge-ai/luge-ai
 # jobs:
 #   main:
 #     runs-on: ubuntu-latest
