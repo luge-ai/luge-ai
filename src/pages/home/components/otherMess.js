@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -32,11 +32,13 @@ const GamesCard = memo(props => {
         game_02,
         game_03
     ];
-    useMemo(async () => {
-        const res = await getRankList({ taskId: taskId });
-        if (res.data.list && res.data.list[0]) {
-            setRankData(res.data.list[0]);
-        }
+    useEffect(async () => {
+        try {
+            const res = await getRankList({ taskId: taskId });
+            if (res.data.list && res.data.list[0]) {
+                setRankData(res.data.list[0]);
+            }
+        } catch (error) {}
     }, [taskId]);
     return (
         <div className='platform' style={{ height: '210px' }}>
@@ -112,11 +114,13 @@ const PlatformCard = memo(props => {
 
 const GameMess = memo(() => {
     const [gameData, setGameData] = useState([]);
-    useMemo(async () => {
-        const res = await getGameList({});
-        if (res.data) {
-            setGameData(res.data.list);
-        }
+    useEffect(async () => {
+        try {
+            const res = await getGameList({});
+            if (res.data) {
+                setGameData(res.data.list);
+            }
+        } catch (error) {}
     }, []);
     return (
         <div className='platform'>
