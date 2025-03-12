@@ -53,7 +53,7 @@ const GamesCard = memo(props => {
             </div>
             <ul className='games-list'>
                 {
-                    rankData.top && rankData.top.map(
+                    rankData?.top && rankData?.top?.map(
                         (item, index) => (
                             <li key={index}>
                                 <img src={imgs[index]} alt='' />
@@ -133,7 +133,7 @@ const GameMess = memo(() => {
             </div>
             <ul className='games-list games_data_list'>
                 {
-                    gameData.map((item, index) => (
+                    gameData?.map?.((item, index) => (
                         index < 3 &&
                         <li key={index}>
                             <a
