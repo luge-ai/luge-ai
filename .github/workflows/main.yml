@@ -60,6 +60,6 @@ jobs:
 #     - name: Deploy
 #       uses: JamesIves/github-pages-deploy-action@releases/v3
 #       with:
-#         ACCESS_TOKEN: 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
+#         ACCESS_TOKEN: ''
 #         BRANCH: gh-pages
 #         FOLDER: build
